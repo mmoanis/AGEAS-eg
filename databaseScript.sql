@@ -54,8 +54,10 @@ CREATE TABLE Purchase (
     Customer_ID INT
         FOREIGN KEY REFERENCES Customer(Customer_ID),
     Name Nvarchar(50) NOT NULL,
+    Is_On_Installment BIT NOT NULL,
     Discount DECIMAL(3, 3) NOT NULL,
-    Total_Revenue DECIMAL(3, 3) NOT NULL
+    Value DECIMAL(3, 3) NOT NULL,
+    Recieved_Value
 )
 
 -- product purchaese relation
