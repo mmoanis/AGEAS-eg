@@ -2,16 +2,16 @@
 --
 USE master ;
 
-GO;
+GO
 
 
 CREATE DATABASE AGEAS;
 
-GO;
+GO
 
 USE AGEAS;
 
-GO;
+GO
 
 -- customers table
 
@@ -31,7 +31,7 @@ CREATE TABLE Supplier (
     Company nvarchar(50) NOT NULL UNIQUE
 )
 
-GO;
+GO
 
 
 CREATE TABLE Product (
