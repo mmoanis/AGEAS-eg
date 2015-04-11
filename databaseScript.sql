@@ -44,8 +44,8 @@ CREATE TABLE Product (
 )
 
 
-CREATE TABLE Transaction (
-    Transaction_ID INT IDENTITY(1, 1) PRIMARY KEY,
+CREATE TABLE Purchase (
+    Purchase_ID INT IDENTITY(1, 1) PRIMARY KEY,
     Customer_ID INT
         FOREIGN KEY REFERENCES Customer(Customer_ID),
     Name Nvarchar(50) NOT NULL,
@@ -54,12 +54,12 @@ CREATE TABLE Transaction (
 )
 
 
-CREATE TABLE Product_Transaction (
-    Product_Transaction_ID int IDENTITY(1, 1) PRIMARY KEY,
+CREATE TABLE Product_Purchase (
+    Product_Purchase_ID int IDENTITY(1, 1) PRIMARY KEY,
     Product_ID INT 
         FOREIGN KEY REFERENCES Product(Product_ID),
-    Transaction_ID INT
-        FOREIGN KEY REFERENCES Transaction(Transaction_ID),
+    Purchase_ID INT
+        FOREIGN KEY REFERENCES Purchase(Purchase_ID),
     Quantity INt NOT NULL
 )
 
