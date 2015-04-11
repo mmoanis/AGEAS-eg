@@ -2,6 +2,11 @@
 --
 USE master ;
 
+IF EXISTS(select * from sys.databases where name='AGEAS')
+
+DROP DATABASE AGEAS
+
+
 GO
 
 
