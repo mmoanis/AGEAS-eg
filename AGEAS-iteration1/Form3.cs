@@ -20,16 +20,12 @@ namespace AGEAS_iteration1
             PriceLabel.Visible= false;
             QuantityLabel.Visible = false;
             SupplierLabel.Visible = false;
-            ByTypeLabel.Visible = false;
-            ByBrandLabel.Visible = false;
 
-            TypetextBox.Visible = false;
-            BrandtextBox.Visible = false;
             PricetextBox.Visible = false;
             QuantitytextBox.Visible = false;
             SuppliertextBox.Visible = false;
-            ByTypetextBox.Visible = false;
-            ByBrandtextBox.Visible = false;
+            TypetextBox.Visible = false;
+            BrandtextBox.Visible = false;
 
         }
 
@@ -40,7 +36,7 @@ namespace AGEAS_iteration1
             f.Show();
         }
 
-        private void Gobtn1_Click(object sender, EventArgs e)
+        private void Browserbtn1_CheckedChanged(object sender, EventArgs e)
         {
             if (Addrbtn1.Checked == true)
             {
@@ -57,48 +53,32 @@ namespace AGEAS_iteration1
                 SuppliertextBox.Visible = true;
 
             }
-            else 
+            else if (Searchrbtn1.Checked == true)
             {
-                TypeLabel.Visible = false;
-                BrandLabel.Visible = false;
+                TypeLabel.Visible = true;
+                BrandLabel.Visible = true;
                 PriceLabel.Visible = false;
                 QuantityLabel.Visible = false;
                 SupplierLabel.Visible = false;
-               
 
-                TypetextBox.Visible = false;
-                BrandtextBox.Visible = false;
+                TypetextBox.Visible = true;
+                BrandtextBox.Visible = true;
                 PricetextBox.Visible = false;
                 QuantitytextBox.Visible = false;
                 SuppliertextBox.Visible = false;
-                
 
-                
             }
 
-            if (Searchrbtn1.Checked == true)
+            else if (Updaterbtn1.Checked == true)
             {
-                ByTypeLabel.Visible = true;
-                ByBrandLabel.Visible = true;
-                ByTypetextBox.Visible = true;
-                ByBrandtextBox.Visible = true;
-
+                TypetextBox.Visible = true;
+                BrandtextBox.Visible = true;
             }
-            else 
+            else
             {
-                ByTypeLabel.Visible = false;
-                ByBrandLabel.Visible = false; 
-                ByTypetextBox.Visible = false;
-                ByBrandtextBox.Visible = false;
+                TypetextBox.Visible = false;
+                BrandtextBox.Visible = false;
             }
-
-
-
-
         }
-
-
-
-
     }
 }

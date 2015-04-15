@@ -37,18 +37,13 @@ namespace AGEAS_iteration1
                 {
                     //check if username and password exist in db
                     Form2 f = new Form2();
+                    f.FormClosed += (s, args) => this.Close();
                     this.Hide();
                     f.Show();
                     //else show incorrect username or password
                 }
                 
             }
-
-
-
-
-            
-
         }
     }
 }

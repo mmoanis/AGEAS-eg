@@ -41,82 +41,88 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 54);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 24);
+            this.label1.Size = new System.Drawing.Size(519, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to AGEAS Database!";
+            this.label1.Text = "اهلاً بك فى قاعدة البيانات الخاصة باحمد جمال للأجهزة الكهربائية";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 124);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(409, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 24);
+            this.label3.Size = new System.Drawing.Size(135, 26);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Choose a category:";
+            this.label3.Text = "ارجو اختيار فئة";
             // 
             // Productsbtn
             // 
-            this.Productsbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Productsbtn.Location = new System.Drawing.Point(45, 175);
+            this.Productsbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Productsbtn.Location = new System.Drawing.Point(414, 177);
             this.Productsbtn.Name = "Productsbtn";
             this.Productsbtn.Size = new System.Drawing.Size(91, 40);
             this.Productsbtn.TabIndex = 3;
-            this.Productsbtn.Text = "Products";
+            this.Productsbtn.Text = "بضائع";
             this.Productsbtn.UseVisualStyleBackColor = true;
             this.Productsbtn.Click += new System.EventHandler(this.Productsbtn_Click);
             // 
             // Customersbtn
             // 
-            this.Customersbtn.Location = new System.Drawing.Point(168, 175);
+            this.Customersbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Customersbtn.Location = new System.Drawing.Point(291, 177);
             this.Customersbtn.Name = "Customersbtn";
             this.Customersbtn.Size = new System.Drawing.Size(91, 38);
             this.Customersbtn.TabIndex = 4;
-            this.Customersbtn.Text = "Customers";
+            this.Customersbtn.Text = "عملاء";
             this.Customersbtn.UseVisualStyleBackColor = true;
             this.Customersbtn.Click += new System.EventHandler(this.Customersbtn_Click);
             // 
             // Transactionsbtn
             // 
-            this.Transactionsbtn.Location = new System.Drawing.Point(414, 175);
+            this.Transactionsbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Transactionsbtn.Location = new System.Drawing.Point(45, 175);
             this.Transactionsbtn.Name = "Transactionsbtn";
             this.Transactionsbtn.Size = new System.Drawing.Size(91, 38);
             this.Transactionsbtn.TabIndex = 5;
-            this.Transactionsbtn.Text = "Transactions";
+            this.Transactionsbtn.Text = "تعاملات";
             this.Transactionsbtn.UseVisualStyleBackColor = true;
             this.Transactionsbtn.Click += new System.EventHandler(this.Transactionsbtn_Click);
             // 
             // Suppliersbtn
             // 
-            this.Suppliersbtn.Location = new System.Drawing.Point(297, 175);
+            this.Suppliersbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Suppliersbtn.Location = new System.Drawing.Point(167, 175);
             this.Suppliersbtn.Name = "Suppliersbtn";
             this.Suppliersbtn.Size = new System.Drawing.Size(91, 38);
             this.Suppliersbtn.TabIndex = 6;
-            this.Suppliersbtn.Text = "Suppliers";
+            this.Suppliersbtn.Text = "موردين";
             this.Suppliersbtn.UseVisualStyleBackColor = true;
             this.Suppliersbtn.Click += new System.EventHandler(this.Suppliersbtn_Click);
             // 
             // Reportsbtn
             // 
-            this.Reportsbtn.Location = new System.Drawing.Point(45, 258);
+            this.Reportsbtn.Enabled = false;
+            this.Reportsbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reportsbtn.Location = new System.Drawing.Point(414, 252);
             this.Reportsbtn.Name = "Reportsbtn";
             this.Reportsbtn.Size = new System.Drawing.Size(91, 38);
             this.Reportsbtn.TabIndex = 7;
-            this.Reportsbtn.Text = "Reports";
+            this.Reportsbtn.Text = "تقارير";
             this.Reportsbtn.UseVisualStyleBackColor = true;
             this.Reportsbtn.Click += new System.EventHandler(this.Reportsbtn_Click);
             // 
             // Logoutbtn
             // 
+            this.Logoutbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logoutbtn.Location = new System.Drawing.Point(414, 378);
             this.Logoutbtn.Name = "Logoutbtn";
-            this.Logoutbtn.Size = new System.Drawing.Size(91, 24);
+            this.Logoutbtn.Size = new System.Drawing.Size(91, 30);
             this.Logoutbtn.TabIndex = 8;
-            this.Logoutbtn.Text = "Log out";
+            this.Logoutbtn.Text = "خروج";
             this.Logoutbtn.UseVisualStyleBackColor = true;
             this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
             // 
@@ -134,7 +140,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
 
