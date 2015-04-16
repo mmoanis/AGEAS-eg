@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
+using AGEAS_iteration1;
 namespace AGEAS_iteration1
 {
     static class Program
@@ -14,7 +14,7 @@ namespace AGEAS_iteration1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(Controller.StartForm1());
         }
     }
 }

@@ -19,34 +19,38 @@ namespace AGEAS_iteration1
 
         private void Productsbtn_Click(object sender, EventArgs e)
         {
-            Form3 f = new Form3();
-            f.FormClosed += (s, args) => this.Show();
-            this.Hide();
-            f.Show();
+            //Form3 f = new Form3();
+            //f.FormClosed += (s, args) => this.Show();
+            //this.Hide();
+            //f.Show();
+            Controller.Form2ProductsButtonPressed();
         }
 
         private void Customersbtn_Click(object sender, EventArgs e)
         {
-            Form4 f = new Form4();
-            f.FormClosed += (s, args) => this.Show();
-            this.Hide();
-            f.Show();
+            //Form4 f = new Form4();
+            //f.FormClosed += (s, args) => this.Show();
+            //this.Hide();
+            //f.Show();
+            Controller.Form2CustomersButtonPressed();
         }
 
         private void Suppliersbtn_Click(object sender, EventArgs e)
         {
-            Form5 f = new Form5();
-            f.FormClosed += (s, args) => this.Show();
-            this.Hide();
-            f.Show();
+            //Form5 f = new Form5();
+            //f.FormClosed += (s, args) => this.Show();
+            //this.Hide();
+            //f.Show();
+            Controller.Form2SuppliersButtonPressed();
         }
 
         private void Transactionsbtn_Click(object sender, EventArgs e)
         {
-            Form6 f = new Form6();
-            f.FormClosed += (s, args) => this.Show();
-            this.Hide();
-            f.Show();
+            //Form6 f = new Form6();
+            //f.FormClosed += (s, args) => this.Show();
+            //this.Hide();
+            //f.Show();
+            Controller.Form2TransactionsButtonPressed();
         }
 
         private void Reportsbtn_Click(object sender, EventArgs e)
@@ -59,7 +63,7 @@ namespace AGEAS_iteration1
 
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Controller.Form2LogoutButtonPressed();
         }
     }
 }

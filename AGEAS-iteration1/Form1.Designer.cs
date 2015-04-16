@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Loginbtn = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Usernamebtn
@@ -53,9 +54,9 @@
             this.Passwordbtn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwordbtn.Location = new System.Drawing.Point(354, 217);
             this.Passwordbtn.Name = "Passwordbtn";
-            this.Passwordbtn.Size = new System.Drawing.Size(107, 26);
+            this.Passwordbtn.Size = new System.Drawing.Size(113, 26);
             this.Passwordbtn.TabIndex = 1;
-            this.Passwordbtn.Text = ":كلمةالمرور";
+            this.Passwordbtn.Text = ":كلمة المرور";
             // 
             // UsernametextBox
             // 
@@ -94,21 +95,33 @@
             // Loginbtn
             // 
             this.Loginbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loginbtn.Image = global::AGEAS_iteration1.Properties.Resources.tick11;
             this.Loginbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Loginbtn.Location = new System.Drawing.Point(333, 310);
+            this.Loginbtn.Location = new System.Drawing.Point(457, 383);
             this.Loginbtn.Name = "Loginbtn";
-            this.Loginbtn.Size = new System.Drawing.Size(89, 31);
+            this.Loginbtn.Size = new System.Drawing.Size(92, 40);
             this.Loginbtn.TabIndex = 6;
             this.Loginbtn.Text = "تسجيل";
             this.Loginbtn.UseVisualStyleBackColor = true;
             this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(62, 383);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(92, 40);
+            this.CloseButton.TabIndex = 7;
+            this.CloseButton.Text = "خروج";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 481);
+            this.ControlBox = false;
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.Loginbtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,6 +145,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Loginbtn;
+        private System.Windows.Forms.Button CloseButton;
     }
 }
 

@@ -14,8 +14,6 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             PasswordtextBox.PasswordChar='*';
-
-            
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
@@ -33,16 +31,22 @@ namespace AGEAS_iteration1
                 else
                 {
                     //check if username and password exist in db
-                    Form2 f = new Form2();
-                    f.FormClosed += (s, args) => this.Show();
+                    //Form2 f = new Form2();
+                    //f.FormClosed += (s, args) => this.Show();
                     this.UsernametextBox.Clear();
                     this.PasswordtextBox.Clear();
-                    this.Hide();
-                    f.Show();
+                    Controller.Form1LoginButtonPressed();
+                    //this.Hide();
+                    //f.Show();
                     //else show incorrect username or password
                 }
                 
             }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

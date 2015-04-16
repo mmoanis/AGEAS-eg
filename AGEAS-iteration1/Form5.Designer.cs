@@ -71,10 +71,10 @@
             this.Browserbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browserbtn3.Location = new System.Drawing.Point(51, 120);
             this.Browserbtn3.Name = "Browserbtn3";
-            this.Browserbtn3.Size = new System.Drawing.Size(57, 25);
+            this.Browserbtn3.Size = new System.Drawing.Size(68, 25);
             this.Browserbtn3.TabIndex = 9;
             this.Browserbtn3.TabStop = true;
-            this.Browserbtn3.Text = "بحث";
+            this.Browserbtn3.Text = "عرض";
             this.Browserbtn3.UseVisualStyleBackColor = true;
             this.Browserbtn3.CheckedChanged += new System.EventHandler(this.Addrbtn3_CheckedChanged);
             // 
