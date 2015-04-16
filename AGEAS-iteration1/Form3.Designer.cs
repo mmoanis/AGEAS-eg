@@ -222,6 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 486);
+            this.ControlBox = false;
             this.Controls.Add(this.BrandtextBox);
             this.Controls.Add(this.TypetextBox);
             this.Controls.Add(this.SuppliertextBox);

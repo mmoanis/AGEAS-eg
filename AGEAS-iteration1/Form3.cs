@@ -29,9 +29,7 @@ namespace AGEAS_iteration1
 
         private void Backbtn1_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
-            this.Hide();
-            f.Show();
+            this.Close();
         }
 
         private void Browserbtn1_CheckedChanged(object sender, EventArgs e)

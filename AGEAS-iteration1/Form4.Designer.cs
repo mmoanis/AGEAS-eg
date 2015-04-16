@@ -207,6 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 463);
+            this.ControlBox = false;
             this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.NametextBox);
             this.Controls.Add(this.IDLabel);

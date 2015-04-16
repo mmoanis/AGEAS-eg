@@ -20,7 +20,6 @@ namespace AGEAS_iteration1
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrEmpty(UsernametextBox.Text))
             {
                 MessageBox.Show("Please enter a Username!");
@@ -35,7 +34,9 @@ namespace AGEAS_iteration1
                 {
                     //check if username and password exist in db
                     Form2 f = new Form2();
-                    f.FormClosed += (s, args) => this.Close();
+                    f.FormClosed += (s, args) => this.Show();
+                    this.UsernametextBox.Clear();
+                    this.PasswordtextBox.Clear();
                     this.Hide();
                     f.Show();
                     //else show incorrect username or password

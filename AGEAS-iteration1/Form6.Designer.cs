@@ -203,6 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 473);
+            this.ControlBox = false;
             this.Controls.Add(this.ProducttextBox);
             this.Controls.Add(this.DatetextBox);
             this.Controls.Add(this.DiscounttextBox);
