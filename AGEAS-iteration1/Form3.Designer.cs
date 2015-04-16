@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(466, 41);
+            this.label1.Location = new System.Drawing.Point(434, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 26);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.Backbtn1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Backbtn1.Location = new System.Drawing.Point(53, 421);
             this.Backbtn1.Name = "Backbtn1";
-            this.Backbtn1.Size = new System.Drawing.Size(128, 27);
+            this.Backbtn1.Size = new System.Drawing.Size(128, 33);
             this.Backbtn1.TabIndex = 1;
             this.Backbtn1.Text = "الرجوع";
             this.Backbtn1.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // Applybtn1
             // 
             this.Applybtn1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Applybtn1.Location = new System.Drawing.Point(53, 388);
+            this.Applybtn1.Location = new System.Drawing.Point(53, 382);
             this.Applybtn1.Name = "Applybtn1";
-            this.Applybtn1.Size = new System.Drawing.Size(128, 25);
+            this.Applybtn1.Size = new System.Drawing.Size(128, 33);
             this.Applybtn1.TabIndex = 6;
             this.Applybtn1.Text = "تعديل";
             this.Applybtn1.UseVisualStyleBackColor = true;

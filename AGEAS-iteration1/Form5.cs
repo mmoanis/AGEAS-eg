@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AGEAS_iteration1
@@ -18,14 +16,14 @@ namespace AGEAS_iteration1
             NameLabel.Visible = false;
             IDLabel.Visible = false;
             PhoneLabel.Visible = false;
-            ByNameLabel.Visible = false;
-            ByIDLabel.Visible = false;
+            NameLabel.Visible = false;
+            IDLabel.Visible = false;
 
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
             PhonetextBox.Visible = false;
-            ByNametextBox.Visible = false;
-            ByIDtextBox.Visible = false;
+            NametextBox.Visible = false;
+            IDtextBox.Visible = false;
         }
 
         private void Backbtn3_Click(object sender, EventArgs e)
@@ -35,9 +33,9 @@ namespace AGEAS_iteration1
             f.Show();
         }
 
-        private void Gobtn1_Click(object sender, EventArgs e)
+        private void Addrbtn3_CheckedChanged(object sender, EventArgs e)
         {
-            if(Addrbtn3.Checked==true)
+            if (Addrbtn3.Checked)
             {
                 NameLabel.Visible = true;
                 IDLabel.Visible = true;
@@ -46,34 +44,35 @@ namespace AGEAS_iteration1
                 NametextBox.Visible = true;
                 IDtextBox.Visible = true;
                 PhonetextBox.Visible = true;
-            
+
             }
+
+            else if (Searchrbtn3.Checked)
+            {
+                NameLabel.Visible = true;
+                IDLabel.Visible = true;
+                PhoneLabel.Visible = false;
+
+                NametextBox.Visible = true;
+                IDtextBox.Visible = true;
+                PhonetextBox.Visible = false;
+            }
+
+            else if (Browserbtn3.Checked)
+            {
+                NameLabel.Visible = true;
+                IDLabel.Visible = true;
+                NametextBox.Visible = true;
+                IDtextBox.Visible = true;
+
+            }
+
             else
             {
                 NameLabel.Visible = false;
                 IDLabel.Visible = false;
-                PhoneLabel.Visible = false;
-
                 NametextBox.Visible = false;
                 IDtextBox.Visible = false;
-                PhonetextBox.Visible = false;
-            
-            }
-
-            if(Searchrbtn3.Checked==true)
-            {
-                ByNameLabel.Visible = true;
-                ByIDLabel.Visible = true;
-                ByNametextBox.Visible = true;
-                ByIDtextBox.Visible = true;
-
-            }
-            else
-            {
-                ByNameLabel.Visible = false;
-                ByIDLabel.Visible = false;
-                ByNametextBox.Visible = false;
-                ByIDtextBox.Visible = false;
 
             }
         }

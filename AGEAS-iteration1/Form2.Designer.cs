@@ -46,7 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(519, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "اهلاً بك فى قاعدة البيانات الخاصة باحمد جمال للأجهزة الكهربائية";
+            this.label1.Text = "اهلاً بك فى قاعدة البيانات الخاصة بأحمد جمال للأجهزة الكهربائية";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
@@ -57,7 +57,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 26);
             this.label3.TabIndex = 2;
-            this.label3.Text = "ارجو اختيار فئة";
+            this.label3.Text = "أرجو إختيار فئة";
             // 
             // Productsbtn
             // 
