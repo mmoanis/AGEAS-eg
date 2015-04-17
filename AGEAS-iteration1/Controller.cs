@@ -13,6 +13,7 @@ namespace AGEAS_iteration1
         public Form5 F5;
         public Form6 F6;
         public Form7 F7;
+        public DataGridViewForm DGV;
 
         public Form1 StartForm1()
         {
@@ -65,6 +66,11 @@ namespace AGEAS_iteration1
             F6.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F6.FormClosed += (s, args) => F2.Show();
             F6.ShowDialog();
+        }
+
+        public void FormActionToPerform(int FormNumber, int Action)
+        {
+
         }
     }
 }

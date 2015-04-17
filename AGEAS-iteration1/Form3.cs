@@ -25,6 +25,9 @@ namespace AGEAS_iteration1
             TypetextBox.Visible = false;
             BrandtextBox.Visible = false;
 
+            Applybtn1.Visible = false;
+            TypetextBox.MaxLength = 50;
+
         }
 
         private void Backbtn1_Click(object sender, EventArgs e)
@@ -48,6 +51,9 @@ namespace AGEAS_iteration1
                 QuantitytextBox.Visible = true;
                 SuppliertextBox.Visible = true;
 
+                Applybtn1.Visible = true;
+                Applybtn1.Text = "اضافة";
+
             }
             else if (Searchrbtn1.Checked == true)
             {
@@ -63,17 +69,34 @@ namespace AGEAS_iteration1
                 QuantitytextBox.Visible = false;
                 SuppliertextBox.Visible = false;
 
+                Applybtn1.Visible = true;
+                Applybtn1.Text = "بحث";
             }
 
             else if (Updaterbtn1.Checked == true)
             {
                 TypetextBox.Visible = true;
                 BrandtextBox.Visible = true;
+
+                Applybtn1.Visible = true;
+                Applybtn1.Text = "تعديل";
             }
             else
             {
+                TypeLabel.Visible = false;
+                BrandLabel.Visible = false;
+                PriceLabel.Visible = false;
+                QuantityLabel.Visible = false;
+                SupplierLabel.Visible = false;
+
                 TypetextBox.Visible = false;
                 BrandtextBox.Visible = false;
+                PricetextBox.Visible = false;
+                QuantitytextBox.Visible = false;
+                SuppliertextBox.Visible = false;
+
+                Applybtn1.Visible = true;
+                Applybtn1.Text = "عرض";
             }
         }
     }

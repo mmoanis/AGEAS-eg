@@ -69,7 +69,6 @@
             // Browserbtn2
             // 
             this.Browserbtn2.AutoSize = true;
-            this.Browserbtn2.Enabled = false;
             this.Browserbtn2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browserbtn2.Location = new System.Drawing.Point(42, 110);
             this.Browserbtn2.Name = "Browserbtn2";
@@ -83,7 +82,6 @@
             // Updaterbtn2
             // 
             this.Updaterbtn2.AutoSize = true;
-            this.Updaterbtn2.Enabled = false;
             this.Updaterbtn2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updaterbtn2.Location = new System.Drawing.Point(158, 110);
             this.Updaterbtn2.Name = "Updaterbtn2";
@@ -129,21 +127,22 @@
             this.Applybtn2.TabIndex = 10;
             this.Applybtn2.Text = "تعديل";
             this.Applybtn2.UseVisualStyleBackColor = true;
+            this.Applybtn2.Click += new System.EventHandler(this.Applybtn2_Click);
             // 
             // IDtextBox
             // 
             this.IDtextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDtextBox.Location = new System.Drawing.Point(192, 205);
+            this.IDtextBox.Location = new System.Drawing.Point(158, 205);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(248, 20);
+            this.IDtextBox.Size = new System.Drawing.Size(282, 20);
             this.IDtextBox.TabIndex = 34;
             // 
             // NametextBox
             // 
             this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NametextBox.Location = new System.Drawing.Point(192, 171);
+            this.NametextBox.Location = new System.Drawing.Point(158, 171);
             this.NametextBox.Name = "NametextBox";
-            this.NametextBox.Size = new System.Drawing.Size(248, 20);
+            this.NametextBox.Size = new System.Drawing.Size(282, 20);
             this.NametextBox.TabIndex = 33;
             // 
             // IDLabel
@@ -169,17 +168,17 @@
             // TeltextBox
             // 
             this.TeltextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeltextBox.Location = new System.Drawing.Point(192, 275);
+            this.TeltextBox.Location = new System.Drawing.Point(158, 275);
             this.TeltextBox.Name = "TeltextBox";
-            this.TeltextBox.Size = new System.Drawing.Size(248, 20);
+            this.TeltextBox.Size = new System.Drawing.Size(282, 20);
             this.TeltextBox.TabIndex = 29;
             // 
             // BalancetextBox
             // 
             this.BalancetextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalancetextBox.Location = new System.Drawing.Point(192, 239);
+            this.BalancetextBox.Location = new System.Drawing.Point(158, 239);
             this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.Size = new System.Drawing.Size(248, 20);
+            this.BalancetextBox.Size = new System.Drawing.Size(282, 20);
             this.BalancetextBox.TabIndex = 28;
             // 
             // TelLabel

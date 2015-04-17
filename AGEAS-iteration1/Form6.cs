@@ -23,7 +23,8 @@ namespace AGEAS_iteration1
             ProducttextBox.Visible = false;
             DatetextBox.Visible = false;
             DiscounttextBox.Visible = false;
-            
+
+            Applybtn4.Visible = false;
         }
 
         private void Backbtn4_Click(object sender, EventArgs e)
@@ -44,6 +45,9 @@ namespace AGEAS_iteration1
                 ProducttextBox.Visible = true;
                 DatetextBox.Visible = true;
                 DiscounttextBox.Visible = true;
+
+                Applybtn4.Visible = true;
+                Applybtn4.Text = "اضافة";
             }
             else if (Searchrbtn4.Checked == true)
             {
@@ -56,17 +60,33 @@ namespace AGEAS_iteration1
                 ProducttextBox.Visible = true;
                 DatetextBox.Visible = true;
                 DiscounttextBox.Visible = true;
+
+                Applybtn4.Visible = true;
+                Applybtn4.Text = "بحث";
             }
 
             else if (Updaterbtn4.Checked == true)
             {
                 DateLabel.Visible = true;
                 DatetextBox.Visible = true;
+
+                Applybtn4.Visible = true;
+                Applybtn4.Text = "تعديل";
             }
             else
             {
+                CustomerLabel.Visible = false;
+                ProductLabel.Visible = false;
                 DateLabel.Visible = false;
+                DiscountLabel.Visible = false;
+
+                CustomertextBox.Visible = false;
+                ProducttextBox.Visible = false;
                 DatetextBox.Visible = false;
+                DiscounttextBox.Visible = false;
+
+                Applybtn4.Visible = true;
+                Applybtn4.Text = "عرض";
             }
         }
     }

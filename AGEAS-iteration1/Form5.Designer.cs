@@ -41,6 +41,8 @@
             this.NametextBox = new System.Windows.Forms.TextBox();
             this.IDtextBox = new System.Windows.Forms.TextBox();
             this.PhonetextBox = new System.Windows.Forms.TextBox();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.AddresstextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +69,6 @@
             // Browserbtn3
             // 
             this.Browserbtn3.AutoSize = true;
-            this.Browserbtn3.Enabled = false;
             this.Browserbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browserbtn3.Location = new System.Drawing.Point(51, 120);
             this.Browserbtn3.Name = "Browserbtn3";
@@ -81,7 +82,6 @@
             // Updaterbtn3
             // 
             this.Updaterbtn3.AutoSize = true;
-            this.Updaterbtn3.Enabled = false;
             this.Updaterbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updaterbtn3.Location = new System.Drawing.Point(173, 120);
             this.Updaterbtn3.Name = "Updaterbtn3";
@@ -182,12 +182,31 @@
             this.PhonetextBox.Size = new System.Drawing.Size(222, 20);
             this.PhonetextBox.TabIndex = 28;
             // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressLabel.Location = new System.Drawing.Point(443, 295);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(53, 20);
+            this.AddressLabel.TabIndex = 29;
+            this.AddressLabel.Text = ":العنوان";
+            // 
+            // AddresstextBox
+            // 
+            this.AddresstextBox.Location = new System.Drawing.Point(194, 295);
+            this.AddresstextBox.Name = "AddresstextBox";
+            this.AddresstextBox.Size = new System.Drawing.Size(222, 20);
+            this.AddresstextBox.TabIndex = 30;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 472);
             this.ControlBox = false;
+            this.Controls.Add(this.AddresstextBox);
+            this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.PhonetextBox);
             this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.NametextBox);
@@ -223,5 +242,7 @@
         private System.Windows.Forms.TextBox NametextBox;
         private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox PhonetextBox;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.TextBox AddresstextBox;
     }
 }

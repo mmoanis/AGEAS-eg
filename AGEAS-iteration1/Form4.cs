@@ -26,6 +26,9 @@ namespace AGEAS_iteration1
             TeltextBox.Visible = false;
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
+
+            Applybtn2.Visible = false;
+            NametextBox.MaxLength = 50;
         }
 
         private void Backbtn2_Click(object sender, EventArgs e)
@@ -46,6 +49,9 @@ namespace AGEAS_iteration1
                 IDtextBox.Visible = true;
                 BalancetextBox.Visible = true;
                 TeltextBox.Visible = true;
+
+                Applybtn2.Visible = true;
+                Applybtn2.Text = "اضافة";
             }
 
             else if (Searchrbtn2.Checked == true)
@@ -59,6 +65,9 @@ namespace AGEAS_iteration1
                 IDtextBox.Visible = true;
                 BalancetextBox.Visible = false;
                 TeltextBox.Visible = false;
+
+                Applybtn2.Visible = true;
+                Applybtn2.Text = "بحث";
             }
 
             else if (Updaterbtn2.Checked)
@@ -72,14 +81,48 @@ namespace AGEAS_iteration1
                 IDtextBox.Visible = false;
                 BalancetextBox.Visible = false;
                 TeltextBox.Visible = false;
+
+                Applybtn2.Visible = true;
+                Applybtn2.Text = "تعديل";
             }
 
             else
             {
                 NameLabel.Visible = false;
                 IDLabel.Visible = false;
+                BalanceLabel.Visible = false;
+                TelLabel.Visible = false;
+
                 NametextBox.Visible = false;
                 IDtextBox.Visible = false;
+                BalancetextBox.Visible = false;
+                TeltextBox.Visible = false;
+
+                Applybtn2.Visible = true;
+                Applybtn2.Text = "عرض";
+            }
+        }
+
+        private void Applybtn2_Click(object sender, EventArgs e)
+        {
+            if (Addrbtn2.Checked)
+            {
+                
+            }
+
+            else if (Searchrbtn2.Checked == true)
+            {
+                
+            }
+
+            else if (Updaterbtn2.Checked)
+            {
+                
+            }
+
+            else
+            {
+                
             }
         }
     }
