@@ -23,7 +23,7 @@ namespace AGEAS_iteration1
             //f.FormClosed += (s, args) => this.Show();
             //this.Hide();
             //f.Show();
-            Controller.Form2ProductsButtonPressed();
+            Program.myController.Form2ProductsButtonPressed();
         }
 
         private void Customersbtn_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace AGEAS_iteration1
             //f.FormClosed += (s, args) => this.Show();
             //this.Hide();
             //f.Show();
-            Controller.Form2CustomersButtonPressed();
+            Program.myController.Form2CustomersButtonPressed();
         }
 
         private void Suppliersbtn_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace AGEAS_iteration1
             //f.FormClosed += (s, args) => this.Show();
             //this.Hide();
             //f.Show();
-            Controller.Form2SuppliersButtonPressed();
+            Program.myController.Form2SuppliersButtonPressed();
         }
 
         private void Transactionsbtn_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace AGEAS_iteration1
             //f.FormClosed += (s, args) => this.Show();
             //this.Hide();
             //f.Show();
-            Controller.Form2TransactionsButtonPressed();
+            Program.myController.Form2TransactionsButtonPressed();
         }
 
         private void Reportsbtn_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace AGEAS_iteration1
 
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
-            Controller.Form2LogoutButtonPressed();
+            Program.myController.Form2LogoutButtonPressed();
         }
     }
 }

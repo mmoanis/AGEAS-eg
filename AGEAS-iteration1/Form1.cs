@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using AGEAS_iteration1;
 
 namespace AGEAS_iteration1
 {
@@ -35,7 +36,7 @@ namespace AGEAS_iteration1
                     //f.FormClosed += (s, args) => this.Show();
                     this.UsernametextBox.Clear();
                     this.PasswordtextBox.Clear();
-                    Controller.Form1LoginButtonPressed();
+                    Program.myController.Form1LoginButtonPressed();
                     //this.Hide();
                     //f.Show();
                     //else show incorrect username or password

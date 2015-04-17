@@ -4,24 +4,24 @@ using System.Text;
 
 namespace AGEAS_iteration1
 {
-    public static partial class Controller
+    public class Controller
     {
-        public static Form1 F1;
-        public static Form2 F2;
-        public static Form3 F3;
-        public static Form4 F4;
-        public static Form5 F5;
-        public static Form6 F6;
-        public static Form7 F7;
+        public Form1 F1;
+        public Form2 F2;
+        public Form3 F3;
+        public Form4 F4;
+        public Form5 F5;
+        public Form6 F6;
+        public Form7 F7;
 
-        public static Form1 StartForm1()
+        public Form1 StartForm1()
         {
             F1 = new Form1();
             F1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             return F1;
         }
         
-        public static void Form1LoginButtonPressed()
+        public void Form1LoginButtonPressed()
         {
             F2 = new Form2();
             F2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -29,13 +29,13 @@ namespace AGEAS_iteration1
             F2.Show();
         }
 
-        public static void Form2LogoutButtonPressed()
+        public void Form2LogoutButtonPressed()
         {
             F2.Close();
             F1.Show();
         }
 
-        public static void Form2ProductsButtonPressed()
+        public void Form2ProductsButtonPressed()
         {
             F3 = new Form3();
             F3.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -43,7 +43,7 @@ namespace AGEAS_iteration1
             F3.ShowDialog();
         }
 
-        public static void Form2CustomersButtonPressed()
+        public void Form2CustomersButtonPressed()
         {
             F4 = new Form4();
             F4.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -51,7 +51,7 @@ namespace AGEAS_iteration1
             F4.ShowDialog();
         }
 
-        public static void Form2SuppliersButtonPressed()
+        public void Form2SuppliersButtonPressed()
         {
             F5 = new Form5();
             F5.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -59,7 +59,7 @@ namespace AGEAS_iteration1
             F5.ShowDialog();
         }
 
-        public static void Form2TransactionsButtonPressed()
+        public void Form2TransactionsButtonPressed()
         {
             F6 = new Form6();
             F6.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
