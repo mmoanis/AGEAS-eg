@@ -11,14 +11,13 @@ namespace AGEAS_iteration1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static Controller myController = new Controller();
         [STAThread]
-        public static Controller myController;
         static void Main()
         {
-            Controller myController = new Controller();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Controller.StartForm1());
+            Application.Run(myController.StartForm1());
         }
     }
 }
