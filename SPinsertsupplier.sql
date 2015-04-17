@@ -1,7 +1,5 @@
 CREATE PROCEDURE InsertSupplier
 (
-@Supplier_ID INT,
-
 @Name  NVARCHAR(50) ,
 @Phone VARCHAR(14),
 @Address NVARCHAR(100),
@@ -12,7 +10,7 @@ AS
 BEGIN
 INSERT INTO Supplier
 
-(Supplier_ID,
+(
  Name,
  Phone,
  Address,
@@ -21,8 +19,6 @@ INSERT INTO Supplier
 
 VALUES
 (
-@Supplier_ID,
-
 @Name   ,
 @Phone ,
 @Address ,

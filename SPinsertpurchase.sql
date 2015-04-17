@@ -1,6 +1,5 @@
 CREATE PROCEDURE InsertPurchase
 (
-@Purchase_ID INT, 
 @Customer_ID INT,
 @Name  NVARCHAR(50) ,
 @Is_On_Installment BIT,
@@ -15,7 +14,7 @@ AS
 BEGIN
 INSERT INTO Purchase
 
-(Purchase_ID , 
+(
 Customer_ID ,
 Name ,
 Is_On_Installment,
@@ -25,8 +24,7 @@ Recieved_Value
 )
 
 VALUES
-(
-@Purchase_ID , 
+( 
 @Customer_ID ,
 @Name   ,
 @Is_On_Installment,
