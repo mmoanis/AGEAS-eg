@@ -68,9 +68,5 @@ namespace AGEAS_iteration1
             F6.ShowDialog();
         }
 
-        public void FormActionToPerform(int FormNumber, int Action)
-        {
-
-        }
     }
 }
