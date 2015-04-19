@@ -22,11 +22,11 @@ namespace AGEAS_iteration1
 
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
-            BalancetextBox.Visible = false;
+            BalanceText.Visible = false;
             TeltextBox.Visible = false;
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
-
+            
             Applybtn2.Visible = false;
             NametextBox.MaxLength = 50;
         }
@@ -47,7 +47,7 @@ namespace AGEAS_iteration1
 
                 NametextBox.Visible = true;
                 IDtextBox.Visible = true;
-                BalancetextBox.Visible = true;
+                BalanceText.Visible = true;
                 TeltextBox.Visible = true;
 
                 Applybtn2.Visible = true;
@@ -63,7 +63,7 @@ namespace AGEAS_iteration1
 
                 NametextBox.Visible = true;
                 IDtextBox.Visible = true;
-                BalancetextBox.Visible = false;
+                BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 
                 Applybtn2.Visible = true;
@@ -79,7 +79,7 @@ namespace AGEAS_iteration1
 
                 NametextBox.Visible = false;
                 IDtextBox.Visible = false;
-                BalancetextBox.Visible = false;
+                BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 
                 Applybtn2.Visible = true;
@@ -95,7 +95,7 @@ namespace AGEAS_iteration1
 
                 NametextBox.Visible = false;
                 IDtextBox.Visible = false;
-                BalancetextBox.Visible = false;
+                BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 
                 Applybtn2.Visible = true;
@@ -103,11 +103,16 @@ namespace AGEAS_iteration1
             }
         }
 
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         private void Applybtn2_Click(object sender, EventArgs e)
         {
             if (Addrbtn2.Checked)
             {
-                
+                Program.myController.InsertCustomer(NametextBox.Text, TeltextBox.Text, BalanceText.Value);
             }
 
             else if (Searchrbtn2.Checked == true)

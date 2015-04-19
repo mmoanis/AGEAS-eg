@@ -40,9 +40,10 @@
             this.IDLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TeltextBox = new System.Windows.Forms.TextBox();
-            this.BalancetextBox = new System.Windows.Forms.TextBox();
             this.TelLabel = new System.Windows.Forms.Label();
             this.BalanceLabel = new System.Windows.Forms.Label();
+            this.BalanceText = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceText)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +70,7 @@
             // Browserbtn2
             // 
             this.Browserbtn2.AutoSize = true;
+            this.Browserbtn2.Enabled = false;
             this.Browserbtn2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browserbtn2.Location = new System.Drawing.Point(42, 110);
             this.Browserbtn2.Name = "Browserbtn2";
@@ -82,6 +84,7 @@
             // Updaterbtn2
             // 
             this.Updaterbtn2.AutoSize = true;
+            this.Updaterbtn2.Enabled = false;
             this.Updaterbtn2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updaterbtn2.Location = new System.Drawing.Point(158, 110);
             this.Updaterbtn2.Name = "Updaterbtn2";
@@ -95,6 +98,7 @@
             // Searchrbtn2
             // 
             this.Searchrbtn2.AutoSize = true;
+            this.Searchrbtn2.Enabled = false;
             this.Searchrbtn2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Searchrbtn2.Location = new System.Drawing.Point(298, 110);
             this.Searchrbtn2.Name = "Searchrbtn2";
@@ -173,14 +177,6 @@
             this.TeltextBox.Size = new System.Drawing.Size(282, 20);
             this.TeltextBox.TabIndex = 29;
             // 
-            // BalancetextBox
-            // 
-            this.BalancetextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalancetextBox.Location = new System.Drawing.Point(158, 239);
-            this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.Size = new System.Drawing.Size(282, 20);
-            this.BalancetextBox.TabIndex = 28;
-            // 
             // TelLabel
             // 
             this.TelLabel.AutoSize = true;
@@ -201,18 +197,26 @@
             this.BalanceLabel.TabIndex = 25;
             this.BalanceLabel.Text = ":الحساب";
             // 
+            // BalanceText
+            // 
+            this.BalanceText.Location = new System.Drawing.Point(158, 240);
+            this.BalanceText.Name = "BalanceText";
+            this.BalanceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BalanceText.Size = new System.Drawing.Size(282, 20);
+            this.BalanceText.TabIndex = 35;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 463);
             this.ControlBox = false;
+            this.Controls.Add(this.BalanceText);
             this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.NametextBox);
             this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.TeltextBox);
-            this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.TelLabel);
             this.Controls.Add(this.BalanceLabel);
             this.Controls.Add(this.Applybtn2);
@@ -224,6 +228,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form4";
             this.Text = "عملاء";
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceText)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,8 +248,8 @@
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox TeltextBox;
-        private System.Windows.Forms.TextBox BalancetextBox;
         private System.Windows.Forms.Label TelLabel;
         private System.Windows.Forms.Label BalanceLabel;
+        private System.Windows.Forms.NumericUpDown BalanceText;
     }
 }

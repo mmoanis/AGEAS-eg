@@ -11,7 +11,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        public static Controller myController = new Controller();
+        public static Controller myController = Controller.Instance;
         [STAThread]
         static void Main()
         {

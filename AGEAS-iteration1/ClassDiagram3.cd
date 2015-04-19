@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AGEAS_iteration1.Customer">
+    <Position X="12.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQCAAAQAAAAAAAQFAgAIAwAIAAgQAIAAAAAIABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGEAS_iteration1.Product">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KUACAAAAARAAAIGAAgAAIAQAAAAAwAAEAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGEAS_iteration1.Product_Purchase">
+    <Position X="29" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQCADAAQAAAAAAAgAAEAAAAAAEAAAAAAAAAgBABAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGEAS_iteration1.Purchase">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DIkDAQAEEAAEABAAAAEUIARAACBQQwEgYoAkAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AGEAS_iteration1.Supplier">
+    <Position X="19.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAACAAAAAEQEAAAIEYAEACAQAACEAoAJABABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Data.Objects.DataClasses.EntityObject" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -69,6 +69,7 @@
             // Browserbtn3
             // 
             this.Browserbtn3.AutoSize = true;
+            this.Browserbtn3.Enabled = false;
             this.Browserbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Browserbtn3.Location = new System.Drawing.Point(51, 120);
             this.Browserbtn3.Name = "Browserbtn3";
@@ -82,6 +83,7 @@
             // Updaterbtn3
             // 
             this.Updaterbtn3.AutoSize = true;
+            this.Updaterbtn3.Enabled = false;
             this.Updaterbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Updaterbtn3.Location = new System.Drawing.Point(173, 120);
             this.Updaterbtn3.Name = "Updaterbtn3";
@@ -95,6 +97,7 @@
             // Searchrbtn3
             // 
             this.Searchrbtn3.AutoSize = true;
+            this.Searchrbtn3.Enabled = false;
             this.Searchrbtn3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Searchrbtn3.Location = new System.Drawing.Point(305, 120);
             this.Searchrbtn3.Name = "Searchrbtn3";

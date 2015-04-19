@@ -15,6 +15,31 @@ namespace AGEAS_iteration1
         public Form7 F7;
         public DataGridViewForm DGV;
 
+        private Model1Container dataModel;
+        private static Controller controller;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private Controller()
+        {
+            dataModel = new Model1Container();
+        }
+
+        /// <summary>
+        /// Gets the instance of the controller
+        /// </summary>
+        public static Controller Instance
+        {
+            get
+            {
+                if (controller == null)
+                    controller = new Controller();
+
+                return controller;
+            }
+        }
+
         public Form1 StartForm1()
         {
             F1 = new Form1();
@@ -68,5 +93,29 @@ namespace AGEAS_iteration1
             F6.ShowDialog();
         }
 
+        /// <summary>
+        /// Creates a customer entity and save it to the database.
+        /// </summary>
+        /// <param name="name">customer name.</param>
+        /// <param name="phone">customer phone.</param>
+        /// <param name="balance">customer balance.</param>
+        public void InsertCustomer(string name, string phone, decimal balance)
+        {
+            Customer c = new Customer();
+            c.Name = name;
+            c.Phone = phone;
+            c.Balance = balance;
+
+            
+            dataModel.AddToCustomers(c);
+            dataModel.SaveChanges();
+            F4.ShowMessage("Mabrooooooooooooooooooook");
+
+            
+        }
+
+        public void InsertProduct()
+        {
+        }
     }
 }

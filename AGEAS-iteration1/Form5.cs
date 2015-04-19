@@ -18,12 +18,14 @@ namespace AGEAS_iteration1
             PhoneLabel.Visible = false;
             NameLabel.Visible = false;
             IDLabel.Visible = false;
+            AddressLabel.Visible = false;
 
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
             PhonetextBox.Visible = false;
             NametextBox.Visible = false;
             IDtextBox.Visible = false;
+            AddresstextBox.Visible = false;
 
             Applybtn3.Visible = false;
 
