@@ -14,17 +14,17 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             NameLabel.Visible = false;
-            IDLabel.Visible = false;
+            
             PhoneLabel.Visible = false;
             NameLabel.Visible = false;
-            IDLabel.Visible = false;
+            
             AddressLabel.Visible = false;
 
             NametextBox.Visible = false;
-            IDtextBox.Visible = false;
+            
             PhonetextBox.Visible = false;
             NametextBox.Visible = false;
-            IDtextBox.Visible = false;
+            
             AddresstextBox.Visible = false;
 
             Applybtn3.Visible = false;
@@ -44,15 +44,16 @@ namespace AGEAS_iteration1
             if (Addrbtn3.Checked)
             {
                 NameLabel.Visible = true;
-                IDLabel.Visible = true;
+                
                 PhoneLabel.Visible = true;
                 AddressLabel.Visible = true;
 
                 NametextBox.Visible = true;
-                IDtextBox.Visible = true;
+                
                 PhonetextBox.Visible = true;
                 AddresstextBox.Visible = true;
-
+                label2.Visible = true;
+                textBox1.Visible = true;
                 Applybtn3.Visible = true;
                 Applybtn3.Text = "اضافة";
 
@@ -61,12 +62,12 @@ namespace AGEAS_iteration1
             else if (Searchrbtn3.Checked)
             {
                 NameLabel.Visible = true;
-                IDLabel.Visible = true;
+                
                 PhoneLabel.Visible = false;
                 AddressLabel.Visible = false;
 
                 NametextBox.Visible = true;
-                IDtextBox.Visible = true;
+                
                 PhonetextBox.Visible = false;
                 AddresstextBox.Visible = false;
 
@@ -77,12 +78,12 @@ namespace AGEAS_iteration1
             else if (Browserbtn3.Checked)
             {
                 NameLabel.Visible = true;
-                IDLabel.Visible = true;
+                
                 AddressLabel.Visible = true;
 
                 NametextBox.Visible = true;
                 AddresstextBox.Visible = false;
-                IDtextBox.Visible = true;
+                
                 
 
                 Applybtn3.Visible = true;
@@ -93,12 +94,12 @@ namespace AGEAS_iteration1
             else
             {
                 NameLabel.Visible = false;
-                IDLabel.Visible = false;
+                
                 PhoneLabel.Visible = false;
                 AddressLabel.Visible = false;
 
                 NametextBox.Visible = false;
-                IDtextBox.Visible = false;
+                
                 PhonetextBox.Visible = false;
                 AddresstextBox.Visible = false;
 
@@ -106,6 +107,44 @@ namespace AGEAS_iteration1
                 Applybtn3.Text = "عرض";
 
             }
+        }
+
+        private void Applybtn3_Click(object sender, EventArgs e)
+        {
+            if (Addrbtn3.Checked)
+            {
+                Program.myController.AddSuppliers(NametextBox.Text, PhonetextBox.Text, AddresstextBox.Text, textBox1.Text);
+            }
+
+            else if (Searchrbtn3.Checked)
+            {
+               
+            }
+
+            else if (Browserbtn3.Checked)
+            {
+                
+            }
+
+            else
+            {
+                
+            }
+        }
+
+        internal void ShowMessage(string p)
+        {
+            MessageBox.Show(p);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -130,6 +130,7 @@
             this.Applybtn4.TabIndex = 10;
             this.Applybtn4.Text = "تعديل";
             this.Applybtn4.UseVisualStyleBackColor = true;
+            this.Applybtn4.Click += new System.EventHandler(this.Applybtn4_Click);
             // 
             // CustomerLabel
             // 

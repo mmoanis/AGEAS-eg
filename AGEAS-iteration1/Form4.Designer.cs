@@ -35,9 +35,7 @@
             this.Searchrbtn2 = new System.Windows.Forms.RadioButton();
             this.Addrbtn2 = new System.Windows.Forms.RadioButton();
             this.Applybtn2 = new System.Windows.Forms.Button();
-            this.IDtextBox = new System.Windows.Forms.TextBox();
             this.NametextBox = new System.Windows.Forms.TextBox();
-            this.IDLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TeltextBox = new System.Windows.Forms.TextBox();
             this.TelLabel = new System.Windows.Forms.Label();
@@ -133,14 +131,6 @@
             this.Applybtn2.UseVisualStyleBackColor = true;
             this.Applybtn2.Click += new System.EventHandler(this.Applybtn2_Click);
             // 
-            // IDtextBox
-            // 
-            this.IDtextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDtextBox.Location = new System.Drawing.Point(158, 205);
-            this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(282, 20);
-            this.IDtextBox.TabIndex = 34;
-            // 
             // NametextBox
             // 
             this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,16 +138,6 @@
             this.NametextBox.Name = "NametextBox";
             this.NametextBox.Size = new System.Drawing.Size(282, 20);
             this.NametextBox.TabIndex = 33;
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLabel.Location = new System.Drawing.Point(455, 206);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(35, 19);
-            this.IDLabel.TabIndex = 32;
-            this.IDLabel.Text = ":الرقم";
             // 
             // NameLabel
             // 
@@ -172,7 +152,7 @@
             // TeltextBox
             // 
             this.TeltextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeltextBox.Location = new System.Drawing.Point(158, 275);
+            this.TeltextBox.Location = new System.Drawing.Point(152, 245);
             this.TeltextBox.Name = "TeltextBox";
             this.TeltextBox.Size = new System.Drawing.Size(282, 20);
             this.TeltextBox.TabIndex = 29;
@@ -181,7 +161,7 @@
             // 
             this.TelLabel.AutoSize = true;
             this.TelLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelLabel.Location = new System.Drawing.Point(455, 276);
+            this.TelLabel.Location = new System.Drawing.Point(449, 246);
             this.TelLabel.Name = "TelLabel";
             this.TelLabel.Size = new System.Drawing.Size(69, 19);
             this.TelLabel.TabIndex = 26;
@@ -191,7 +171,7 @@
             // 
             this.BalanceLabel.AutoSize = true;
             this.BalanceLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceLabel.Location = new System.Drawing.Point(454, 240);
+            this.BalanceLabel.Location = new System.Drawing.Point(448, 210);
             this.BalanceLabel.Name = "BalanceLabel";
             this.BalanceLabel.Size = new System.Drawing.Size(50, 19);
             this.BalanceLabel.TabIndex = 25;
@@ -199,7 +179,7 @@
             // 
             // BalanceText
             // 
-            this.BalanceText.Location = new System.Drawing.Point(158, 240);
+            this.BalanceText.Location = new System.Drawing.Point(152, 210);
             this.BalanceText.Name = "BalanceText";
             this.BalanceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BalanceText.Size = new System.Drawing.Size(282, 20);
@@ -212,9 +192,7 @@
             this.ClientSize = new System.Drawing.Size(556, 463);
             this.ControlBox = false;
             this.Controls.Add(this.BalanceText);
-            this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.NametextBox);
-            this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.TeltextBox);
             this.Controls.Add(this.TelLabel);
@@ -243,9 +221,7 @@
         private System.Windows.Forms.RadioButton Searchrbtn2;
         private System.Windows.Forms.RadioButton Addrbtn2;
         private System.Windows.Forms.Button Applybtn2;
-        private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox NametextBox;
-        private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox TeltextBox;
         private System.Windows.Forms.Label TelLabel;

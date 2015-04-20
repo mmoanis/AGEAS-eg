@@ -14,19 +14,20 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             TypeLabel.Visible = false; 
-            BrandLabel.Visible = false;
+            
             PriceLabel.Visible= false;
             QuantityLabel.Visible = false;
             SupplierLabel.Visible = false;
 
-            PricetextBox.Visible = false;
+            numericUpDown1.Visible = false;
             QuantitytextBox.Visible = false;
-            SuppliertextBox.Visible = false;
+            
             TypetextBox.Visible = false;
-            BrandtextBox.Visible = false;
+            
 
             Applybtn1.Visible = false;
             TypetextBox.MaxLength = 50;
+            comboBox1.Visible = false;
 
         }
 
@@ -40,34 +41,35 @@ namespace AGEAS_iteration1
             if (Addrbtn1.Checked == true)
             {
                 TypeLabel.Visible = true;
-                BrandLabel.Visible = true;
+                
                 PriceLabel.Visible = true;
                 QuantityLabel.Visible = true;
                 SupplierLabel.Visible = true;
 
                 TypetextBox.Visible = true;
-                BrandtextBox.Visible = true;
-                PricetextBox.Visible = true;
+
+                numericUpDown1.Visible = true;
                 QuantitytextBox.Visible = true;
-                SuppliertextBox.Visible = true;
+                comboBox1.Visible = true;
 
                 Applybtn1.Visible = true;
+                comboBox1.Visible = true;
                 Applybtn1.Text = "اضافة";
 
             }
             else if (Searchrbtn1.Checked == true)
             {
                 TypeLabel.Visible = true;
-                BrandLabel.Visible = true;
+                
                 PriceLabel.Visible = false;
                 QuantityLabel.Visible = false;
                 SupplierLabel.Visible = false;
 
                 TypetextBox.Visible = true;
-                BrandtextBox.Visible = true;
-                PricetextBox.Visible = false;
+
+                numericUpDown1.Visible = false;
                 QuantitytextBox.Visible = false;
-                SuppliertextBox.Visible = false;
+                comboBox1.Visible = false;
 
                 Applybtn1.Visible = true;
                 Applybtn1.Text = "بحث";
@@ -76,7 +78,7 @@ namespace AGEAS_iteration1
             else if (Updaterbtn1.Checked == true)
             {
                 TypetextBox.Visible = true;
-                BrandtextBox.Visible = true;
+                
 
                 Applybtn1.Visible = true;
                 Applybtn1.Text = "تعديل";
@@ -84,20 +86,57 @@ namespace AGEAS_iteration1
             else
             {
                 TypeLabel.Visible = false;
-                BrandLabel.Visible = false;
+                
                 PriceLabel.Visible = false;
                 QuantityLabel.Visible = false;
                 SupplierLabel.Visible = false;
 
                 TypetextBox.Visible = false;
-                BrandtextBox.Visible = false;
-                PricetextBox.Visible = false;
+                
+                numericUpDown1.Visible = false;
                 QuantitytextBox.Visible = false;
-                SuppliertextBox.Visible = false;
+                comboBox1.Visible = false;
 
                 Applybtn1.Visible = true;
                 Applybtn1.Text = "عرض";
             }
+        }
+
+        private void Applybtn1_Click(object sender, EventArgs e)
+        {
+            if (Addrbtn1.Checked)
+            {
+                Program.myController.InsertProduct(TypetextBox.Text, numericUpDown1.Value);
+            }
+
+            else if (Searchrbtn1.Checked)
+            {
+
+            }
+
+            else if (Browserbtn1.Checked)
+            {
+
+            }
+
+            else
+            {
+
+            }
+        }
+
+        internal void ShowMessage(string p)
+        {
+            MessageBox.Show(p);
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            System.Data.Objects.ObjectQuery<Supplier> suppliers = Program.myController.GetSuppliers();
+
+            comboBox1.DataSource = suppliers;
+            comboBox1.ValueMember = "Supplier_ID";
+            comboBox1.DisplayMember = "Name";
         }
     }
 }

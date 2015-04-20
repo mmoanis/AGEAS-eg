@@ -36,13 +36,13 @@
             this.Addrbtn3 = new System.Windows.Forms.RadioButton();
             this.Applybtn3 = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.IDLabel = new System.Windows.Forms.Label();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.NametextBox = new System.Windows.Forms.TextBox();
-            this.IDtextBox = new System.Windows.Forms.TextBox();
             this.PhonetextBox = new System.Windows.Forms.TextBox();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddresstextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -130,6 +130,7 @@
             this.Applybtn3.TabIndex = 10;
             this.Applybtn3.Text = "تعديل";
             this.Applybtn3.UseVisualStyleBackColor = true;
+            this.Applybtn3.Click += new System.EventHandler(this.Applybtn3_Click);
             // 
             // NameLabel
             // 
@@ -141,21 +142,11 @@
             this.NameLabel.TabIndex = 11;
             this.NameLabel.Text = ":الاسم";
             // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLabel.Location = new System.Drawing.Point(443, 222);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(41, 20);
-            this.IDLabel.TabIndex = 12;
-            this.IDLabel.Text = ":الرقم";
-            // 
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneLabel.Location = new System.Drawing.Point(440, 256);
+            this.PhoneLabel.Location = new System.Drawing.Point(440, 224);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(80, 20);
             this.PhoneLabel.TabIndex = 13;
@@ -169,18 +160,10 @@
             this.NametextBox.Size = new System.Drawing.Size(222, 20);
             this.NametextBox.TabIndex = 26;
             // 
-            // IDtextBox
-            // 
-            this.IDtextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDtextBox.Location = new System.Drawing.Point(194, 223);
-            this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(222, 20);
-            this.IDtextBox.TabIndex = 27;
-            // 
             // PhonetextBox
             // 
             this.PhonetextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhonetextBox.Location = new System.Drawing.Point(194, 257);
+            this.PhonetextBox.Location = new System.Drawing.Point(194, 225);
             this.PhonetextBox.Name = "PhonetextBox";
             this.PhonetextBox.Size = new System.Drawing.Size(222, 20);
             this.PhonetextBox.TabIndex = 28;
@@ -189,7 +172,7 @@
             // 
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressLabel.Location = new System.Drawing.Point(443, 295);
+            this.AddressLabel.Location = new System.Drawing.Point(443, 263);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(53, 20);
             this.AddressLabel.TabIndex = 29;
@@ -197,10 +180,34 @@
             // 
             // AddresstextBox
             // 
-            this.AddresstextBox.Location = new System.Drawing.Point(194, 295);
+            this.AddresstextBox.Location = new System.Drawing.Point(194, 263);
             this.AddresstextBox.Name = "AddresstextBox";
             this.AddresstextBox.Size = new System.Drawing.Size(222, 20);
             this.AddresstextBox.TabIndex = 30;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(194, 301);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(222, 20);
+            this.textBox1.TabIndex = 32;
+            this.textBox1.UseWaitCursor = true;
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(443, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "اسم الشركة";
+            this.label2.UseWaitCursor = true;
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form5
             // 
@@ -208,13 +215,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 472);
             this.ControlBox = false;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.AddresstextBox);
             this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.PhonetextBox);
-            this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.NametextBox);
             this.Controls.Add(this.PhoneLabel);
-            this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.Applybtn3);
             this.Controls.Add(this.Browserbtn3);
@@ -240,12 +247,12 @@
         private System.Windows.Forms.RadioButton Addrbtn3;
         private System.Windows.Forms.Button Applybtn3;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TextBox NametextBox;
-        private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox PhonetextBox;
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox AddresstextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

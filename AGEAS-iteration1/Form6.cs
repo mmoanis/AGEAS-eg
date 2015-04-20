@@ -89,5 +89,28 @@ namespace AGEAS_iteration1
                 Applybtn4.Text = "عرض";
             }
         }
+
+        private void Applybtn4_Click(object sender, EventArgs e)
+        {
+            if (Addrbtn4.Checked)
+            {
+                //Program.myController.AddTransactions(CustomertextBox.Text, ProducttextBox.Text, DiscounttextBox.Text);
+            }
+
+            else if (Searchrbtn4.Checked)
+            {
+
+            }
+
+            else if (Browserbtn4.Checked)
+            {
+
+            }
+
+            else
+            {
+
+            }
+        }
     }
 }

@@ -14,18 +14,18 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             NameLabel.Visible = false;
-            IDLabel.Visible = false;
+            
             BalanceLabel.Visible = false;
             TelLabel.Visible = false;
             NameLabel.Visible = false;
-            IDLabel.Visible = false;
+            
 
             NametextBox.Visible = false;
-            IDtextBox.Visible = false;
+            
             BalanceText.Visible = false;
             TeltextBox.Visible = false;
             NametextBox.Visible = false;
-            IDtextBox.Visible = false;
+            
             
             Applybtn2.Visible = false;
             NametextBox.MaxLength = 50;
@@ -41,12 +41,12 @@ namespace AGEAS_iteration1
             if (Addrbtn2.Checked)
             {
                 NameLabel.Visible = true;
-                IDLabel.Visible = true;
+                
                 BalanceLabel.Visible = true;
                 TelLabel.Visible = true;
 
                 NametextBox.Visible = true;
-                IDtextBox.Visible = true;
+                
                 BalanceText.Visible = true;
                 TeltextBox.Visible = true;
 
@@ -57,12 +57,12 @@ namespace AGEAS_iteration1
             else if (Searchrbtn2.Checked == true)
             {
                 NameLabel.Visible = true;
-                IDLabel.Visible = true;
+                
                 BalanceLabel.Visible = false;
                 TelLabel.Visible = false;
 
                 NametextBox.Visible = true;
-                IDtextBox.Visible = true;
+                
                 BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 
@@ -73,12 +73,12 @@ namespace AGEAS_iteration1
             else if (Updaterbtn2.Checked)
             {
                 NameLabel.Visible = false;
-                IDLabel.Visible = false;
+                
                 BalanceLabel.Visible = false;
                 TelLabel.Visible = false;
 
                 NametextBox.Visible = false;
-                IDtextBox.Visible = false;
+                
                 BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 
@@ -89,12 +89,12 @@ namespace AGEAS_iteration1
             else
             {
                 NameLabel.Visible = false;
-                IDLabel.Visible = false;
+                
                 BalanceLabel.Visible = false;
                 TelLabel.Visible = false;
 
                 NametextBox.Visible = false;
-                IDtextBox.Visible = false;
+                
                 BalanceText.Visible = false;
                 TeltextBox.Visible = false;
 

@@ -82,6 +82,7 @@
             // 
             // Transactionsbtn
             // 
+            this.Transactionsbtn.Enabled = false;
             this.Transactionsbtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Transactionsbtn.Location = new System.Drawing.Point(45, 175);
             this.Transactionsbtn.Name = "Transactionsbtn";

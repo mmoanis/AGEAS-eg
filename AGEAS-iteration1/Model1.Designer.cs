@@ -9,42 +9,42 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Model1", "FK__Purchase__Custom__1DE57479", "Customer", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Customer), "Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Purchase))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Model1", "FK__Product__Supplie__1B0907CE", "Supplier", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Supplier), "Product", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Model1", "FK__Product_P__Produ__1BFD2C07", "Product", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Product), "Product_Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product_Purchase))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Model1", "FK__Product_P__Purch__1CF15040", "Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Purchase), "Product_Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product_Purchase))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Database1Model", "FK__Purchase__Custom__1DE57479", "Customer", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Customer), "Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Purchase))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Database1Model", "FK__Product__Supplie__1B0907CE", "Supplier", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Supplier), "Product", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Database1Model", "FK__Product_P__Produ__1BFD2C07", "Product", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Product), "Product_Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product_Purchase))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("Database1Model", "FK__Product_P__Purch__1CF15040", "Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AGEAS_iteration1.Purchase), "Product_Purchase", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AGEAS_iteration1.Product_Purchase))]
 
 // Original file name:
-// Generation date: 4/19/2015 1:35:45 PM
+// Generation date: 4/20/2015 12:35:54 PM
 namespace AGEAS_iteration1
 {
     
     /// <summary>
-    /// There are no comments for Model1Container in the schema.
+    /// There are no comments for Database1Entities in the schema.
     /// </summary>
-    public partial class Model1Container : global::System.Data.Objects.ObjectContext
+    public partial class Database1Entities : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new Model1Container object using the connection string found in the 'Model1Container' section of the application configuration file.
+        /// Initializes a new Database1Entities object using the connection string found in the 'Database1Entities' section of the application configuration file.
         /// </summary>
-        public Model1Container() : 
-                base("name=Model1Container", "Model1Container")
+        public Database1Entities() : 
+                base("name=Database1Entities", "Database1Entities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new Model1Container object.
+        /// Initialize a new Database1Entities object.
         /// </summary>
-        public Model1Container(string connectionString) : 
-                base(connectionString, "Model1Container")
+        public Database1Entities(string connectionString) : 
+                base(connectionString, "Database1Entities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new Model1Container object.
+        /// Initialize a new Database1Entities object.
         /// </summary>
-        public Model1Container(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "Model1Container")
+        public Database1Entities(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "Database1Entities")
         {
             this.OnContextCreated();
         }
@@ -176,12 +176,12 @@ namespace AGEAS_iteration1
         }
     }
     /// <summary>
-    /// There are no comments for Model1.Customer in the schema.
+    /// There are no comments for Database1Model.Customer in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Customer_ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Model1", Name="Customer")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Database1Model", Name="Customer")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Customer : global::System.Data.Objects.DataClasses.EntityObject
@@ -204,9 +204,6 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for property Customer_ID in the schema.
         /// </summary>
-        /// <LongDescription>
-        /// Customer ID
-        /// </LongDescription>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
@@ -315,7 +312,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for Purchases in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Purchase__Custom__1DE57479", "Purchase")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Purchase__Custom__1DE57479", "Purchase")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -324,24 +321,24 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Purchase>("Model1.FK__Purchase__Custom__1DE57479", "Purchase");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Purchase>("Database1Model.FK__Purchase__Custom__1DE57479", "Purchase");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Purchase>("Model1.FK__Purchase__Custom__1DE57479", "Purchase", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Purchase>("Database1Model.FK__Purchase__Custom__1DE57479", "Purchase", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Model1.Product in the schema.
+    /// There are no comments for Database1Model.Product in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Product_ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Model1", Name="Product")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Database1Model", Name="Product")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Product : global::System.Data.Objects.DataClasses.EntityObject
@@ -445,7 +442,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for Supplier in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product__Supplie__1B0907CE", "Supplier")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product__Supplie__1B0907CE", "Supplier")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -454,11 +451,11 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Model1.FK__Product__Supplie__1B0907CE", "Supplier").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Database1Model.FK__Product__Supplie__1B0907CE", "Supplier").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Model1.FK__Product__Supplie__1B0907CE", "Supplier").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Database1Model.FK__Product__Supplie__1B0907CE", "Supplier").Value = value;
             }
         }
         /// <summary>
@@ -471,20 +468,20 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Model1.FK__Product__Supplie__1B0907CE", "Supplier");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Supplier>("Database1Model.FK__Product__Supplie__1B0907CE", "Supplier");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Supplier>("Model1.FK__Product__Supplie__1B0907CE", "Supplier", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Supplier>("Database1Model.FK__Product__Supplie__1B0907CE", "Supplier", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for Product_Purchase in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product_P__Produ__1BFD2C07", "Product_Purchase")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product_P__Produ__1BFD2C07", "Product_Purchase")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -493,24 +490,24 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product_Purchase>("Model1.FK__Product_P__Produ__1BFD2C07", "Product_Purchase");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product_Purchase>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product_Purchase");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product_Purchase>("Model1.FK__Product_P__Produ__1BFD2C07", "Product_Purchase", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product_Purchase>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product_Purchase", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Model1.Product_Purchase in the schema.
+    /// There are no comments for Database1Model.Product_Purchase in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Product_Purchase_ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Model1", Name="Product_Purchase")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Database1Model", Name="Product_Purchase")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Product_Purchase : global::System.Data.Objects.DataClasses.EntityObject
@@ -585,7 +582,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for Product in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product_P__Produ__1BFD2C07", "Product")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product_P__Produ__1BFD2C07", "Product")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -594,11 +591,11 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Model1.FK__Product_P__Produ__1BFD2C07", "Product").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Model1.FK__Product_P__Produ__1BFD2C07", "Product").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product").Value = value;
             }
         }
         /// <summary>
@@ -611,20 +608,20 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Model1.FK__Product_P__Produ__1BFD2C07", "Product");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Product>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Product>("Model1.FK__Product_P__Produ__1BFD2C07", "Product", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Product>("Database1Model.FK__Product_P__Produ__1BFD2C07", "Product", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for Purchase in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product_P__Purch__1CF15040", "Purchase")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product_P__Purch__1CF15040", "Purchase")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -633,11 +630,11 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Purchase").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Purchase").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Purchase").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Purchase").Value = value;
             }
         }
         /// <summary>
@@ -650,24 +647,24 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Purchase");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Purchase");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Purchase", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Purchase", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Model1.Purchase in the schema.
+    /// There are no comments for Database1Model.Purchase in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Purchase_ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Model1", Name="Purchase")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Database1Model", Name="Purchase")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Purchase : global::System.Data.Objects.DataClasses.EntityObject
@@ -887,7 +884,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for Customer in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Purchase__Custom__1DE57479", "Customer")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Purchase__Custom__1DE57479", "Customer")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -896,11 +893,11 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Model1.FK__Purchase__Custom__1DE57479", "Customer").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Database1Model.FK__Purchase__Custom__1DE57479", "Customer").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Model1.FK__Purchase__Custom__1DE57479", "Customer").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Database1Model.FK__Purchase__Custom__1DE57479", "Customer").Value = value;
             }
         }
         /// <summary>
@@ -913,20 +910,20 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Model1.FK__Purchase__Custom__1DE57479", "Customer");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<Customer>("Database1Model.FK__Purchase__Custom__1DE57479", "Customer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Customer>("Model1.FK__Purchase__Custom__1DE57479", "Customer", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<Customer>("Database1Model.FK__Purchase__Custom__1DE57479", "Customer", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for Product_Purchase in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product_P__Purch__1CF15040", "Product_Purchase")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product_P__Purch__1CF15040", "Product_Purchase")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -935,24 +932,24 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product_Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Product_Purchase");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product_Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Product_Purchase");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product_Purchase>("Model1.FK__Product_P__Purch__1CF15040", "Product_Purchase", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product_Purchase>("Database1Model.FK__Product_P__Purch__1CF15040", "Product_Purchase", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for Model1.Supplier in the schema.
+    /// There are no comments for Database1Model.Supplier in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Supplier_ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Model1", Name="Supplier")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="Database1Model", Name="Supplier")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Supplier : global::System.Data.Objects.DataClasses.EntityObject
@@ -1114,7 +1111,7 @@ namespace AGEAS_iteration1
         /// <summary>
         /// There are no comments for Products in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Model1", "FK__Product__Supplie__1B0907CE", "Product")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("Database1Model", "FK__Product__Supplie__1B0907CE", "Product")]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
@@ -1123,13 +1120,13 @@ namespace AGEAS_iteration1
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("Model1.FK__Product__Supplie__1B0907CE", "Product");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<Product>("Database1Model.FK__Product__Supplie__1B0907CE", "Product");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("Model1.FK__Product__Supplie__1B0907CE", "Product", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<Product>("Database1Model.FK__Product__Supplie__1B0907CE", "Product", value);
                 }
             }
         }

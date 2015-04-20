@@ -4,26 +4,26 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
-        <EntityContainer Name="Model1StoreContainer">
-          <EntitySet Name="Customer" EntityType="Model1.Store.Customer" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Product" EntityType="Model1.Store.Product" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Product_Purchase" EntityType="Model1.Store.Product_Purchase" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Purchase" EntityType="Model1.Store.Purchase" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Supplier" EntityType="Model1.Store.Supplier" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__Product__Supplie__1B0907CE" Association="Model1.Store.FK__Product__Supplie__1B0907CE">
+      <Schema Namespace="Database1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Database1Model.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="Database1Model.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product_Purchase" EntityType="Database1Model.Store.Product_Purchase" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Purchase" EntityType="Database1Model.Store.Purchase" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Supplier" EntityType="Database1Model.Store.Supplier" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Product__Supplie__1B0907CE" Association="Database1Model.Store.FK__Product__Supplie__1B0907CE">
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product_P__Produ__1BFD2C07" Association="Model1.Store.FK__Product_P__Produ__1BFD2C07">
+          <AssociationSet Name="FK__Product_P__Produ__1BFD2C07" Association="Database1Model.Store.FK__Product_P__Produ__1BFD2C07">
             <End Role="Product" EntitySet="Product" />
             <End Role="Product_Purchase" EntitySet="Product_Purchase" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product_P__Purch__1CF15040" Association="Model1.Store.FK__Product_P__Purch__1CF15040">
+          <AssociationSet Name="FK__Product_P__Purch__1CF15040" Association="Database1Model.Store.FK__Product_P__Purch__1CF15040">
             <End Role="Purchase" EntitySet="Purchase" />
             <End Role="Product_Purchase" EntitySet="Product_Purchase" />
           </AssociationSet>
-          <AssociationSet Name="FK__Purchase__Custom__1DE57479" Association="Model1.Store.FK__Purchase__Custom__1DE57479">
+          <AssociationSet Name="FK__Purchase__Custom__1DE57479" Association="Database1Model.Store.FK__Purchase__Custom__1DE57479">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Purchase" EntitySet="Purchase" />
           </AssociationSet>
@@ -79,8 +79,8 @@
           <Property Name="Company" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Product__Supplie__1B0907CE">
-          <End Role="Supplier" Type="Model1.Store.Supplier" Multiplicity="0..1" />
-          <End Role="Product" Type="Model1.Store.Product" Multiplicity="*" />
+          <End Role="Supplier" Type="Database1Model.Store.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Database1Model.Store.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplier">
               <PropertyRef Name="Supplier_ID" />
@@ -91,8 +91,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Product_P__Produ__1BFD2C07">
-          <End Role="Product" Type="Model1.Store.Product" Multiplicity="0..1" />
-          <End Role="Product_Purchase" Type="Model1.Store.Product_Purchase" Multiplicity="*" />
+          <End Role="Product" Type="Database1Model.Store.Product" Multiplicity="0..1" />
+          <End Role="Product_Purchase" Type="Database1Model.Store.Product_Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Product_ID" />
@@ -103,8 +103,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Product_P__Purch__1CF15040">
-          <End Role="Purchase" Type="Model1.Store.Purchase" Multiplicity="0..1" />
-          <End Role="Product_Purchase" Type="Model1.Store.Product_Purchase" Multiplicity="*" />
+          <End Role="Purchase" Type="Database1Model.Store.Purchase" Multiplicity="0..1" />
+          <End Role="Product_Purchase" Type="Database1Model.Store.Product_Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purchase">
               <PropertyRef Name="Purchase_ID" />
@@ -115,8 +115,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Purchase__Custom__1DE57479">
-          <End Role="Customer" Type="Model1.Store.Customer" Multiplicity="0..1" />
-          <End Role="Purchase" Type="Model1.Store.Purchase" Multiplicity="*" />
+          <End Role="Customer" Type="Database1Model.Store.Customer" Multiplicity="0..1" />
+          <End Role="Purchase" Type="Database1Model.Store.Purchase" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customer">
               <PropertyRef Name="Customer_ID" />
@@ -126,285 +126,216 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="Insertcustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Name" Type="nvarchar" Mode="In" />
-          <Parameter Name="Phone" Type="nvarchar" Mode="In" />
-          <Parameter Name="Balance" Type="decimal" Mode="In" />
-        </Function>
-        <Function Name="InsertProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Supplier_ID" Type="int" Mode="In" />
-          <Parameter Name="Name" Type="nvarchar" Mode="In" />
-          <Parameter Name="Price" Type="decimal" Mode="In" />
-        </Function>
-        <Function Name="InsertProductPurchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Product_ID" Type="int" Mode="In" />
-          <Parameter Name="Purchase_ID" Type="int" Mode="In" />
-          <Parameter Name="Quantity" Type="int" Mode="In" />
-        </Function>
-        <Function Name="InsertPurchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Customer_ID" Type="int" Mode="In" />
-          <Parameter Name="Name" Type="nvarchar" Mode="In" />
-          <Parameter Name="Is_On_Installment" Type="bit" Mode="In" />
-          <Parameter Name="Discount" Type="decimal" Mode="In" />
-          <Parameter Name="Value" Type="decimal" Mode="In" />
-          <Parameter Name="Recieved_Value" Type="decimal" Mode="In" />
-        </Function>
-        <Function Name="InsertSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Name" Type="nvarchar" Mode="In" />
-          <Parameter Name="Phone" Type="varchar" Mode="In" />
-          <Parameter Name="Address" Type="nvarchar" Mode="In" />
-          <Parameter Name="Company" Type="nvarchar" Mode="In" />
-        </Function>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2006/04/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self"  >
-        <EntityContainer Name="Model1Container" >
-          <EntitySet Name="Customers" EntityType="Model1.Customer" />
-          <EntitySet Name="Products" EntityType="Model1.Product" />
-          <EntitySet Name="Product_Purchase" EntityType="Model1.Product_Purchase" />
-          <EntitySet Name="Purchases" EntityType="Model1.Purchase" />
-          <EntitySet Name="Suppliers" EntityType="Model1.Supplier" />
-          <AssociationSet Name="FK__Purchase__Custom__1DE57479" Association="Model1.FK__Purchase__Custom__1DE57479">
+      <Schema Namespace="Database1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="Database1Entities">
+          <EntitySet Name="Customers" EntityType="Database1Model.Customer" />
+          <EntitySet Name="Products" EntityType="Database1Model.Product" />
+          <EntitySet Name="Product_Purchase" EntityType="Database1Model.Product_Purchase" />
+          <EntitySet Name="Purchases" EntityType="Database1Model.Purchase" />
+          <EntitySet Name="Suppliers" EntityType="Database1Model.Supplier" />
+          <AssociationSet Name="FK__Purchase__Custom__1DE57479" Association="Database1Model.FK__Purchase__Custom__1DE57479">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Purchase" EntitySet="Purchases" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Supplie__1B0907CE" Association="Model1.FK__Product__Supplie__1B0907CE">
+          <AssociationSet Name="FK__Product__Supplie__1B0907CE" Association="Database1Model.FK__Product__Supplie__1B0907CE">
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product_P__Produ__1BFD2C07" Association="Model1.FK__Product_P__Produ__1BFD2C07">
+          <AssociationSet Name="FK__Product_P__Produ__1BFD2C07" Association="Database1Model.FK__Product_P__Produ__1BFD2C07">
             <End Role="Product" EntitySet="Products" />
             <End Role="Product_Purchase" EntitySet="Product_Purchase" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product_P__Purch__1CF15040" Association="Model1.FK__Product_P__Purch__1CF15040">
+          <AssociationSet Name="FK__Product_P__Purch__1CF15040" Association="Database1Model.FK__Product_P__Purch__1CF15040">
             <End Role="Purchase" EntitySet="Purchases" />
             <End Role="Product_Purchase" EntitySet="Product_Purchase" />
           </AssociationSet>
-          <FunctionImport Name="Insertcustomer">
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="Phone" Mode="In" Type="String" />
-            <Parameter Name="Balance" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="InsertProduct">
-            <Parameter Name="Supplier_ID" Mode="In" Type="Int32" />
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="Price" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="InsertProductPurchase">
-            <Parameter Name="Product_ID" Mode="In" Type="Int32" />
-            <Parameter Name="Purchase_ID" Mode="In" Type="Int32" />
-            <Parameter Name="Quantity" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="InsertPurchase">
-            <Parameter Name="Customer_ID" Mode="In" Type="Int32" />
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="Is_On_Installment" Mode="In" Type="Boolean" />
-            <Parameter Name="Discount" Mode="In" Type="Decimal" />
-            <Parameter Name="Value" Mode="In" Type="Decimal" />
-            <Parameter Name="Recieved_Value" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="InsertSupplier">
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="Phone" Mode="In" Type="String" />
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="Company" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="Customer_ID" />
           </Key>
-          <Property Type="Int32" Name="Customer_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" cg:SetterAccess="Private" >
-            <Documentation>
-              <LongDescription>Customer ID</LongDescription>
-            </Documentation>
-          </Property>
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Phone" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="Balance" Precision="12" Scale="3" />
-          <NavigationProperty Name="Purchases" Relationship="Model1.FK__Purchase__Custom__1DE57479" FromRole="Customer" ToRole="Purchase" />
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="Balance" Type="Decimal" Precision="12" Scale="3" />
+          <NavigationProperty Name="Purchases" Relationship="Database1Model.FK__Purchase__Custom__1DE57479" FromRole="Customer" ToRole="Purchase" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Product_ID" />
           </Key>
-          <Property Type="Int32" Name="Product_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" cg:SetterAccess="Private" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="Price" Nullable="false" Precision="12" Scale="3" />
-          <NavigationProperty Name="Supplier" Relationship="Model1.FK__Product__Supplie__1B0907CE" FromRole="Product" ToRole="Supplier" />
-          <NavigationProperty Name="Product_Purchase" Relationship="Model1.FK__Product_P__Produ__1BFD2C07" FromRole="Product" ToRole="Product_Purchase" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="12" Scale="3" />
+          <NavigationProperty Name="Supplier" Relationship="Database1Model.FK__Product__Supplie__1B0907CE" FromRole="Product" ToRole="Supplier" />
+          <NavigationProperty Name="Product_Purchase" Relationship="Database1Model.FK__Product_P__Produ__1BFD2C07" FromRole="Product" ToRole="Product_Purchase" />
         </EntityType>
         <EntityType Name="Product_Purchase">
           <Key>
             <PropertyRef Name="Product_Purchase_ID" />
           </Key>
-          <Property Type="Int32" Name="Product_Purchase_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" cg:SetterAccess="Private" />
-          <Property Type="Int32" Name="Quantity" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="Model1.FK__Product_P__Produ__1BFD2C07" FromRole="Product_Purchase" ToRole="Product" />
-          <NavigationProperty Name="Purchase" Relationship="Model1.FK__Product_P__Purch__1CF15040" FromRole="Product_Purchase" ToRole="Purchase" />
+          <Property Name="Product_Purchase_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Database1Model.FK__Product_P__Produ__1BFD2C07" FromRole="Product_Purchase" ToRole="Product" />
+          <NavigationProperty Name="Purchase" Relationship="Database1Model.FK__Product_P__Purch__1CF15040" FromRole="Product_Purchase" ToRole="Purchase" />
         </EntityType>
         <EntityType Name="Purchase">
           <Key>
             <PropertyRef Name="Purchase_ID" />
           </Key>
-          <Property Type="Int32" Name="Purchase_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" cg:SetterAccess="Private" />
-          <Property Type="DateTime" Name="Date__" Nullable="false" Precision="0" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="Is_On_Installment" Nullable="false" />
-          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="5" Scale="2" />
-          <Property Type="Decimal" Name="Value" Nullable="false" Precision="12" Scale="3" />
-          <Property Type="Decimal" Name="Recieved_Value" Nullable="false" Precision="12" Scale="3" />
-          <NavigationProperty Name="Customer" Relationship="Model1.FK__Purchase__Custom__1DE57479" FromRole="Purchase" ToRole="Customer" />
-          <NavigationProperty Name="Product_Purchase" Relationship="Model1.FK__Product_P__Purch__1CF15040" FromRole="Purchase" ToRole="Product_Purchase" />
+          <Property Name="Purchase_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Date__" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Is_On_Installment" Type="Boolean" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="Value" Type="Decimal" Nullable="false" Precision="12" Scale="3" />
+          <Property Name="Recieved_Value" Type="Decimal" Nullable="false" Precision="12" Scale="3" />
+          <NavigationProperty Name="Customer" Relationship="Database1Model.FK__Purchase__Custom__1DE57479" FromRole="Purchase" ToRole="Customer" />
+          <NavigationProperty Name="Product_Purchase" Relationship="Database1Model.FK__Product_P__Purch__1CF15040" FromRole="Purchase" ToRole="Product_Purchase" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
             <PropertyRef Name="Supplier_ID" />
           </Key>
-          <Property Type="Int32" Name="Supplier_ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" cg:SetterAccess="Private" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Phone" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Company" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="Model1.FK__Product__Supplie__1B0907CE" FromRole="Supplier" ToRole="Product" />
+          <Property Name="Supplier_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="Database1Model.FK__Product__Supplie__1B0907CE" FromRole="Supplier" ToRole="Product" />
         </EntityType>
         <Association Name="FK__Purchase__Custom__1DE57479">
-          <End Type="Model1.Customer" Role="Customer" Multiplicity="0..1" />
-          <End Type="Model1.Purchase" Role="Purchase" Multiplicity="*" />
+          <End Role="Customer" Type="Database1Model.Customer" Multiplicity="0..1" />
+          <End Role="Purchase" Type="Database1Model.Purchase" Multiplicity="*" />
         </Association>
         <Association Name="FK__Product__Supplie__1B0907CE">
-          <End Type="Model1.Supplier" Role="Supplier" Multiplicity="0..1" />
-          <End Type="Model1.Product" Role="Product" Multiplicity="*" />
+          <End Role="Supplier" Type="Database1Model.Supplier" Multiplicity="0..1" />
+          <End Role="Product" Type="Database1Model.Product" Multiplicity="*" />
         </Association>
         <Association Name="FK__Product_P__Produ__1BFD2C07">
-          <End Type="Model1.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="Model1.Product_Purchase" Role="Product_Purchase" Multiplicity="*" />
+          <End Role="Product" Type="Database1Model.Product" Multiplicity="0..1" />
+          <End Role="Product_Purchase" Type="Database1Model.Product_Purchase" Multiplicity="*" />
         </Association>
         <Association Name="FK__Product_P__Purch__1CF15040">
-          <End Type="Model1.Purchase" Role="Purchase" Multiplicity="0..1" />
-          <End Type="Model1.Product_Purchase" Role="Product_Purchase" Multiplicity="*" />
+          <End Role="Purchase" Type="Database1Model.Purchase" Multiplicity="0..1" />
+          <End Role="Product_Purchase" Type="Database1Model.Product_Purchase" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS" Space="C-S">
-        <Alias Key="Model" Value="Model1" />
-        <Alias Key="Target" Value="Model1.Store" />
-        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="Model1.Customer">
+            <EntityTypeMapping TypeName="Database1Model.Customer">
               <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="Balance" ColumnName="Balance" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="Model1.Product">
+            <EntityTypeMapping TypeName="Database1Model.Product">
               <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product_Purchase">
-            <EntityTypeMapping TypeName="Model1.Product_Purchase">
+            <EntityTypeMapping TypeName="Database1Model.Product_Purchase">
               <MappingFragment StoreEntitySet="Product_Purchase">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Product_Purchase_ID" ColumnName="Product_Purchase_ID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Purchases">
-            <EntityTypeMapping TypeName="Model1.Purchase">
+            <EntityTypeMapping TypeName="Database1Model.Purchase">
               <MappingFragment StoreEntitySet="Purchase">
-                <ScalarProperty Name="Recieved_Value" ColumnName="Recieved_Value" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Is_On_Installment" ColumnName="Is_On_Installment" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Date__" ColumnName="Date__" />
                 <ScalarProperty Name="Purchase_ID" ColumnName="Purchase_ID" />
+                <ScalarProperty Name="Date__" ColumnName="Date__" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Is_On_Installment" ColumnName="Is_On_Installment" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Recieved_Value" ColumnName="Recieved_Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="Model1.Supplier">
+            <EntityTypeMapping TypeName="Database1Model.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
-                <ScalarProperty Name="Company" ColumnName="Company" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK__Purchase__Custom__1DE57479" TypeName="Model1.FK__Purchase__Custom__1DE57479" StoreEntitySet="Purchase">
-            <EndProperty Name="Purchase">
-              <ScalarProperty Name="Purchase_ID" ColumnName="Purchase_ID" />
-            </EndProperty>
+          <AssociationSetMapping Name="FK__Purchase__Custom__1DE57479" TypeName="Database1Model.FK__Purchase__Custom__1DE57479" StoreEntitySet="Purchase">
             <EndProperty Name="Customer">
               <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
             </EndProperty>
-            <Condition ColumnName="Customer_ID" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK__Product__Supplie__1B0907CE" TypeName="Model1.FK__Product__Supplie__1B0907CE" StoreEntitySet="Product">
-            <EndProperty Name="Product">
-              <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-            </EndProperty>
-            <EndProperty Name="Supplier">
-              <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
-            </EndProperty>
-            <Condition ColumnName="Supplier_ID" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK__Product_P__Produ__1BFD2C07" TypeName="Model1.FK__Product_P__Produ__1BFD2C07" StoreEntitySet="Product_Purchase">
-            <EndProperty Name="Product_Purchase">
-              <ScalarProperty Name="Product_Purchase_ID" ColumnName="Product_Purchase_ID" />
-            </EndProperty>
-            <EndProperty Name="Product">
-              <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-            </EndProperty>
-            <Condition ColumnName="Product_ID" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK__Product_P__Purch__1CF15040" TypeName="Model1.FK__Product_P__Purch__1CF15040" StoreEntitySet="Product_Purchase">
-            <EndProperty Name="Product_Purchase">
-              <ScalarProperty Name="Product_Purchase_ID" ColumnName="Product_Purchase_ID" />
-            </EndProperty>
             <EndProperty Name="Purchase">
               <ScalarProperty Name="Purchase_ID" ColumnName="Purchase_ID" />
             </EndProperty>
+            <Condition ColumnName="Customer_ID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Product__Supplie__1B0907CE" TypeName="Database1Model.FK__Product__Supplie__1B0907CE" StoreEntitySet="Product">
+            <EndProperty Name="Supplier">
+              <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+            </EndProperty>
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+            </EndProperty>
+            <Condition ColumnName="Supplier_ID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Product_P__Produ__1BFD2C07" TypeName="Database1Model.FK__Product_P__Produ__1BFD2C07" StoreEntitySet="Product_Purchase">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+            </EndProperty>
+            <EndProperty Name="Product_Purchase">
+              <ScalarProperty Name="Product_Purchase_ID" ColumnName="Product_Purchase_ID" />
+            </EndProperty>
+            <Condition ColumnName="Product_ID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__Product_P__Purch__1CF15040" TypeName="Database1Model.FK__Product_P__Purch__1CF15040" StoreEntitySet="Product_Purchase">
+            <EndProperty Name="Purchase">
+              <ScalarProperty Name="Purchase_ID" ColumnName="Purchase_ID" />
+            </EndProperty>
+            <EndProperty Name="Product_Purchase">
+              <ScalarProperty Name="Product_Purchase_ID" ColumnName="Product_Purchase_ID" />
+            </EndProperty>
             <Condition ColumnName="Purchase_ID" IsNull="false" />
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="Insertcustomer" FunctionName="Model1.Store.Insertcustomer" />
-          <FunctionImportMapping FunctionImportName="InsertProduct" FunctionName="Model1.Store.InsertProduct" />
-          <FunctionImportMapping FunctionImportName="InsertProductPurchase" FunctionName="Model1.Store.InsertProductPurchase" />
-          <FunctionImportMapping FunctionImportName="InsertPurchase" FunctionName="Model1.Store.InsertPurchase" />
-          <FunctionImportMapping FunctionImportName="InsertSupplier" FunctionName="Model1.Store.InsertSupplier" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
-    <edmx:Connection>
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
-    </edmx:Connection>
-    <edmx:Options>
+    </Connection>
+    <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
       </DesignerInfoPropertySet>
-    </edmx:Options>
+    </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <edmx:Diagrams>
-    </edmx:Diagrams>
-  </edmx:Designer>
+    <Diagrams></Diagrams>
+  </Designer>
 </edmx:Edmx>

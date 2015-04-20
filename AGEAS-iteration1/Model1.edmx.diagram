@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="395be096a5374da89406b29cd9a5a178" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.Entity1" Width="2.25" PointX="3.125" PointY="1" />
-        <EntityTypeShape EntityType="Model1.Customer" Width="1.5" PointX="9.875" PointY="6.375" />
-        <EntityTypeShape EntityType="Model1.Product" Width="1.5" PointX="7.3952968620673278" PointY="29.453586100346214" />
-        <EntityTypeShape EntityType="Model1.Product_Purchase" Width="2.25" PointX="10.375" PointY="22.125" />
-        <EntityTypeShape EntityType="Model1.Purchase" Width="1.5" PointX="6.945756373436077" PointY="9.42006218872036" />
-        <EntityTypeShape EntityType="Model1.Supplier" Width="1.5" PointX="0.38347851316606552" PointY="25.365856540094065" />
-        <AssociationConnector Association="Model1.FK__Purchase__Custom__1DE57479" />
-        <AssociationConnector Association="Model1.FK__Product__Supplie__1B0907CE" />
-        <AssociationConnector Association="Model1.FK__Product_P__Produ__1BFD2C07" />
-        <AssociationConnector Association="Model1.FK__Product_P__Purch__1CF15040" />
+      <Diagram DiagramId="9067e3506681428991afdf16c169a2eb" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.Customer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Product" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Product_Purchase" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Purchase" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Supplier" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK__Purchase__Custom__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Product__Supplie__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Product_P__Produ__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Product_P__Purch__1CF15040" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

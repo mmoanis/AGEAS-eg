@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data.Entity;
+using System.Data.Objects;
 
 namespace AGEAS_iteration1
 {
@@ -15,15 +17,15 @@ namespace AGEAS_iteration1
         public Form7 F7;
         public DataGridViewForm DGV;
 
-        private Model1Container dataModel;
         private static Controller controller;
+
+        Database1Entities e = new Database1Entities();
 
         /// <summary>
         /// 
         /// </summary>
         private Controller()
         {
-            dataModel = new Model1Container();
         }
 
         /// <summary>
@@ -47,12 +49,29 @@ namespace AGEAS_iteration1
             return F1;
         }
         
-        public void Form1LoginButtonPressed()
+        public bool Form1LoginButtonPressed(string name, string pw)
         {
             F2 = new Form2();
             F2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            F1.Hide();
-            F2.Show();
+            
+
+            if (name == AGEAS_iteration1.Properties.Settings.Default.adminUserName && pw == AGEAS_iteration1.Properties.Settings.Default.adminPassword)
+            {
+                F1.Hide();
+                F2.Show();
+                return true;
+            }
+            else if (name == AGEAS_iteration1.Properties.Settings.Default.username && pw == AGEAS_iteration1.Properties.Settings.Default.userPassword)
+            {
+                F1.Hide();
+                F2.Show();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public void Form2LogoutButtonPressed()
@@ -106,16 +125,93 @@ namespace AGEAS_iteration1
             c.Phone = phone;
             c.Balance = balance;
 
-            
-            dataModel.AddToCustomers(c);
-            dataModel.SaveChanges();
-            F4.ShowMessage("Mabrooooooooooooooooooook");
+            using (var e = new Database1Entities())
+            {
+                e.AddToCustomers(c);
 
-            
+                try
+                {
+                    if (e.SaveChanges() == 1)
+                        F4.ShowMessage("تم ادخال البيانات");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    F4.ShowMessage(" لم يتم ادخال البيانات");
+                }
+            }
         }
 
-        public void InsertProduct()
+        public void InsertProduct(string name, decimal price)
         {
+            Product p = new Product();
+            p.Name = name;
+            p.Price = price;
+
+            using (var e = new Database1Entities())
+            {
+                e.AddToProducts(p);
+
+                try
+                {
+                    if (e.SaveChanges() == 1)
+                        F3.ShowMessage("تم ادخال البيانات");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    F3.ShowMessage(" لم يتم ادخال البيانات");
+                }
+            }
+        }
+
+        internal void AddSuppliers(string p1, string p2, string p3, string company)
+        {
+            Supplier s = new Supplier();
+            s.Name = p1;
+            s.Phone = p2;
+            s.Address = p3;
+            s.Company = company;
+
+            using (var e = new Database1Entities())
+            {
+                e.AddToSuppliers(s);
+
+                try
+                {
+                    if (e.SaveChanges() == 1)
+                        F5.ShowMessage("تم ادخال البيانات");
+                }
+                catch (InvalidOperationException ex)
+                {
+                    F5.ShowMessage(" لم يتم ادخال البيانات");
+                }
+            }
+        }
+
+        //internal void AddTransactions(string p1, string p2, string p3)
+        //{
+        //    Product p = new Product();
+        //    p.Name = name;
+        //    p.Price = price;
+
+        //    using (var e = new Database1Entities())
+        //    {
+        //        e.AddToProducts(p);
+
+        //        try
+        //        {
+        //            if (e.SaveChanges() == 1)
+        //                F4.ShowMessage("تم ادخال البيانات");
+        //        }
+        //        catch (InvalidOperationException ex)
+        //        {
+        //            F4.ShowMessage(" لم يتم ادخال البيانات");
+        //        }
+        //    }
+        //}
+
+        internal ObjectQuery<Supplier> GetSuppliers()
+        {
+                return e.Suppliers;
         }
     }
 }

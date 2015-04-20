@@ -34,10 +34,15 @@ namespace AGEAS_iteration1
                     //check if username and password exist in db
                     //Form2 f = new Form2();
                     //f.FormClosed += (s, args) => this.Show();
+
+                    if (! Program.myController.Form1LoginButtonPressed(UsernametextBox.Text, PasswordtextBox.Text))
+                    {
+                        MessageBox.Show("معلومات الدخول خاطئة");
+                    }
+                    //this.Hide();
+
                     this.UsernametextBox.Clear();
                     this.PasswordtextBox.Clear();
-                    Program.myController.Form1LoginButtonPressed();
-                    //this.Hide();
                     //f.Show();
                     //else show incorrect username or password
                 }

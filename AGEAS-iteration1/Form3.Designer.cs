@@ -36,15 +36,14 @@
             this.Browserbtn1 = new System.Windows.Forms.RadioButton();
             this.Applybtn1 = new System.Windows.Forms.Button();
             this.TypeLabel = new System.Windows.Forms.Label();
-            this.BrandLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.SupplierLabel = new System.Windows.Forms.Label();
-            this.PricetextBox = new System.Windows.Forms.TextBox();
             this.QuantitytextBox = new System.Windows.Forms.TextBox();
-            this.SuppliertextBox = new System.Windows.Forms.TextBox();
             this.TypetextBox = new System.Windows.Forms.TextBox();
-            this.BrandtextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -132,6 +131,7 @@
             this.Applybtn1.TabIndex = 6;
             this.Applybtn1.Text = "تعديل";
             this.Applybtn1.UseVisualStyleBackColor = true;
+            this.Applybtn1.Click += new System.EventHandler(this.Applybtn1_Click);
             // 
             // TypeLabel
             // 
@@ -143,21 +143,11 @@
             this.TypeLabel.TabIndex = 10;
             this.TypeLabel.Text = ":النوع";
             // 
-            // BrandLabel
-            // 
-            this.BrandLabel.AutoSize = true;
-            this.BrandLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrandLabel.Location = new System.Drawing.Point(420, 208);
-            this.BrandLabel.Name = "BrandLabel";
-            this.BrandLabel.Size = new System.Drawing.Size(104, 20);
-            this.BrandLabel.TabIndex = 11;
-            this.BrandLabel.Text = ":العلامة التجارية";
-            // 
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(424, 240);
+            this.PriceLabel.Location = new System.Drawing.Point(424, 203);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(47, 20);
             this.PriceLabel.TabIndex = 12;
@@ -167,7 +157,7 @@
             // 
             this.QuantityLabel.AutoSize = true;
             this.QuantityLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityLabel.Location = new System.Drawing.Point(424, 270);
+            this.QuantityLabel.Location = new System.Drawing.Point(424, 233);
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Size = new System.Drawing.Size(46, 20);
             this.QuantityLabel.TabIndex = 13;
@@ -177,32 +167,18 @@
             // 
             this.SupplierLabel.AutoSize = true;
             this.SupplierLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupplierLabel.Location = new System.Drawing.Point(424, 305);
+            this.SupplierLabel.Location = new System.Drawing.Point(424, 268);
             this.SupplierLabel.Name = "SupplierLabel";
             this.SupplierLabel.Size = new System.Drawing.Size(51, 20);
             this.SupplierLabel.TabIndex = 14;
             this.SupplierLabel.Text = ":المورد";
             // 
-            // PricetextBox
-            // 
-            this.PricetextBox.Location = new System.Drawing.Point(179, 240);
-            this.PricetextBox.Name = "PricetextBox";
-            this.PricetextBox.Size = new System.Drawing.Size(222, 20);
-            this.PricetextBox.TabIndex = 17;
-            // 
             // QuantitytextBox
             // 
-            this.QuantitytextBox.Location = new System.Drawing.Point(179, 270);
+            this.QuantitytextBox.Location = new System.Drawing.Point(179, 233);
             this.QuantitytextBox.Name = "QuantitytextBox";
             this.QuantitytextBox.Size = new System.Drawing.Size(222, 20);
             this.QuantitytextBox.TabIndex = 18;
-            // 
-            // SuppliertextBox
-            // 
-            this.SuppliertextBox.Location = new System.Drawing.Point(179, 305);
-            this.SuppliertextBox.Name = "SuppliertextBox";
-            this.SuppliertextBox.Size = new System.Drawing.Size(222, 20);
-            this.SuppliertextBox.TabIndex = 19;
             // 
             // TypetextBox
             // 
@@ -211,12 +187,23 @@
             this.TypetextBox.Size = new System.Drawing.Size(222, 20);
             this.TypetextBox.TabIndex = 22;
             // 
-            // BrandtextBox
+            // comboBox1
             // 
-            this.BrandtextBox.Location = new System.Drawing.Point(179, 208);
-            this.BrandtextBox.Name = "BrandtextBox";
-            this.BrandtextBox.Size = new System.Drawing.Size(222, 20);
-            this.BrandtextBox.TabIndex = 23;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 269);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(222, 22);
+            this.comboBox1.TabIndex = 24;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(179, 205);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.numericUpDown1.Size = new System.Drawing.Size(222, 20);
+            this.numericUpDown1.TabIndex = 25;
             // 
             // Form3
             // 
@@ -224,15 +211,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 486);
             this.ControlBox = false;
-            this.Controls.Add(this.BrandtextBox);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.TypetextBox);
-            this.Controls.Add(this.SuppliertextBox);
             this.Controls.Add(this.QuantitytextBox);
-            this.Controls.Add(this.PricetextBox);
             this.Controls.Add(this.SupplierLabel);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.PriceLabel);
-            this.Controls.Add(this.BrandLabel);
             this.Controls.Add(this.TypeLabel);
             this.Controls.Add(this.Applybtn1);
             this.Controls.Add(this.Browserbtn1);
@@ -244,6 +229,8 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form3";
             this.Text = "بضائع";
+            this.Load += new System.EventHandler(this.Form3_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,14 +246,12 @@
         private System.Windows.Forms.RadioButton Browserbtn1;
         private System.Windows.Forms.Button Applybtn1;
         private System.Windows.Forms.Label TypeLabel;
-        private System.Windows.Forms.Label BrandLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label QuantityLabel;
         private System.Windows.Forms.Label SupplierLabel;
-        private System.Windows.Forms.TextBox PricetextBox;
         private System.Windows.Forms.TextBox QuantitytextBox;
-        private System.Windows.Forms.TextBox SuppliertextBox;
         private System.Windows.Forms.TextBox TypetextBox;
-        private System.Windows.Forms.TextBox BrandtextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
