@@ -15,6 +15,7 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             PasswordtextBox.PasswordChar='*';
+            
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)

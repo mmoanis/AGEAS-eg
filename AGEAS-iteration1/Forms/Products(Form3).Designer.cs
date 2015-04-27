@@ -30,11 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.Backbtn1 = new System.Windows.Forms.Button();
-            this.Addrbtn1 = new System.Windows.Forms.RadioButton();
-            this.Searchrbtn1 = new System.Windows.Forms.RadioButton();
-            this.Updaterbtn1 = new System.Windows.Forms.RadioButton();
-            this.Browserbtn1 = new System.Windows.Forms.RadioButton();
-            this.Applybtn1 = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
@@ -43,14 +39,23 @@
             this.TypetextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(434, 39);
+            this.label1.Location = new System.Drawing.Point(652, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 26);
             this.label1.TabIndex = 0;
@@ -59,7 +64,7 @@
             // Backbtn1
             // 
             this.Backbtn1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Backbtn1.Location = new System.Drawing.Point(53, 421);
+            this.Backbtn1.Location = new System.Drawing.Point(12, 559);
             this.Backbtn1.Name = "Backbtn1";
             this.Backbtn1.Size = new System.Drawing.Size(128, 33);
             this.Backbtn1.TabIndex = 1;
@@ -67,77 +72,21 @@
             this.Backbtn1.UseVisualStyleBackColor = true;
             this.Backbtn1.Click += new System.EventHandler(this.Backbtn1_Click);
             // 
-            // Addrbtn1
+            // UpdateButton
             // 
-            this.Addrbtn1.AutoSize = true;
-            this.Addrbtn1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addrbtn1.Location = new System.Drawing.Point(428, 116);
-            this.Addrbtn1.Name = "Addrbtn1";
-            this.Addrbtn1.Size = new System.Drawing.Size(64, 25);
-            this.Addrbtn1.TabIndex = 2;
-            this.Addrbtn1.TabStop = true;
-            this.Addrbtn1.Text = "اضافة";
-            this.Addrbtn1.UseVisualStyleBackColor = true;
-            this.Addrbtn1.CheckedChanged += new System.EventHandler(this.Browserbtn1_CheckedChanged);
-            // 
-            // Searchrbtn1
-            // 
-            this.Searchrbtn1.AutoSize = true;
-            this.Searchrbtn1.Enabled = false;
-            this.Searchrbtn1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchrbtn1.Location = new System.Drawing.Point(301, 116);
-            this.Searchrbtn1.Name = "Searchrbtn1";
-            this.Searchrbtn1.Size = new System.Drawing.Size(57, 25);
-            this.Searchrbtn1.TabIndex = 3;
-            this.Searchrbtn1.TabStop = true;
-            this.Searchrbtn1.Text = "بحث";
-            this.Searchrbtn1.UseVisualStyleBackColor = true;
-            this.Searchrbtn1.CheckedChanged += new System.EventHandler(this.Browserbtn1_CheckedChanged);
-            // 
-            // Updaterbtn1
-            // 
-            this.Updaterbtn1.AutoSize = true;
-            this.Updaterbtn1.Enabled = false;
-            this.Updaterbtn1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Updaterbtn1.Location = new System.Drawing.Point(164, 116);
-            this.Updaterbtn1.Name = "Updaterbtn1";
-            this.Updaterbtn1.Size = new System.Drawing.Size(61, 25);
-            this.Updaterbtn1.TabIndex = 4;
-            this.Updaterbtn1.TabStop = true;
-            this.Updaterbtn1.Text = "تعديل";
-            this.Updaterbtn1.UseVisualStyleBackColor = true;
-            this.Updaterbtn1.CheckedChanged += new System.EventHandler(this.Browserbtn1_CheckedChanged);
-            // 
-            // Browserbtn1
-            // 
-            this.Browserbtn1.AutoSize = true;
-            this.Browserbtn1.Enabled = false;
-            this.Browserbtn1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Browserbtn1.Location = new System.Drawing.Point(53, 116);
-            this.Browserbtn1.Name = "Browserbtn1";
-            this.Browserbtn1.Size = new System.Drawing.Size(68, 25);
-            this.Browserbtn1.TabIndex = 5;
-            this.Browserbtn1.TabStop = true;
-            this.Browserbtn1.Text = "عرض";
-            this.Browserbtn1.UseVisualStyleBackColor = true;
-            this.Browserbtn1.CheckedChanged += new System.EventHandler(this.Browserbtn1_CheckedChanged);
-            // 
-            // Applybtn1
-            // 
-            this.Applybtn1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Applybtn1.Location = new System.Drawing.Point(53, 382);
-            this.Applybtn1.Name = "Applybtn1";
-            this.Applybtn1.Size = new System.Drawing.Size(128, 33);
-            this.Applybtn1.TabIndex = 6;
-            this.Applybtn1.Text = "تعديل";
-            this.Applybtn1.UseVisualStyleBackColor = true;
-            this.Applybtn1.Click += new System.EventHandler(this.Applybtn1_Click);
+            this.UpdateButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButton.Location = new System.Drawing.Point(37, 147);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(128, 33);
+            this.UpdateButton.TabIndex = 6;
+            this.UpdateButton.Text = "تعديل";
+            this.UpdateButton.UseVisualStyleBackColor = true;
             // 
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
             this.TypeLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TypeLabel.Location = new System.Drawing.Point(424, 170);
+            this.TypeLabel.Location = new System.Drawing.Point(282, 20);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(43, 20);
             this.TypeLabel.TabIndex = 10;
@@ -147,7 +96,7 @@
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(424, 203);
+            this.PriceLabel.Location = new System.Drawing.Point(282, 53);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(47, 20);
             this.PriceLabel.TabIndex = 12;
@@ -157,7 +106,7 @@
             // 
             this.QuantityLabel.AutoSize = true;
             this.QuantityLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuantityLabel.Location = new System.Drawing.Point(424, 233);
+            this.QuantityLabel.Location = new System.Drawing.Point(282, 83);
             this.QuantityLabel.Name = "QuantityLabel";
             this.QuantityLabel.Size = new System.Drawing.Size(46, 20);
             this.QuantityLabel.TabIndex = 13;
@@ -167,7 +116,7 @@
             // 
             this.SupplierLabel.AutoSize = true;
             this.SupplierLabel.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SupplierLabel.Location = new System.Drawing.Point(424, 268);
+            this.SupplierLabel.Location = new System.Drawing.Point(282, 118);
             this.SupplierLabel.Name = "SupplierLabel";
             this.SupplierLabel.Size = new System.Drawing.Size(51, 20);
             this.SupplierLabel.TabIndex = 14;
@@ -175,14 +124,14 @@
             // 
             // QuantitytextBox
             // 
-            this.QuantitytextBox.Location = new System.Drawing.Point(179, 233);
+            this.QuantitytextBox.Location = new System.Drawing.Point(37, 83);
             this.QuantitytextBox.Name = "QuantitytextBox";
             this.QuantitytextBox.Size = new System.Drawing.Size(222, 20);
             this.QuantitytextBox.TabIndex = 18;
             // 
             // TypetextBox
             // 
-            this.TypetextBox.Location = new System.Drawing.Point(179, 170);
+            this.TypetextBox.Location = new System.Drawing.Point(37, 20);
             this.TypetextBox.Name = "TypetextBox";
             this.TypetextBox.Size = new System.Drawing.Size(222, 20);
             this.TypetextBox.TabIndex = 22;
@@ -191,7 +140,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(179, 269);
+            this.comboBox1.Location = new System.Drawing.Point(37, 119);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(222, 22);
@@ -199,31 +148,98 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(179, 205);
+            this.numericUpDown1.Location = new System.Drawing.Point(37, 55);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.numericUpDown1.Size = new System.Drawing.Size(222, 20);
             this.numericUpDown1.TabIndex = 25;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.DeleteButton);
+            this.groupBox1.Controls.Add(this.AddButton);
+            this.groupBox1.Controls.Add(this.QuantitytextBox);
+            this.groupBox1.Controls.Add(this.UpdateButton);
+            this.groupBox1.Controls.Add(this.TypeLabel);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.PriceLabel);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.QuantityLabel);
+            this.groupBox1.Controls.Add(this.TypetextBox);
+            this.groupBox1.Controls.Add(this.SupplierLabel);
+            this.groupBox1.Location = new System.Drawing.Point(986, 164);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(364, 235);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(116, 186);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
+            this.DeleteButton.TabIndex = 32;
+            this.DeleteButton.Text = "مسح";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(205, 147);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(128, 33);
+            this.AddButton.TabIndex = 26;
+            this.AddButton.Text = "اضافة";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 164);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(947, 370);
+            this.dataGridView1.TabIndex = 27;
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(688, 90);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(222, 20);
+            this.SearchTextBox.TabIndex = 29;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(554, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 33);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "بحث";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(916, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = ":النوع";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 486);
+            this.ClientSize = new System.Drawing.Size(1354, 604);
             this.ControlBox = false;
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.TypetextBox);
-            this.Controls.Add(this.QuantitytextBox);
-            this.Controls.Add(this.SupplierLabel);
-            this.Controls.Add(this.QuantityLabel);
-            this.Controls.Add(this.PriceLabel);
-            this.Controls.Add(this.TypeLabel);
-            this.Controls.Add(this.Applybtn1);
-            this.Controls.Add(this.Browserbtn1);
-            this.Controls.Add(this.Updaterbtn1);
-            this.Controls.Add(this.Searchrbtn1);
-            this.Controls.Add(this.Addrbtn1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,6 +247,9 @@
             this.Text = "بضائع";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,11 +259,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Backbtn1;
-        private System.Windows.Forms.RadioButton Addrbtn1;
-        private System.Windows.Forms.RadioButton Searchrbtn1;
-        private System.Windows.Forms.RadioButton Updaterbtn1;
-        private System.Windows.Forms.RadioButton Browserbtn1;
-        private System.Windows.Forms.Button Applybtn1;
+        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label TypeLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label QuantityLabel;
@@ -253,5 +268,12 @@
         private System.Windows.Forms.TextBox TypetextBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }

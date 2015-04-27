@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGEAS-iteration1", "AGEAS-iteration1\AGEAS-iteration1.csproj", "{899712C9-5CB0-4E2A-A4B2-EDC59479E588}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{301C48D7-577D-45AB-BD09-C64FBA0DFFFF}"
+	ProjectSection(SolutionItems) = preProject
+		AGEAS-iteration1\bin\Debug\Database1.mdf = AGEAS-iteration1\bin\Debug\Database1.mdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

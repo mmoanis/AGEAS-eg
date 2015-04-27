@@ -69,53 +69,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="DataGridViewForm.cs">
+    <Compile Include="Forms\Login%28Form1%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataGridViewForm.Designer.cs">
-      <DependentUpon>DataGridViewForm.cs</DependentUpon>
+    <Compile Include="Forms\Login%28Form1%29.Designer.cs">
+      <DependentUpon>Login%28Form1%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Functionchoice%28Form2%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Functionchoice%28Form2%29.Designer.cs">
+      <DependentUpon>Functionchoice%28Form2%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Forms\Products%28Form3%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Forms\Products%28Form3%29.Designer.cs">
+      <DependentUpon>Products%28Form3%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Forms\Clients%28Form4%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="Forms\Clients%28Form4%29.Designer.cs">
+      <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Forms\Suppliers%28Form5%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Forms\Suppliers%28Form5%29.Designer.cs">
+      <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Forms\Transactions%28Form6%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Forms\Transactions%28Form6%29.Designer.cs">
+      <DependentUpon>Transactions%28Form6%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="Forms\Reports%28Form7%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form7.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="Forms\Reports%28Form7%29.Designer.cs">
+      <DependentUpon>Reports%28Form7%29.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,29 +118,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataGridViewForm.resx">
-      <DependentUpon>DataGridViewForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login%28Form1%29.resx">
+      <DependentUpon>Login%28Form1%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Functionchoice%28Form2%29.resx">
+      <DependentUpon>Functionchoice%28Form2%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Products%28Form3%29.resx">
+      <DependentUpon>Products%28Form3%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Clients%28Form4%29.resx">
+      <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Suppliers%28Form5%29.resx">
+      <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Transactions%28Form6%29.resx">
+      <DependentUpon>Transactions%28Form6%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Reports%28Form7%29.resx">
+      <DependentUpon>Reports%28Form7%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,8 +187,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Database1.mdf" />
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
   </ItemGroup>

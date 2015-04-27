@@ -15,11 +15,10 @@ namespace AGEAS_iteration1
         public Form5 F5;
         public Form6 F6;
         public Form7 F7;
-        public DataGridViewForm DGV;
 
         private static Controller controller;
 
-        Database1Entities e = new Database1Entities();
+        Database1Entities model = new Database1Entities();
 
         /// <summary>
         /// 
@@ -124,20 +123,16 @@ namespace AGEAS_iteration1
             c.Name = name;
             c.Phone = phone;
             c.Balance = balance;
+            model.AddToCustomers(c);
 
-            using (var e = new Database1Entities())
+            try
             {
-                e.AddToCustomers(c);
-
-                try
-                {
-                    if (e.SaveChanges() == 1)
-                        F4.ShowMessage("تم ادخال البيانات");
-                }
-                catch (InvalidOperationException ex)
-                {
-                    F4.ShowMessage(" لم يتم ادخال البيانات");
-                }
+                if (model.SaveChanges() == 1)
+                    F4.ShowMessage("تم ادخال البيانات");
+            }
+            catch (InvalidOperationException ex)
+            {
+                F4.ShowMessage(" لم يتم ادخال البيانات");
             }
         }
 
@@ -147,19 +142,16 @@ namespace AGEAS_iteration1
             p.Name = name;
             p.Price = price;
 
-            using (var e = new Database1Entities())
-            {
-                e.AddToProducts(p);
+            model.AddToProducts(p);
 
-                try
-                {
-                    if (e.SaveChanges() == 1)
-                        F3.ShowMessage("تم ادخال البيانات");
-                }
-                catch (InvalidOperationException ex)
-                {
-                    F3.ShowMessage(" لم يتم ادخال البيانات");
-                }
+            try
+            {
+                if (model.SaveChanges() == 1)
+                    F3.ShowMessage("تم ادخال البيانات");
+            }
+            catch (InvalidOperationException ex)
+            {
+                F3.ShowMessage(" لم يتم ادخال البيانات");
             }
         }
 
@@ -171,19 +163,16 @@ namespace AGEAS_iteration1
             s.Address = p3;
             s.Company = company;
 
-            using (var e = new Database1Entities())
-            {
-                e.AddToSuppliers(s);
+            model.AddToSuppliers(s);
 
-                try
-                {
-                    if (e.SaveChanges() == 1)
-                        F5.ShowMessage("تم ادخال البيانات");
-                }
-                catch (InvalidOperationException ex)
-                {
-                    F5.ShowMessage(" لم يتم ادخال البيانات");
-                }
+            try
+            {
+                if (model.SaveChanges() == 1)
+                    F5.ShowMessage("تم ادخال البيانات");
+            }
+            catch (InvalidOperationException ex)
+            {
+                F5.ShowMessage(" لم يتم ادخال البيانات");
             }
         }
 
@@ -209,9 +198,53 @@ namespace AGEAS_iteration1
         //    }
         //}
 
+        internal void DeleteProduct(Product product)
+        {
+
+            model.DeleteObject(product);
+            try
+            {
+                if (model.SaveChanges() == 1)
+                    F3.ShowMessage("تم ادخال البيانات");
+            }
+            catch (InvalidOperationException ex)
+            {
+                F3.ShowMessage(" لم يتم ادخال البيانات");
+            }
+
+        }
+        internal void DeleteSupplier(Supplier supplier)
+        {
+            
+            
+                using (var e = new Database1Entities())
+                {
+                    
+                    ObjectQuery<Supplier> qs = e.Suppliers.Where("it.Supplier_ID = @id", new ObjectParameter("id", supplier.Supplier_ID));
+                    foreach (Supplier s in qs)
+                    {
+                    
+                    e.DeleteObject(s);
+                    
+                    }
+
+                    try
+                    {
+                        if (e.SaveChanges() == 1)
+                            F5.ShowMessage("تم ادخال البيانات");
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        F5.ShowMessage(" لم يتم ادخال البيانات");
+                    }
+                }
+
+            
+
+        }
         internal ObjectQuery<Supplier> GetSuppliers()
         {
-                return e.Suppliers;
+            return model.Suppliers;
         }
     }
 }
