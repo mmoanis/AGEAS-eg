@@ -42,13 +42,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV = new System.Windows.Forms.DataGridView();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,13 +194,13 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // dataGridView1
+            // DGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 164);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(947, 370);
-            this.dataGridView1.TabIndex = 27;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(12, 164);
+            this.DGV.Name = "DGV";
+            this.DGV.Size = new System.Drawing.Size(947, 370);
+            this.DGV.TabIndex = 27;
             // 
             // SearchTextBox
             // 
@@ -238,7 +238,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn1);
             this.Controls.Add(this.label1);
@@ -249,7 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +269,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;

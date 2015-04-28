@@ -19,5 +19,11 @@ namespace AGEAS_iteration1
         {
             this.Close();
         }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

@@ -10,28 +10,25 @@ namespace AGEAS_iteration1
 {
     public partial class Form3 : Form
     {
-        public DataGridView DGV = new DataGridView();
-
 
         public Form3()
         {
             InitializeComponent();
             TypeLabel.Visible = true; 
-            
             PriceLabel.Visible= true;
             QuantityLabel.Visible = true;
             SupplierLabel.Visible = true;
-
             numericUpDown1.Visible = true;
-            numericUpDown1.Maximum = 1000000;
             QuantitytextBox.Visible = true;
-            
             TypetextBox.Visible = true;
-            
-
-            UpdateButton.Visible = true;
-            TypetextBox.MaxLength = 50;
             comboBox1.Visible = true;
+            UpdateButton.Visible = true;
+            
+            TypetextBox.MaxLength = 50;
+            numericUpDown1.Maximum = 999999999;
+            numericUpDown1.DecimalPlaces = 3;
+            SearchTextBox.MaxLength = 50;
+            
 
             DGV.AutoSize = false;
             DGV.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
@@ -40,6 +37,7 @@ namespace AGEAS_iteration1
             DGV.AllowUserToAddRows = false;
             DGV.AllowUserToDeleteRows = false;
             DGV.AllowUserToOrderColumns = false;
+            DGV.ReadOnly = true;
         }
 
         private void DGV_SelectionChanged(object sender, EventArgs e)
@@ -63,16 +61,16 @@ namespace AGEAS_iteration1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            System.Data.Objects.ObjectQuery<Supplier> suppliers = Program.myController.GetSuppliers();
+            //System.Data.Objects.ObjectQuery<Supplier> suppliers = Program.myController.GetSuppliers();
 
-            comboBox1.DataSource = suppliers;
-            comboBox1.ValueMember = "Supplier_ID";
-            comboBox1.DisplayMember = "Name";
+            //comboBox1.DataSource = suppliers;
+            //comboBox1.ValueMember = "Supplier_ID";
+            //comboBox1.DisplayMember = "Name";
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Program.myController.InsertProduct(TypetextBox.Text,(decimal) numericUpDown1.Value);
+            //Program.myController.InsertProduct(TypetextBox.Text,(decimal) numericUpDown1.Value);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.Entity;
+using System.Data;
 using System.Data.Objects;
 
 namespace AGEAS_iteration1
@@ -18,13 +18,14 @@ namespace AGEAS_iteration1
 
         private static Controller controller;
 
-        Database1Entities model = new Database1Entities();
+        private DBManager dbManager;
 
         /// <summary>
         /// 
         /// </summary>
         private Controller()
         {
+            dbManager = DBManager.Instance;
         }
 
         /// <summary>
@@ -119,132 +120,138 @@ namespace AGEAS_iteration1
         /// <param name="balance">customer balance.</param>
         public void InsertCustomer(string name, string phone, decimal balance)
         {
-            Customer c = new Customer();
-            c.Name = name;
-            c.Phone = phone;
-            c.Balance = balance;
-            model.AddToCustomers(c);
+            try
+            {
+                dbManager.Insertcustomer(name, phone, balance);
+                F4.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F4.ShowMessage(e.Message);
+            }
+        }
+
+        public void InsertProduct(int supplier_id, string name, decimal price)
+        {
+            try
+            {
+                dbManager.InsertProduct(supplier_id, name, price);
+                F3.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F3.ShowMessage(e.Message);
+            }
+        }
+
+        public void AddSuppliers(string name, string phone, string address, string company)
+        {
+            try
+            {
+                dbManager.InsertSupplier(name, phone, address, company);
+                F5.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+            }
+        }
+
+        public void AddTransactions(string p1, string p2, string p3)
+        {
+            try
+            {
+                //dbManager.InsertProduct(supplier_id, name, price);
+                //F6.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                //F3.ShowMessage(e.Message);
+            }
+        }
+
+        public void DeleteProduct(int product_id)
+        {
 
             try
             {
-                if (model.SaveChanges() == 1)
-                    F4.ShowMessage("تم ادخال البيانات");
+                dbManager.deleteProduct(product_id);
+                F3.ShowMessage("تم ادخال البيانات بنجاح");
             }
-            catch (InvalidOperationException ex)
+            catch (Exception e)
             {
-                F4.ShowMessage(" لم يتم ادخال البيانات");
+                F3.ShowMessage(e.Message);
             }
+
         }
 
-        public void InsertProduct(string name, decimal price)
+        public void DeleteCustomer(int customer_id)
         {
-            Product p = new Product();
-            p.Name = name;
-            p.Price = price;
-
-            model.AddToProducts(p);
 
             try
             {
-                if (model.SaveChanges() == 1)
-                    F3.ShowMessage("تم ادخال البيانات");
+                dbManager.deletecustomer(customer_id);
+                F4.ShowMessage("تم ادخال البيانات بنجاح");
             }
-            catch (InvalidOperationException ex)
+            catch (Exception e)
             {
-                F3.ShowMessage(" لم يتم ادخال البيانات");
+                F4.ShowMessage(e.Message);
             }
+
         }
 
-        internal void AddSuppliers(string p1, string p2, string p3, string company)
+        public DataTable GetCustomers()
         {
-            Supplier s = new Supplier();
-            s.Name = p1;
-            s.Phone = p2;
-            s.Address = p3;
-            s.Company = company;
-
-            model.AddToSuppliers(s);
-
             try
             {
-                if (model.SaveChanges() == 1)
-                    F5.ShowMessage("تم ادخال البيانات");
+                return dbManager.getCustomer();
             }
-            catch (InvalidOperationException ex)
+            catch (Exception e)
             {
-                F5.ShowMessage(" لم يتم ادخال البيانات");
+                F4.ShowMessage(e.Message);
+                return null;
             }
         }
 
-        //internal void AddTransactions(string p1, string p2, string p3)
-        //{
-        //    Product p = new Product();
-        //    p.Name = name;
-        //    p.Price = price;
-
-        //    using (var e = new Database1Entities())
-        //    {
-        //        e.AddToProducts(p);
-
-        //        try
-        //        {
-        //            if (e.SaveChanges() == 1)
-        //                F4.ShowMessage("تم ادخال البيانات");
-        //        }
-        //        catch (InvalidOperationException ex)
-        //        {
-        //            F4.ShowMessage(" لم يتم ادخال البيانات");
-        //        }
-        //    }
-        //}
-
-        internal void DeleteProduct(Product product)
+        public DataTable GetCustomerByName(string Customer_Name)
         {
-
-            model.DeleteObject(product);
             try
             {
-                if (model.SaveChanges() == 1)
-                    F3.ShowMessage("تم ادخال البيانات");
+                return dbManager.getCustomerByName(Customer_Name);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception e)
             {
-                F3.ShowMessage(" لم يتم ادخال البيانات");
+                F4.ShowMessage("فشلت عملية البحث");
+                return null;
             }
-
         }
-        internal void DeleteSupplier(Supplier supplier)
+
+
+
+        public DataTable GetSuppliers()
         {
-            
-            
-                using (var e = new Database1Entities())
-                {
-                    
-                    ObjectQuery<Supplier> qs = e.Suppliers.Where("it.Supplier_ID = @id", new ObjectParameter("id", supplier.Supplier_ID));
-                    foreach (Supplier s in qs)
-                    {
-                    
-                    e.DeleteObject(s);
-                    
-                    }
-
-                    try
-                    {
-                        if (e.SaveChanges() == 1)
-                            F5.ShowMessage("تم ادخال البيانات");
-                    }
-                    catch (InvalidOperationException ex)
-                    {
-                        F5.ShowMessage(" لم يتم ادخال البيانات");
-                    }
-                }
-
-            
-
+            try
+            {
+                return dbManager.getSuppliers();
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return null;
+            }
         }
-        internal ObjectQuery<Supplier> GetSuppliers()
+
+        public void UpdateCustomer(int customer_id, string name, string phone, decimal balance)
         {
-            return model.Suppliers;
+            try
+            {
+                dbManager.UpdateCustomer(customer_id, name, phone, balance);
+                F4.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F4.ShowMessage(e.Message);
+            }
         }
     }
 }

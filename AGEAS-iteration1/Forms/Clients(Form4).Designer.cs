@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.NametextBox = new System.Windows.Forms.TextBox();
+            this.AddButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BalanceText = new System.Windows.Forms.NumericUpDown();
             this.BalanceLabel = new System.Windows.Forms.Label();
+            this.TelLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TeltextBox = new System.Windows.Forms.TextBox();
-            this.NametextBox = new System.Windows.Forms.TextBox();
+            this.DGV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Backbtn2 = new System.Windows.Forms.Button();
-            this.BalanceText = new System.Windows.Forms.NumericUpDown();
-            this.TelLabel = new System.Windows.Forms.Label();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BalanceText)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,6 +66,36 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(158, 225);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
+            this.DeleteButton.TabIndex = 39;
+            this.DeleteButton.Text = "مسح";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // NametextBox
+            // 
+            this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NametextBox.Location = new System.Drawing.Point(35, 45);
+            this.NametextBox.Name = "NametextBox";
+            this.NametextBox.Size = new System.Drawing.Size(282, 20);
+            this.NametextBox.TabIndex = 33;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(241, 172);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(128, 33);
+            this.AddButton.TabIndex = 38;
+            this.AddButton.Text = "اضافة";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
             // UpdateButton
             // 
             this.UpdateButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,14 +105,15 @@
             this.UpdateButton.TabIndex = 10;
             this.UpdateButton.Text = "تعديل";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // dataGridView1
+            // BalanceText
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(866, 369);
-            this.dataGridView1.TabIndex = 37;
+            this.BalanceText.Location = new System.Drawing.Point(35, 83);
+            this.BalanceText.Name = "BalanceText";
+            this.BalanceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BalanceText.Size = new System.Drawing.Size(282, 20);
+            this.BalanceText.TabIndex = 35;
             // 
             // BalanceLabel
             // 
@@ -93,6 +124,16 @@
             this.BalanceLabel.Size = new System.Drawing.Size(50, 19);
             this.BalanceLabel.TabIndex = 25;
             this.BalanceLabel.Text = ":الحساب";
+            // 
+            // TelLabel
+            // 
+            this.TelLabel.AutoSize = true;
+            this.TelLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelLabel.Location = new System.Drawing.Point(326, 120);
+            this.TelLabel.Name = "TelLabel";
+            this.TelLabel.Size = new System.Drawing.Size(69, 19);
+            this.TelLabel.TabIndex = 26;
+            this.TelLabel.Text = ":رقم التليفون";
             // 
             // NameLabel
             // 
@@ -107,18 +148,21 @@
             // TeltextBox
             // 
             this.TeltextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeltextBox.Location = new System.Drawing.Point(29, 119);
+            this.TeltextBox.Location = new System.Drawing.Point(35, 119);
             this.TeltextBox.Name = "TeltextBox";
             this.TeltextBox.Size = new System.Drawing.Size(282, 20);
             this.TeltextBox.TabIndex = 29;
             // 
-            // NametextBox
+            // DGV
             // 
-            this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NametextBox.Location = new System.Drawing.Point(35, 45);
-            this.NametextBox.Name = "NametextBox";
-            this.NametextBox.Size = new System.Drawing.Size(282, 20);
-            this.NametextBox.TabIndex = 33;
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(42, 148);
+            this.DGV.Name = "DGV";
+            this.DGV.Size = new System.Drawing.Size(866, 369);
+            this.DGV.TabIndex = 37;
             // 
             // label1
             // 
@@ -141,54 +185,16 @@
             this.Backbtn2.UseVisualStyleBackColor = true;
             this.Backbtn2.Click += new System.EventHandler(this.Backbtn2_Click);
             // 
-            // BalanceText
+            // SearchButton
             // 
-            this.BalanceText.Location = new System.Drawing.Point(29, 84);
-            this.BalanceText.Name = "BalanceText";
-            this.BalanceText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BalanceText.Size = new System.Drawing.Size(282, 20);
-            this.BalanceText.TabIndex = 35;
-            // 
-            // TelLabel
-            // 
-            this.TelLabel.AutoSize = true;
-            this.TelLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelLabel.Location = new System.Drawing.Point(326, 120);
-            this.TelLabel.Name = "TelLabel";
-            this.TelLabel.Size = new System.Drawing.Size(69, 19);
-            this.TelLabel.TabIndex = 26;
-            this.TelLabel.Text = ":رقم التليفون";
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(158, 225);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
-            this.DeleteButton.TabIndex = 39;
-            this.DeleteButton.Text = "مسح";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(241, 172);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(128, 33);
-            this.AddButton.TabIndex = 38;
-            this.AddButton.Text = "اضافة";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(503, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 33);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "بحث";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(503, 94);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(128, 33);
+            this.SearchButton.TabIndex = 39;
+            this.SearchButton.Text = "بحث";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchTextBox
             // 
@@ -214,18 +220,20 @@
             this.ClientSize = new System.Drawing.Size(1354, 604);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn2);
             this.Controls.Add(this.label1);
             this.Name = "Form4";
             this.Text = "عملاء";
+            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Click += new System.EventHandler(this.Form4_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BalanceText)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,12 +249,12 @@
         private System.Windows.Forms.Label TelLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox TeltextBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Backbtn2;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Label label2;
 

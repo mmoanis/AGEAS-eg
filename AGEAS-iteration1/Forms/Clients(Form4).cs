@@ -10,7 +10,6 @@ namespace AGEAS_iteration1
 {
     public partial class Form4 : Form
     {
-        public DataGridView DGV = new DataGridView();
         public Form4()
         {
             InitializeComponent();
@@ -19,18 +18,17 @@ namespace AGEAS_iteration1
             BalanceLabel.Visible = true;
             TelLabel.Visible = true;
             NameLabel.Visible = true;
-
-
-            NametextBox.Visible = true;
-
-            BalanceText.Visible = true;
-            BalanceText.Maximum = 10000000;
             TeltextBox.Visible = true;
             NametextBox.Visible = true;
-
-
+            NametextBox.Visible = true;
+            BalanceText.Visible = true;
             UpdateButton.Visible = true;
+
+            BalanceText.Maximum = 999999999;
+            BalanceText.DecimalPlaces = 3;
             NametextBox.MaxLength = 50;
+            TeltextBox.MaxLength = 14;
+            SearchTextBox.MaxLength = 50;
 
             DGV.AutoSize = false;
             DGV.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
@@ -39,13 +37,27 @@ namespace AGEAS_iteration1
             DGV.AllowUserToAddRows = false;
             DGV.AllowUserToDeleteRows = false;
             DGV.AllowUserToOrderColumns = false;
+            DGV.ReadOnly = true;
+            
+           
         }
 
         void DGV_SelectionChanged(object sender, EventArgs e)
         {
-            NametextBox.Text = DGV.SelectedRows[0].Cells[1].ToString();
-            TeltextBox.Text = DGV.SelectedRows[0].Cells[2].ToString();
-            BalanceText.Text = DGV.SelectedRows[0].Cells[3].ToString();
+            if (DGV.SelectedRows.Count > 0)
+            {
+                NametextBox.Text = DGV.SelectedRows[0].Cells[1].Value.ToString();
+                TeltextBox.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
+                BalanceText.Text = DGV.SelectedRows[0].Cells[3].Value.ToString();
+                AddButton.Enabled = false;
+            }
+            else
+            {
+                NametextBox.Text = "";
+                TeltextBox.Text = "";
+                BalanceText.Text = "";
+                AddButton.Enabled = true;
+            }
         }
 
         private void Backbtn2_Click(object sender, EventArgs e)
@@ -53,25 +65,48 @@ namespace AGEAS_iteration1
             this.Close();
         }
 
-        private void Browserbtn2_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
 
-        private void Applybtn2_Click(object sender, EventArgs e)
-        {
-            
-                
-        }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
             Program.myController.InsertCustomer(NametextBox.Text, TeltextBox.Text, BalanceText.Value);
+            Form4_Load(sender, e);
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            
+            DGV.DataSource = Program.myController.GetCustomers();
+            DGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DGV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DGV.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Program.myController.DeleteCustomer((int)DGV.SelectedRows[0].Cells[0].Value);
+            Form4_Load(sender, e);
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            DGV.DataSource = Program.myController.GetCustomerByName(SearchTextBox.Text);
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            Program.myController.UpdateCustomer(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text, TeltextBox.Text, BalanceText.Value);
+            Form4_Load(sender, e);
+        }
+
+        private void Form4_Click(object sender, EventArgs e)
+        {
+            DGV.ClearSelection();
         }
     }
 }

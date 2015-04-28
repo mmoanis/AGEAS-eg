@@ -40,14 +40,14 @@
             this.CompanyTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,7 +142,6 @@
             this.CompanyTextBox.Size = new System.Drawing.Size(222, 20);
             this.CompanyTextBox.TabIndex = 32;
             this.CompanyTextBox.UseWaitCursor = true;
-            this.CompanyTextBox.Visible = false;
             // 
             // label2
             // 
@@ -150,11 +149,10 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(255, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 31;
-            this.label2.Text = "اسم الشركة";
+            this.label2.Text = ":اسم الشركة";
             this.label2.UseWaitCursor = true;
-            this.label2.Visible = false;
             // 
             // groupBox1
             // 
@@ -174,6 +172,27 @@
             this.groupBox1.Size = new System.Drawing.Size(341, 271);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(91, 223);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
+            this.DeleteButton.TabIndex = 34;
+            this.DeleteButton.Text = "مسح";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(180, 184);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(128, 33);
+            this.AddButton.TabIndex = 33;
+            this.AddButton.Text = "اضافة";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // SearchButton
             // 
@@ -202,34 +221,14 @@
             this.label3.TabIndex = 36;
             this.label3.Text = ":الاسم";
             // 
-            // DeleteButton
+            // DGV
             // 
-            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(91, 223);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
-            this.DeleteButton.TabIndex = 34;
-            this.DeleteButton.Text = "مسح";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(180, 184);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(128, 33);
-            this.AddButton.TabIndex = 33;
-            this.AddButton.Text = "اضافة";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(954, 398);
-            this.dataGridView1.TabIndex = 37;
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Location = new System.Drawing.Point(13, 119);
+            this.DGV.Name = "DGV";
+            this.DGV.Size = new System.Drawing.Size(954, 398);
+            this.DGV.TabIndex = 37;
             // 
             // Form5
             // 
@@ -237,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 604);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
@@ -246,9 +245,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Form5";
             this.Text = "موردين";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +273,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV;
     }
 }

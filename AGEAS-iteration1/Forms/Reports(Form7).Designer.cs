@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.Backbtn5 = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reports";
             // 
             // Backbtn5
             // 
@@ -52,24 +42,31 @@
             this.Backbtn5.UseVisualStyleBackColor = true;
             this.Backbtn5.Click += new System.EventHandler(this.Backbtn5_Click);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(1018, 363);
+            this.reportViewer1.TabIndex = 2;
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 466);
+            this.ClientSize = new System.Drawing.Size(1042, 466);
             this.ControlBox = false;
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.Backbtn5);
-            this.Controls.Add(this.label1);
             this.Name = "Form7";
             this.Text = "Form7";
+            this.Load += new System.EventHandler(this.Form7_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Backbtn5;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
