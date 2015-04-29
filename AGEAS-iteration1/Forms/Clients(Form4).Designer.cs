@@ -82,6 +82,7 @@
             this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NametextBox.Location = new System.Drawing.Point(35, 45);
             this.NametextBox.Name = "NametextBox";
+            this.NametextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.NametextBox.Size = new System.Drawing.Size(282, 20);
             this.NametextBox.TabIndex = 33;
             // 
@@ -150,6 +151,7 @@
             this.TeltextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeltextBox.Location = new System.Drawing.Point(35, 119);
             this.TeltextBox.Name = "TeltextBox";
+            this.TeltextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TeltextBox.Size = new System.Drawing.Size(282, 20);
             this.TeltextBox.TabIndex = 29;
             // 
@@ -200,6 +202,7 @@
             // 
             this.SearchTextBox.Location = new System.Drawing.Point(637, 101);
             this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SearchTextBox.Size = new System.Drawing.Size(222, 20);
             this.SearchTextBox.TabIndex = 38;
             // 

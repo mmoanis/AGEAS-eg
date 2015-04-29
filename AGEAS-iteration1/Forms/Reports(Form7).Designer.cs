@@ -34,7 +34,7 @@
             // 
             // Backbtn5
             // 
-            this.Backbtn5.Location = new System.Drawing.Point(393, 381);
+            this.Backbtn5.Location = new System.Drawing.Point(12, 431);
             this.Backbtn5.Name = "Backbtn5";
             this.Backbtn5.Size = new System.Drawing.Size(75, 23);
             this.Backbtn5.TabIndex = 1;
@@ -46,7 +46,7 @@
             // 
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1018, 363);
+            this.reportViewer1.Size = new System.Drawing.Size(1018, 413);
             this.reportViewer1.TabIndex = 2;
             // 
             // Form7

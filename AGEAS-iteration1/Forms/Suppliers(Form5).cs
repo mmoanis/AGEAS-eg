@@ -30,7 +30,7 @@ namespace AGEAS_iteration1
             PhonetextBox.MaxLength = 14;
             AddresstextBox.MaxLength = 100;
             CompanyTextBox.MaxLength = 50;
-            SearchTextBox.MaxLength = 50;
+            SearchNameTextBox.MaxLength = 50;
 
             
             DGV.AutoSize = false;
@@ -42,10 +42,7 @@ namespace AGEAS_iteration1
             DGV.AllowUserToOrderColumns = false;
             DGV.ReadOnly = true;
             DGV.ReadOnly = true;
-
-            
-
-           
+            DGV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
         }
 
         void DGV_SelectionChanged(object sender, EventArgs e)
@@ -56,6 +53,15 @@ namespace AGEAS_iteration1
                 PhonetextBox.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
                 AddresstextBox.Text = DGV.SelectedRows[0].Cells[3].Value.ToString();
                 CompanyTextBox.Text = DGV.SelectedRows[0].Cells[4].Value.ToString();
+                AddButton.Enabled = false;
+            }
+            else
+            {
+                NametextBox.Text = "";
+                PhonetextBox.Text = "";
+                AddresstextBox.Text = "";
+                CompanyTextBox.Text = "";
+                AddButton.Enabled = true;
             }
         }
 
@@ -72,6 +78,7 @@ namespace AGEAS_iteration1
         private void AddButton_Click(object sender, EventArgs e)
         {
             Program.myController.AddSuppliers(NametextBox.Text, PhonetextBox.Text, AddresstextBox.Text, CompanyTextBox.Text);
+            Form5_Load(sender,e);
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -82,6 +89,29 @@ namespace AGEAS_iteration1
             DGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             DGV.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             DGV.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            DGV.DataSource = Program.myController.GetSupplierbyName(SearchNameTextBox.Text,SearchCompanyTextBox.Text);
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            Program.myController.updateSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text,
+                PhonetextBox.Text, AddresstextBox.Text, CompanyTextBox.Text);
+            Form5_Load(sender, e);
+        }
+
+        private void Form5_Click(object sender, EventArgs e)
+        {
+            DGV.ClearSelection();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Program.myController.DeleteSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()));
+            Form5_Load(sender,e);
         }
       
     }

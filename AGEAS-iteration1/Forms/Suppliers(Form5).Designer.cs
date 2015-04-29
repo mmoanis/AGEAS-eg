@@ -43,9 +43,11 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
+            this.SearchCompanyTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             // Backbtn3
             // 
             this.Backbtn3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Backbtn3.Location = new System.Drawing.Point(13, 545);
+            this.Backbtn3.Location = new System.Drawing.Point(12, 606);
             this.Backbtn3.Name = "Backbtn3";
             this.Backbtn3.Size = new System.Drawing.Size(128, 33);
             this.Backbtn3.TabIndex = 1;
@@ -76,10 +78,12 @@
             this.UpdateButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Location = new System.Drawing.Point(6, 184);
             this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.UpdateButton.Size = new System.Drawing.Size(128, 33);
             this.UpdateButton.TabIndex = 10;
             this.UpdateButton.Text = "تعديل";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // NameLabel
             // 
@@ -106,6 +110,7 @@
             this.NametextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NametextBox.Location = new System.Drawing.Point(6, 29);
             this.NametextBox.Name = "NametextBox";
+            this.NametextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.NametextBox.Size = new System.Drawing.Size(222, 20);
             this.NametextBox.TabIndex = 26;
             // 
@@ -114,6 +119,7 @@
             this.PhonetextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhonetextBox.Location = new System.Drawing.Point(6, 67);
             this.PhonetextBox.Name = "PhonetextBox";
+            this.PhonetextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.PhonetextBox.Size = new System.Drawing.Size(222, 20);
             this.PhonetextBox.TabIndex = 28;
             // 
@@ -131,6 +137,7 @@
             // 
             this.AddresstextBox.Location = new System.Drawing.Point(6, 105);
             this.AddresstextBox.Name = "AddresstextBox";
+            this.AddresstextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.AddresstextBox.Size = new System.Drawing.Size(222, 20);
             this.AddresstextBox.TabIndex = 30;
             // 
@@ -139,6 +146,7 @@
             this.CompanyTextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyTextBox.Location = new System.Drawing.Point(6, 143);
             this.CompanyTextBox.Name = "CompanyTextBox";
+            this.CompanyTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CompanyTextBox.Size = new System.Drawing.Size(222, 20);
             this.CompanyTextBox.TabIndex = 32;
             this.CompanyTextBox.UseWaitCursor = true;
@@ -178,16 +186,19 @@
             this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteButton.Location = new System.Drawing.Point(91, 223);
             this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DeleteButton.Size = new System.Drawing.Size(128, 33);
             this.DeleteButton.TabIndex = 34;
             this.DeleteButton.Text = "مسح";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Location = new System.Drawing.Point(180, 184);
             this.AddButton.Name = "AddButton";
+            this.AddButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.AddButton.Size = new System.Drawing.Size(128, 33);
             this.AddButton.TabIndex = 33;
             this.AddButton.Text = "اضافة";
@@ -197,19 +208,22 @@
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(562, 63);
+            this.SearchButton.Location = new System.Drawing.Point(562, 77);
             this.SearchButton.Name = "SearchButton";
+            this.SearchButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SearchButton.Size = new System.Drawing.Size(128, 33);
             this.SearchButton.TabIndex = 35;
             this.SearchButton.Text = "بحث";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // SearchTextBox
+            // SearchNameTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(696, 70);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(222, 20);
-            this.SearchTextBox.TabIndex = 34;
+            this.SearchNameTextBox.Location = new System.Drawing.Point(696, 70);
+            this.SearchNameTextBox.Name = "SearchNameTextBox";
+            this.SearchNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SearchNameTextBox.Size = new System.Drawing.Size(222, 20);
+            this.SearchNameTextBox.TabIndex = 34;
             // 
             // label3
             // 
@@ -225,27 +239,51 @@
             // 
             this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV.Location = new System.Drawing.Point(13, 119);
+            this.DGV.Location = new System.Drawing.Point(12, 122);
             this.DGV.Name = "DGV";
             this.DGV.Size = new System.Drawing.Size(954, 398);
             this.DGV.TabIndex = 37;
+            // 
+            // SearchCompanyTextBox
+            // 
+            this.SearchCompanyTextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchCompanyTextBox.Location = new System.Drawing.Point(696, 96);
+            this.SearchCompanyTextBox.Name = "SearchCompanyTextBox";
+            this.SearchCompanyTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SearchCompanyTextBox.Size = new System.Drawing.Size(222, 20);
+            this.SearchCompanyTextBox.TabIndex = 39;
+            this.SearchCompanyTextBox.UseWaitCursor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(924, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 38;
+            this.label4.Text = ":اسم الشركة";
+            this.label4.UseWaitCursor = true;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 604);
+            this.ClientSize = new System.Drawing.Size(1354, 651);
             this.ControlBox = false;
+            this.Controls.Add(this.SearchCompanyTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.SearchNameTextBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn3);
             this.Controls.Add(this.label1);
             this.Name = "Form5";
             this.Text = "موردين";
             this.Load += new System.EventHandler(this.Form5_Load);
+            this.Click += new System.EventHandler(this.Form5_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
@@ -269,10 +307,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.TextBox SearchNameTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.TextBox SearchCompanyTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

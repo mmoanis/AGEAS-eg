@@ -62,6 +62,7 @@
             // 
             this.UsernametextBox.Location = new System.Drawing.Point(140, 182);
             this.UsernametextBox.Name = "UsernametextBox";
+            this.UsernametextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.UsernametextBox.Size = new System.Drawing.Size(169, 20);
             this.UsernametextBox.TabIndex = 2;
             // 
@@ -69,6 +70,7 @@
             // 
             this.PasswordtextBox.Location = new System.Drawing.Point(140, 223);
             this.PasswordtextBox.Name = "PasswordtextBox";
+            this.PasswordtextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.PasswordtextBox.Size = new System.Drawing.Size(169, 20);
             this.PasswordtextBox.TabIndex = 3;
             // 

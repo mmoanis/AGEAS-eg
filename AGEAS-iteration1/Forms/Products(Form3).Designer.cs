@@ -28,38 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.Backbtn1 = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.SupplierLabel = new System.Windows.Forms.Label();
-            this.QuantitytextBox = new System.Windows.Forms.TextBox();
             this.TypetextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(652, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "بضائع";
             // 
             // Backbtn1
             // 
@@ -77,10 +68,12 @@
             this.UpdateButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Location = new System.Drawing.Point(37, 147);
             this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.UpdateButton.Size = new System.Drawing.Size(128, 33);
             this.UpdateButton.TabIndex = 6;
             this.UpdateButton.Text = "تعديل";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // TypeLabel
             // 
@@ -122,17 +115,11 @@
             this.SupplierLabel.TabIndex = 14;
             this.SupplierLabel.Text = ":المورد";
             // 
-            // QuantitytextBox
-            // 
-            this.QuantitytextBox.Location = new System.Drawing.Point(37, 83);
-            this.QuantitytextBox.Name = "QuantitytextBox";
-            this.QuantitytextBox.Size = new System.Drawing.Size(222, 20);
-            this.QuantitytextBox.TabIndex = 18;
-            // 
             // TypetextBox
             // 
             this.TypetextBox.Location = new System.Drawing.Point(37, 20);
             this.TypetextBox.Name = "TypetextBox";
+            this.TypetextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TypetextBox.Size = new System.Drawing.Size(222, 20);
             this.TypetextBox.TabIndex = 22;
             // 
@@ -156,9 +143,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.DeleteButton);
             this.groupBox1.Controls.Add(this.AddButton);
-            this.groupBox1.Controls.Add(this.QuantitytextBox);
             this.groupBox1.Controls.Add(this.UpdateButton);
             this.groupBox1.Controls.Add(this.TypeLabel);
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -173,21 +160,32 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(37, 85);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.numericUpDown2.Size = new System.Drawing.Size(222, 20);
+            this.numericUpDown2.TabIndex = 33;
+            // 
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteButton.Location = new System.Drawing.Point(116, 186);
             this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DeleteButton.Size = new System.Drawing.Size(128, 33);
             this.DeleteButton.TabIndex = 32;
             this.DeleteButton.Text = "مسح";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Location = new System.Drawing.Point(205, 147);
             this.AddButton.Name = "AddButton";
+            this.AddButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.AddButton.Size = new System.Drawing.Size(128, 33);
             this.AddButton.TabIndex = 26;
             this.AddButton.Text = "اضافة";
@@ -206,18 +204,21 @@
             // 
             this.SearchTextBox.Location = new System.Drawing.Point(688, 90);
             this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SearchTextBox.Size = new System.Drawing.Size(222, 20);
             this.SearchTextBox.TabIndex = 29;
             // 
-            // button1
+            // SearchButton
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(554, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 33);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "بحث";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(554, 83);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.SearchButton.Size = new System.Drawing.Size(128, 33);
+            this.SearchButton.TabIndex = 30;
+            this.SearchButton.Text = "بحث";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // label2
             // 
@@ -229,6 +230,16 @@
             this.label2.TabIndex = 31;
             this.label2.Text = ":النوع";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(652, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "بضائع";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -236,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(1354, 604);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.groupBox1);
@@ -246,9 +257,11 @@
             this.Name = "Form3";
             this.Text = "بضائع";
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.Click += new System.EventHandler(this.Form3_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,23 +270,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Backbtn1;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label TypeLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label QuantityLabel;
         private System.Windows.Forms.Label SupplierLabel;
-        private System.Windows.Forms.TextBox QuantitytextBox;
         private System.Windows.Forms.TextBox TypetextBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label1;
     }
 }

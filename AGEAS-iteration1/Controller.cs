@@ -8,6 +8,7 @@ namespace AGEAS_iteration1
 {
     public class Controller
     {
+        #region Fields
         public Form1 F1;
         public Form2 F2;
         public Form3 F3;
@@ -19,7 +20,9 @@ namespace AGEAS_iteration1
         private static Controller controller;
 
         private DBManager dbManager;
+        #endregion Fields
 
+        #region PrivateMethods
         /// <summary>
         /// 
         /// </summary>
@@ -28,32 +31,164 @@ namespace AGEAS_iteration1
             dbManager = DBManager.Instance;
         }
 
-        /// <summary>
-        /// Gets the instance of the controller
-        /// </summary>
-        public static Controller Instance
-        {
-            get
-            {
-                if (controller == null)
-                    controller = new Controller();
+        #endregion PrivateMethods
 
-                return controller;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product_id"></param>
+        /// <param name="purchase_id"></param>
+        /// <param name="quantity"></param>
+        public void AddProductPurchase(int product_id, int purchase_id, int quantity)
+        {
+            try
+            {
+                dbManager.InsertProductPurchase(product_id, purchase_id, quantity);
+                F6.ShowMessage("تم  ادخال بيانات المعاملة بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
             }
         }
 
-        public Form1 StartForm1()
+        /// <summary>
+        /// Add a supplier to the database
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="phone"></param>
+        /// <param name="address"></param>
+        /// <param name="company"></param>
+        public void AddSuppliers(string name, string phone, string address, string company)
         {
-            F1 = new Form1();
-            F1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            return F1;
+            try
+            {
+                dbManager.InsertSupplier(name, phone, address, company);
+                F5.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+            }
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="supplier_id"></param>
+        /// <param name="discount"></param>
+        /// <param name="value"></param>
+        /// <param name="paid"></param>
+        /// <param name="onInstallment"></param>
+        public void AddTransaction(int supplier_id, decimal discount, decimal value, decimal paid, bool onInstallment)
+        {
+            try
+            {
+                dbManager.InsertPurchase(supplier_id, onInstallment, discount, value, paid);
+                F6.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Deletes a specific customer
+        /// </summary>
+        /// <param name="customer_id"></param>
+        public void DeleteCustomer(int customer_id)
+        {
+
+            try
+            {
+                dbManager.deletecustomer(customer_id);
+                F4.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F4.ShowMessage(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// Delete product from the database
+        /// </summary>
+        /// <param name="product_id"></param>
+        public void DeleteProduct(int product_id)
+        {
+
+            try
+            {
+                dbManager.deleteProduct(product_id);
+                F3.ShowMessage("تم مسح البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F3.ShowMessage(e.Message);
+            }
+        }
+
+        public void DeleteProductPurchase(int product_purchase_id)
+        {
+            try
+            {
+                dbManager.deleteProductPurchase(product_purchase_id);
+                F6.ShowMessage("تم حذف البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Delete Supplier from database
+        /// </summary>
+        /// <param name="Supplier_ID"></param>
+        /// <returns></returns>
+        public DataTable DeleteSupplier(int Supplier_ID)
+        {
+            try
+            {
+                return dbManager.deletesupplier(Supplier_ID);
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="purchase_id"></param>
+        public void DeleteTransaction(int purchase_id)
+        {
+            try
+            {
+                dbManager.deletePurchase(purchase_id);
+                F6.ShowMessage("تم حذف البيانات بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pw"></param>
+        /// <returns></returns>
         public bool Form1LoginButtonPressed(string name, string pw)
         {
             F2 = new Form2();
             F2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            
+
 
             if (name == AGEAS_iteration1.Properties.Settings.Default.adminUserName && pw == AGEAS_iteration1.Properties.Settings.Default.adminPassword)
             {
@@ -71,23 +206,12 @@ namespace AGEAS_iteration1
             {
                 return false;
             }
-            
+
         }
 
-        public void Form2LogoutButtonPressed()
-        {
-            F2.Close();
-            F1.Show();
-        }
-
-        public void Form2ProductsButtonPressed()
-        {
-            F3 = new Form3();
-            F3.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            F3.FormClosed += (s, args) => F2.Show();
-            F3.ShowDialog();
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Form2CustomersButtonPressed()
         {
             F4 = new Form4();
@@ -96,6 +220,29 @@ namespace AGEAS_iteration1
             F4.ShowDialog();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Form2LogoutButtonPressed()
+        {
+            F2.Close();
+            F1.Show();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Form2ProductsButtonPressed()
+        {
+            F3 = new Form3();
+            F3.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            F3.FormClosed += (s, args) => F2.Show();
+            F3.ShowDialog();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public void Form2SuppliersButtonPressed()
         {
             F5 = new Form5();
@@ -104,12 +251,121 @@ namespace AGEAS_iteration1
             F5.ShowDialog();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Form2TransactionsButtonPressed()
         {
             F6 = new Form6();
             F6.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F6.FormClosed += (s, args) => F2.Show();
             F6.ShowDialog();
+        }
+
+        /// <summary>
+        /// Search for a specific customer
+        /// </summary>
+        /// <param name="Customer_Name"></param>
+        /// <returns></returns>
+        public DataTable GetCustomerByName(string Customer_Name)
+        {
+            try
+            {
+                return dbManager.getCustomerByName(Customer_Name);
+            }
+            catch (Exception e)
+            {
+                F4.ShowMessage("فشلت عملية البحث");
+                return new DataTable();
+            }
+        }
+
+        /// <summary>
+        /// Return table of existing customers in database
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetCustomers()
+        {
+            try
+            {
+                return dbManager.getCustomer();
+            }
+            catch (Exception e)
+            {
+                F4.ShowMessage(e.Message);
+                return new DataTable();
+            }
+        }
+
+        /// <summary>
+        /// Get a table of products in the database
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetProductsList()
+        {
+            try
+            {
+                return dbManager.getProduct();
+
+            }
+            catch (Exception e)
+            {
+                F3.ShowMessage(e.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPurchases()
+        {
+            try
+            {
+                return dbManager.getPurchase();
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return new DataTable();
+            }
+        }
+
+        /// <summary>
+        /// Search for supplier inside the database
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Company"></param>
+        /// <returns></returns>
+        public DataTable GetSupplierbyName(string Name, string Company)
+        {
+            try
+            {
+                return dbManager.getSupplierByNameCompany(Name, Company);
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return new DataTable();
+            }
+        }
+
+        /// <summary>
+        /// Returns a table of the suppliers in the database
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetSuppliers()
+        {
+            try
+            {
+                return dbManager.getSuppliers();
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return null;
+            }
         }
 
         /// <summary>
@@ -131,6 +387,12 @@ namespace AGEAS_iteration1
             }
         }
 
+        /// <summary>
+        /// Insert a product to the database
+        /// </summary>
+        /// <param name="supplier_id"></param>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
         public void InsertProduct(int supplier_id, string name, decimal price)
         {
             try
@@ -144,103 +406,93 @@ namespace AGEAS_iteration1
             }
         }
 
-        public void AddSuppliers(string name, string phone, string address, string company)
+        /// <summary>
+        /// Gets the instance of the controller
+        /// </summary>
+        public static Controller Instance
         {
-            try
+            get
             {
-                dbManager.InsertSupplier(name, phone, address, company);
-                F5.ShowMessage("تم ادخال البيانات بنجاح");
-            }
-            catch (Exception e)
-            {
-                F5.ShowMessage(e.Message);
+                if (controller == null)
+                    controller = new Controller();
+
+                return controller;
             }
         }
 
-        public void AddTransactions(string p1, string p2, string p3)
+        /// <summary>
+        /// Search for a certain product inside the database
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        public DataTable SearchProductbyName(string Name)
         {
             try
             {
-                //dbManager.InsertProduct(supplier_id, name, price);
-                //F6.ShowMessage("تم ادخال البيانات بنجاح");
-            }
-            catch (Exception e)
-            {
-                //F3.ShowMessage(e.Message);
-            }
-        }
-
-        public void DeleteProduct(int product_id)
-        {
-
-            try
-            {
-                dbManager.deleteProduct(product_id);
-                F3.ShowMessage("تم ادخال البيانات بنجاح");
+                return dbManager.getProductByName(Name);
             }
             catch (Exception e)
             {
                 F3.ShowMessage(e.Message);
-            }
-
-        }
-
-        public void DeleteCustomer(int customer_id)
-        {
-
-            try
-            {
-                dbManager.deletecustomer(customer_id);
-                F4.ShowMessage("تم ادخال البيانات بنجاح");
-            }
-            catch (Exception e)
-            {
-                F4.ShowMessage(e.Message);
-            }
-
-        }
-
-        public DataTable GetCustomers()
-        {
-            try
-            {
-                return dbManager.getCustomer();
-            }
-            catch (Exception e)
-            {
-                F4.ShowMessage(e.Message);
                 return null;
             }
         }
 
-        public DataTable GetCustomerByName(string Customer_Name)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public DataTable SearchPurchaseByDateExact(DateTime date)
         {
             try
             {
-                return dbManager.getCustomerByName(Customer_Name);
+                return dbManager.getPurchaseByDateExact(date);
             }
             catch (Exception e)
             {
-                F4.ShowMessage("فشلت عملية البحث");
-                return null;
+                F6.ShowMessage(e.Message);
+                return new DataTable();
             }
         }
 
-
-
-        public DataTable GetSuppliers()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="begin"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
+        public DataTable SearchPurchaseByDateInterval(DateTime begin, DateTime end)
         {
             try
             {
-                return dbManager.getSuppliers();
+                return dbManager.getPurchaseByDateInterval(begin, end);
             }
             catch (Exception e)
             {
-                F5.ShowMessage(e.Message);
-                return null;
+                F6.ShowMessage(e.Message);
+                return new DataTable();
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Form1 StartForm1()
+        {
+            F1 = new Form1();
+            F1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            return F1;
+        }
+
+        /// <summary>
+        /// Updates the data of an exisiting customer
+        /// </summary>
+        /// <param name="customer_id"></param>
+        /// <param name="name"></param>
+        /// <param name="phone"></param>
+        /// <param name="balance"></param>
         public void UpdateCustomer(int customer_id, string name, string phone, decimal balance)
         {
             try
@@ -251,6 +503,90 @@ namespace AGEAS_iteration1
             catch (Exception e)
             {
                 F4.ShowMessage(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Update the information
+        /// </summary>
+        /// <param name="product_purchase_id"></param>
+        /// <param name="product_id"></param>
+        /// <param name="purchase_id"></param>
+        /// <param name="quantity"></param>
+        public void UpdateProductPurchase(int product_purchase_id, int product_id, int purchase_id, int quantity)
+        {
+            try
+            {
+                dbManager.UpdateProductPurchase(product_purchase_id, product_id, purchase_id, quantity);
+                F6.ShowMessage("تم تحديث بيانات المعاملة بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// updates the current information of a selcted product
+        /// </summary>
+        /// <param name="Product_ID"></param>
+        /// <param name="Supplier_ID"></param>
+        /// <param name="Name"></param>
+        /// <param name="Price"></param>
+        /// <returns></returns>
+        public DataTable UpdateProuct(int Product_ID, int Supplier_ID, string Name, decimal Price)
+        {
+            try
+            {
+                return dbManager.UpdateProduct(Product_ID, Supplier_ID, Name, Price);
+            }
+            catch (Exception e)
+            {
+                F3.ShowMessage(e.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update the data of a supplier currently in the database
+        /// </summary>
+        /// <param name="Supplier_ID"></param>
+        /// <param name="Name"></param>
+        /// <param name="Phone"></param>
+        /// <param name="Address"></param>
+        /// <param name="Company"></param>
+        /// <returns></returns>
+        public DataTable updateSupplier(int Supplier_ID, string Name, string Phone, string Address, string Company)
+        {
+            try
+            {
+                return dbManager.UpdateSupplier(Supplier_ID, Name, Phone, Address, Company);
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="purchase_id"></param>
+        /// <param name="discount"></param>
+        /// <param name="value"></param>
+        /// <param name="paid"></param>
+        /// <param name="onInstallment"></param>
+        public void UpdateTransaction(int purchase_id, decimal discount, decimal value, decimal paid, bool onInstallment)
+        {
+            try
+            {
+                dbManager.UpdatePurchase(purchase_id, onInstallment, discount, value, paid);
+                F6.ShowMessage("تم تحديث بيانات المعاملة بنجاح");
+            }
+            catch (Exception e)
+            {
+                F6.ShowMessage(e.Message);
             }
         }
     }

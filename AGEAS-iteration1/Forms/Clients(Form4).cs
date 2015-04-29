@@ -38,6 +38,7 @@ namespace AGEAS_iteration1
             DGV.AllowUserToDeleteRows = false;
             DGV.AllowUserToOrderColumns = false;
             DGV.ReadOnly = true;
+            DGV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             
            
         }
@@ -79,7 +80,6 @@ namespace AGEAS_iteration1
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            
             DGV.DataSource = Program.myController.GetCustomers();
             DGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             DGV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
