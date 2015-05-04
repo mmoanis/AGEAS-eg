@@ -75,5 +75,17 @@ namespace AGEAS_iteration1.Properties {
                 return ((string)(this["AGEASConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"C:\\Program Files\\Microsoft SQL Serv" +
+            "er\\MSSQL11.MSSQLSERVER\\MSSQL\\DATA\\AGEAS.mdf\";Integrated Security=True;Connect Ti" +
+            "meout=30")]
+        public string AGEASConnectionString1 {
+            get {
+                return ((string)(this["AGEASConnectionString1"]));
+            }
+        }
     }
 }

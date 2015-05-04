@@ -71,7 +71,7 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Program.myController.AddTransaction((int)comboBox2.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
+            Program.myController.AddTransaction((int)comboBox1.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
         }
 

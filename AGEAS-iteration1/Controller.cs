@@ -393,11 +393,11 @@ namespace AGEAS_iteration1
         /// <param name="supplier_id"></param>
         /// <param name="name"></param>
         /// <param name="price"></param>
-        public void InsertProduct(int supplier_id, string name, decimal price)
+        public void InsertProduct(int supplier_id, string name, decimal price, int quantity)
         {
             try
             {
-                dbManager.InsertProduct(supplier_id, name, price);
+                dbManager.InsertProduct(supplier_id, name, price, quantity);
                 F3.ShowMessage("تم ادخال البيانات بنجاح");
             }
             catch (Exception e)

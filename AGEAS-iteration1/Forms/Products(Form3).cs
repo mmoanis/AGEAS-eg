@@ -84,7 +84,7 @@ namespace AGEAS_iteration1
         private void AddButton_Click(object sender, EventArgs e)
         {
             int supplier_ID = (int) comboBox1.SelectedValue;
-            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value);
+            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
             Form3_Load(sender, e);
             
         }
@@ -93,7 +93,7 @@ namespace AGEAS_iteration1
         {
             int supplier_ID = (int)comboBox1.SelectedValue;
             int product_ID = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value);
+            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
             Form3_Load(sender, e);
         }
 
