@@ -93,6 +93,22 @@ namespace AGEAS_iteration1
             }
         }
 
+        public bool BackUpDatabase(string path)
+        {
+            try
+            {
+                // FIXME: run as admin may be
+                path += "\\AGEAS.BAK";
+                System.IO.File.Create(path);
+                dbManager.backUPDatabase(path);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Deletes a specific customer
         /// </summary>
@@ -316,7 +332,25 @@ namespace AGEAS_iteration1
         }
 
         /// <summary>
-        /// 
+        /// Get the purchase details for a specific purchase
+        /// </summary>
+        /// <param name="purchase_id"></param>
+        /// <returns></returns>
+        public DataTable GetProductsPurchase(int purchase_id)
+        {
+            try
+            {
+                return dbManager.getProduct_Purchase(purchase_id);
+            }
+            catch (Exception e)
+            {
+                F3.ShowMessage(e.Message);
+                return null;
+            }
+        } 
+
+        /// <summary>
+        /// Get all purchases.
         /// </summary>
         /// <returns></returns>
         public DataTable GetPurchases()
@@ -324,6 +358,19 @@ namespace AGEAS_iteration1
             try
             {
                 return dbManager.getPurchase();
+            }
+            catch (Exception e)
+            {
+                F5.ShowMessage(e.Message);
+                return new DataTable();
+            }
+        }
+
+        public DataTable GetPurchasesByCustomer(int customer_id)
+        {
+            try
+            {
+                return dbManager.getPurchaseByCustomer(customer_id);
             }
             catch (Exception e)
             {

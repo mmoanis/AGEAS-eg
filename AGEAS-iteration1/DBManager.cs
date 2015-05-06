@@ -31,6 +31,22 @@ namespace AGEAS_iteration1
             }
         }
 
+        public void backUPDatabase(string path)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("backUpDatabase", Conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable Table = new DataTable();
+                cmd.Parameters.AddWithValue("@Path", path);
+                adapter.Fill(Table);
+            }
+            catch (Exception EX)
+            {
+                throw (EX);
+            }
+        }
     
     
         public void Open()

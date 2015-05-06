@@ -46,30 +46,20 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.ClientSearchTextBox = new System.Windows.Forms.ComboBox();
-            this.ProductSearchTextBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReceivedValueTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ValueTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscounttextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -268,26 +258,17 @@
             this.DGV.Name = "DGV";
             this.DGV.Size = new System.Drawing.Size(985, 427);
             this.DGV.TabIndex = 20;
+            this.DGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_RowHeaderMouseClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(840, 27);
+            this.label5.Location = new System.Drawing.Point(840, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = ":العميل";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(843, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 20);
-            this.label6.TabIndex = 22;
-            this.label6.Text = ":المنتج";
             // 
             // label7
             // 
@@ -315,21 +296,11 @@
             // 
             this.ClientSearchTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClientSearchTextBox.FormattingEnabled = true;
-            this.ClientSearchTextBox.Location = new System.Drawing.Point(606, 26);
+            this.ClientSearchTextBox.Location = new System.Drawing.Point(602, 32);
             this.ClientSearchTextBox.Name = "ClientSearchTextBox";
             this.ClientSearchTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ClientSearchTextBox.Size = new System.Drawing.Size(220, 21);
             this.ClientSearchTextBox.TabIndex = 28;
-            // 
-            // ProductSearchTextBox
-            // 
-            this.ProductSearchTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductSearchTextBox.FormattingEnabled = true;
-            this.ProductSearchTextBox.Location = new System.Drawing.Point(606, 60);
-            this.ProductSearchTextBox.Name = "ProductSearchTextBox";
-            this.ProductSearchTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ProductSearchTextBox.Size = new System.Drawing.Size(220, 21);
-            this.ProductSearchTextBox.TabIndex = 29;
             // 
             // label8
             // 
@@ -340,69 +311,6 @@
             this.label8.Size = new System.Drawing.Size(75, 20);
             this.label8.TabIndex = 30;
             this.label8.Text = ":التاريخ الى";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(102, 103);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(128, 33);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "اضافة منتج";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(1030, 479);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 142);
-            this.groupBox2.TabIndex = 32;
-            this.groupBox2.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(246, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 20);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "الكمية";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(11, 56);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.numericUpDown1.Size = new System.Drawing.Size(219, 20);
-            this.numericUpDown1.TabIndex = 45;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(247, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 20);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "منتج:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(10, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox2.Size = new System.Drawing.Size(220, 21);
-            this.comboBox2.TabIndex = 45;
             // 
             // dateTimePicker1
             // 
@@ -431,8 +339,6 @@
             this.groupBox3.Controls.Add(this.SearchButton);
             this.groupBox3.Controls.Add(this.ClientSearchTextBox);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.ProductSearchTextBox);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(438, 12);
@@ -442,20 +348,6 @@
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "خيارات البحث";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "اسم العميل",
-            "تاريخ التعامل",
-            "اسم المنتج",
-            "كل ما سبق"});
-            this.comboBox3.Location = new System.Drawing.Point(6, 63);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(128, 21);
-            this.comboBox3.TabIndex = 35;
             // 
             // label1
             // 
@@ -467,6 +359,19 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "بحث ب";
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "اسم العميل",
+            "تاريخ التعامل",
+            "كل ما سبق"});
+            this.comboBox3.Location = new System.Drawing.Point(6, 63);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(128, 21);
+            this.comboBox3.TabIndex = 35;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,7 +379,6 @@
             this.ClientSize = new System.Drawing.Size(1354, 633);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn4);
@@ -488,9 +392,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ValueTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscounttextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -514,20 +415,12 @@
         private System.Windows.Forms.NumericUpDown ReceivedValueTextBox;
         private System.Windows.Forms.NumericUpDown ValueTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ComboBox ClientSearchTextBox;
-        private System.Windows.Forms.ComboBox ProductSearchTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;

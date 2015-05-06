@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using AGEAS_iteration1.Forms;
 
 namespace AGEAS_iteration1
 {
@@ -64,6 +65,12 @@ namespace AGEAS_iteration1
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
             Program.myController.Form2LogoutButtonPressed();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Preferences preferences = new Preferences();
+            preferences.ShowDialog();
         }
     }
 }

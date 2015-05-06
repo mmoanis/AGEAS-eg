@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using AGEAS_iteration1.Forms;
 
 namespace AGEAS_iteration1
 {
@@ -45,12 +46,11 @@ namespace AGEAS_iteration1
             if (DGV.SelectedRows.Count > 0)
             {
                 comboBox1.SelectedValue = DGV.SelectedRows[0].Cells[0].Value.ToString();
-                dateTimePicker3.Text = DGV.SelectedRows[0].Cells[3].Value.ToString();
+                dateTimePicker3.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
                 DiscounttextBox.Value = (decimal) DGV.SelectedRows[0].Cells[4].Value;
                 ValueTextBox.Value = (decimal)DGV.SelectedRows[0].Cells[5].Value;
                 ReceivedValueTextBox.Value = (decimal)DGV.SelectedRows[0].Cells[6].Value;
                 AddButton.Enabled = false;
-                groupBox2.Visible = true;
             }
             else
             {
@@ -60,7 +60,6 @@ namespace AGEAS_iteration1
                 ValueTextBox.Value = 0;
                 ReceivedValueTextBox.Value = 0;
                 AddButton.Enabled = true;
-                groupBox2.Visible = false;
             }
         }
 
@@ -73,6 +72,12 @@ namespace AGEAS_iteration1
         {
             Program.myController.AddTransaction((int)comboBox1.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
+
+            // show the add transaction details
+            TransactionDetails detailsForm = new TransactionDetails(true, (int)DGV.Rows[DGV.RowCount - 1].Cells[0].Value);
+            detailsForm.ShowDialog(this);
+
+            DGV.ClearSelection();
         }
 
         private void Form6_Load(object sender, EventArgs e)
@@ -85,9 +90,6 @@ namespace AGEAS_iteration1
             ClientSearchTextBox.DataSource = customers;
             ClientSearchTextBox.ValueMember = "الرقم";
             ClientSearchTextBox.DisplayMember = "الاسم";
-            comboBox2.DataSource = Program.myController.GetProductsList();
-            comboBox2.ValueMember = "الرقم";
-            comboBox2.DisplayMember = "الاسم";
         }
 
         private void Form6_Click(object sender, EventArgs e)
@@ -95,30 +97,49 @@ namespace AGEAS_iteration1
 
         }
 
+        /// <summary>
+        /// Delete a transaction button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-
+            Program.myController.DeleteTransaction((int)DGV.SelectedRows[0].Cells[0].Value);
         }
 
+        /// <summary>
+        /// Update a transaction button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             Program.myController.UpdateTransaction(Convert.ToInt32(DGV.SelectedRows[0].Cells[0].Value), DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
         }
 
+        /// <summary>
+        /// Search for a transaction.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             switch (comboBox3.SelectedIndex)
             {
                 case 0:
+                    // customer name
+                    DGV.DataSource = Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue);
                     break;
                 case 1:
-                    break;
-                case 2:
+                    // date
+                    DGV.DataSource = Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value);
                     break;
                 case 3:
+                    //Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value).AsEnumerable().Where(o => o in Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue).AsEnumerable());
                     break;
                 default:
+                    MessageBox.Show("لابد من اختيار طريقة البحث");
                     break;
             }
         }
@@ -133,9 +154,10 @@ namespace AGEAS_iteration1
             MessageBox.Show(p);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Program.myController.AddProductPurchase((int) comboBox2.SelectedValue, (int) DGV.SelectedRows[0].Cells[0].Value, (int) numericUpDown1.Value);
+            TransactionDetails details = new TransactionDetails(false, (int) DGV.SelectedRows[0].Cells[0].Value);
+            details.ShowDialog(this);
         }
     }
 }

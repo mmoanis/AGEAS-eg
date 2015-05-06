@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AGEASDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AGEASDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AGEASDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="DBManager.cs" />
@@ -103,11 +108,23 @@
     <Compile Include="Forms\Clients%28Form4%29.Designer.cs">
       <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Preferences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preferences.Designer.cs">
+      <DependentUpon>Preferences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Suppliers%28Form5%29.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Suppliers%28Form5%29.Designer.cs">
       <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransactionDetails.Designer.cs">
+      <DependentUpon>TransactionDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Transactions%28Form6%29.cs">
       <SubType>Form</SubType>
@@ -136,8 +153,17 @@
       <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfitReport.rdlc" />
+    <EmbeddedResource Include="Forms\CustomerReport.rdlc" />
+    <EmbeddedResource Include="Forms\ProfitReportAnnual.rdlc" />
+    <EmbeddedResource Include="Forms\ProfitReportDaily.rdlc" />
+    <EmbeddedResource Include="Forms\Preferences.resx">
+      <DependentUpon>Preferences.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Suppliers%28Form5%29.resx">
       <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransactionDetails.resx">
+      <DependentUpon>TransactionDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Transactions%28Form6%29.resx">
       <DependentUpon>Transactions%28Form6%29.cs</DependentUpon>
@@ -165,6 +191,17 @@
     </None>
     <None Include="AGEASDataSet.xss">
       <DependentUpon>AGEASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AGEASDataSet1.xsc">
+      <DependentUpon>AGEASDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AGEASDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AGEASDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AGEASDataSet1.xss">
+      <DependentUpon>AGEASDataSet1.xsd</DependentUpon>
     </None>
     <None Include="app.config" />
     <None Include="ClassDiagram3.cd" />

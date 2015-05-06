@@ -32,24 +32,24 @@ namespace AGEAS_iteration1.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string adminPassword {
             get {
                 return ((string)(this["adminPassword"]));
             }
+            set {
+                this["adminPassword"] = value;
+            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("user")]
         public string username {
             get {
                 return ((string)(this["username"]));
-            }
-            set {
-                this["username"] = value;
             }
         }
         
@@ -68,8 +68,17 @@ namespace AGEAS_iteration1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\AGEAS.mdf;Integrated" +
-            " Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=.;Database=AGEAS;Integrated Security=True;Connect Timeout=30")]
+        public string AGEASConnectionString1 {
+            get {
+                return ((string)(this["AGEASConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=.;Database=AGEAS;Integrated Security=True;Connect Timeout=30")]
         public string AGEASConnectionString {
             get {
                 return ((string)(this["AGEASConnectionString"]));
@@ -79,12 +88,10 @@ namespace AGEAS_iteration1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"C:\\Program Files\\Microsoft SQL Serv" +
-            "er\\MSSQL11.MSSQLSERVER\\MSSQL\\DATA\\AGEAS.mdf\";Integrated Security=True;Connect Ti" +
-            "meout=30")]
-        public string AGEASConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=.;Database=AGEAS;Integrated Security=True;Connect Timeout=30")]
+        public string AGEASConnectionString2 {
             get {
-                return ((string)(this["AGEASConnectionString1"]));
+                return ((string)(this["AGEASConnectionString2"]));
             }
         }
     }
