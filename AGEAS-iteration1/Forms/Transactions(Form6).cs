@@ -104,7 +104,8 @@ namespace AGEAS_iteration1
         /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Program.myController.DeleteTransaction((int)DGV.SelectedRows[0].Cells[0].Value);
+            if (DGV.SelectedRows.Count != 0)
+                Program.myController.DeleteTransaction((int)DGV.SelectedRows[0].Cells[0].Value);
         }
 
         /// <summary>
