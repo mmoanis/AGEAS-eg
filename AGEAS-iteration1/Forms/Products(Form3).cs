@@ -83,6 +83,7 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            // TODO: check the input
             int supplier_ID = (int) comboBox1.SelectedValue;
             Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
             Form3_Load(sender, e);
@@ -91,10 +92,13 @@ namespace AGEAS_iteration1
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            int supplier_ID = (int)comboBox1.SelectedValue;
-            int product_ID = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
-            Form3_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                int supplier_ID = (int)comboBox1.SelectedValue;
+                int product_ID = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
+                Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
+                Form3_Load(sender, e);
+            }
         }
 
         private void Form3_Click(object sender, EventArgs e)
@@ -104,8 +108,11 @@ namespace AGEAS_iteration1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Program.myController.DeleteProduct(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()));
-            Form3_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.DeleteProduct(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()));
+                Form3_Load(sender, e);
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)

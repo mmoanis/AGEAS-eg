@@ -89,8 +89,11 @@ namespace AGEAS_iteration1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Program.myController.DeleteCustomer((int)DGV.SelectedRows[0].Cells[0].Value);
-            Form4_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.DeleteCustomer((int)DGV.SelectedRows[0].Cells[0].Value);
+                Form4_Load(sender, e);
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -100,8 +103,11 @@ namespace AGEAS_iteration1
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            Program.myController.UpdateCustomer(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text, TeltextBox.Text, BalanceText.Value);
-            Form4_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.UpdateCustomer(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text, TeltextBox.Text, BalanceText.Value);
+                Form4_Load(sender, e);
+            }
         }
 
         private void Form4_Click(object sender, EventArgs e)

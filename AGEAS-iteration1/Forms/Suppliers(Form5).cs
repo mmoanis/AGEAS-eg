@@ -77,6 +77,7 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            // TODO: check the input
             Program.myController.AddSuppliers(NametextBox.Text, PhonetextBox.Text, AddresstextBox.Text, CompanyTextBox.Text);
             Form5_Load(sender,e);
         }
@@ -98,9 +99,12 @@ namespace AGEAS_iteration1
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            Program.myController.updateSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text,
-                PhonetextBox.Text, AddresstextBox.Text, CompanyTextBox.Text);
-            Form5_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.updateSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text,
+                    PhonetextBox.Text, AddresstextBox.Text, CompanyTextBox.Text);
+                Form5_Load(sender, e);
+            }
         }
 
         private void Form5_Click(object sender, EventArgs e)
@@ -110,8 +114,11 @@ namespace AGEAS_iteration1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Program.myController.DeleteSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()));
-            Form5_Load(sender,e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.DeleteSupplier(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()));
+                Form5_Load(sender, e);
+            }
         }
       
     }

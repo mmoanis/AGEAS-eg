@@ -70,6 +70,8 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            // TODO: add the checks for the input fields used
+
             Program.myController.AddTransaction((int)comboBox1.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
 
