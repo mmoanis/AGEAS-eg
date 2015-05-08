@@ -206,13 +206,13 @@ namespace AGEAS_iteration1
             F2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
 
-            if (name == AGEAS_iteration1.Properties.Settings.Default.adminUserName && pw == AGEAS_iteration1.Properties.Settings.Default.adminPassword)
+            if (name == AGEAS_iteration1.Properties.Settings.Default.adminUserName.TrimEnd() && pw == AGEAS_iteration1.Properties.Settings.Default.adminPassword)
             {
                 F1.Hide();
                 F2.Show();
                 return true;
             }
-            else if (name == AGEAS_iteration1.Properties.Settings.Default.username && pw == AGEAS_iteration1.Properties.Settings.Default.userPassword)
+            else if (name == AGEAS_iteration1.Properties.Settings.Default.username.TrimEnd() && pw == AGEAS_iteration1.Properties.Settings.Default.userPassword)
             {
                 F1.Hide();
                 F2.Show();
