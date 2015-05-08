@@ -22,13 +22,13 @@ namespace AGEAS_iteration1
         {
             if (string.IsNullOrEmpty(UsernametextBox.Text))
             {
-                MessageBox.Show("Please enter a Username!");
+                MessageBox.Show("برجاء ادخال اسم المستخدم");
             }
             else
             {
                 if (string.IsNullOrEmpty(PasswordtextBox.Text))
                 {
-                    MessageBox.Show("Please enter a Password!");
+                    MessageBox.Show("برجاء ادخال كلمة المرور");
                 }
                 else
                 {
