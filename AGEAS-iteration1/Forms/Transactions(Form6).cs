@@ -138,7 +138,8 @@ namespace AGEAS_iteration1
                     // date
                     DGV.DataSource = Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value);
                     break;
-                case 3:
+                case 2:
+                    MessageBox.Show("not implemented yet, DONT REPORT AS AN ISSUE");
                     //Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value).AsEnumerable().Where(o => o in Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue).AsEnumerable());
                     break;
                 default:
