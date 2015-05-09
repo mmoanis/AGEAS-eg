@@ -159,7 +159,12 @@ namespace AGEAS_iteration1
 
         private void DGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            TransactionDetails details = new TransactionDetails(false, (int) DGV.SelectedRows[0].Cells[0].Value);
+            // moved to double click
+        }
+
+        private void DGV_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TransactionDetails details = new TransactionDetails(false, (int)DGV.SelectedRows[0].Cells[0].Value);
             details.ShowDialog(this);
         }
     }

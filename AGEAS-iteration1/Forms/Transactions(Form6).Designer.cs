@@ -259,6 +259,7 @@
             this.DGV.Size = new System.Drawing.Size(985, 427);
             this.DGV.TabIndex = 20;
             this.DGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_RowHeaderMouseClick);
+            this.DGV.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_RowHeaderMouseDoubleClick);
             // 
             // label5
             // 
