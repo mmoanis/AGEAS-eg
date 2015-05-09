@@ -16,6 +16,7 @@ namespace AGEAS_iteration1
         public Form5 F5;
         public Form6 F6;
         public Form7 F7;
+        public bool Admin;
 
         private static Controller controller;
 
@@ -208,12 +209,14 @@ namespace AGEAS_iteration1
 
             if (name == AGEAS_iteration1.Properties.Settings.Default.adminUserName.TrimEnd() && pw == AGEAS_iteration1.Properties.Settings.Default.adminPassword)
             {
+                Admin = true;
                 F1.Hide();
                 F2.Show();
                 return true;
             }
             else if (name == AGEAS_iteration1.Properties.Settings.Default.username.TrimEnd() && pw == AGEAS_iteration1.Properties.Settings.Default.userPassword)
             {
+                Admin = false;
                 F1.Hide();
                 F2.Show();
                 return true;
@@ -276,6 +279,16 @@ namespace AGEAS_iteration1
             F6.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F6.FormClosed += (s, args) => F2.Show();
             F6.ShowDialog();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Form2ReportsButtonPressed()
+        {
+            F7 = new Form7();
+            F7.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            F7.FormClosed += (s, args) => F2.Show();
+            F7.ShowDialog();
         }
 
         /// <summary>

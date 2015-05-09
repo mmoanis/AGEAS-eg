@@ -36,7 +36,7 @@
             this.Suppliersbtn = new System.Windows.Forms.Button();
             this.Reportsbtn = new System.Windows.Forms.Button();
             this.Logoutbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SetupButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -125,16 +125,16 @@
             this.Logoutbtn.UseVisualStyleBackColor = true;
             this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
             // 
-            // button1
+            // SetupButton
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(167, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 38);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "اعدادات البرنامج";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SetupButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetupButton.Location = new System.Drawing.Point(167, 252);
+            this.SetupButton.Name = "SetupButton";
+            this.SetupButton.Size = new System.Drawing.Size(215, 38);
+            this.SetupButton.TabIndex = 9;
+            this.SetupButton.Text = "اعدادات البرنامج";
+            this.SetupButton.UseVisualStyleBackColor = true;
+            this.SetupButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
@@ -142,7 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 456);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SetupButton);
             this.Controls.Add(this.Logoutbtn);
             this.Controls.Add(this.Reportsbtn);
             this.Controls.Add(this.Suppliersbtn);
@@ -152,6 +152,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +168,6 @@
         private System.Windows.Forms.Button Suppliersbtn;
         private System.Windows.Forms.Button Reportsbtn;
         private System.Windows.Forms.Button Logoutbtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SetupButton;
     }
 }

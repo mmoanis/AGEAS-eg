@@ -20,46 +20,27 @@ namespace AGEAS_iteration1
 
         private void Productsbtn_Click(object sender, EventArgs e)
         {
-            //Form3 f = new Form3();
-            //f.FormClosed += (s, args) => this.Show();
-            //this.Hide();
-            //f.Show();
             Program.myController.Form2ProductsButtonPressed();
         }
 
         private void Customersbtn_Click(object sender, EventArgs e)
         {
-            //Form4 f = new Form4();
-            //f.FormClosed += (s, args) => this.Show();
-            //this.Hide();
-            //f.Show();
             Program.myController.Form2CustomersButtonPressed();
         }
 
         private void Suppliersbtn_Click(object sender, EventArgs e)
         {
-            //Form5 f = new Form5();
-            //f.FormClosed += (s, args) => this.Show();
-            //this.Hide();
-            //f.Show();
             Program.myController.Form2SuppliersButtonPressed();
         }
 
         private void Transactionsbtn_Click(object sender, EventArgs e)
-        {
-            //Form6 f = new Form6();
-            //f.FormClosed += (s, args) => this.Show();
-            //this.Hide();
-            //f.Show();
+        {   
             Program.myController.Form2TransactionsButtonPressed();
         }
 
         private void Reportsbtn_Click(object sender, EventArgs e)
         {
-            Form7 f = new Form7();
-            f.FormClosed += (s, args) => this.Show();
-            this.Hide();
-            f.Show();
+            Program.myController.Form2ReportsButtonPressed();
         }
 
         private void Logoutbtn_Click(object sender, EventArgs e)
@@ -71,6 +52,15 @@ namespace AGEAS_iteration1
         {
             Preferences preferences = new Preferences();
             preferences.ShowDialog();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if (!Program.myController.Admin)
+            {
+                SetupButton.Enabled = false;
+                Reportsbtn.Enabled = false;
+            }
         }
     }
 }
