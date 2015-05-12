@@ -83,7 +83,7 @@ namespace AGEAS_iteration1
                 return;
             }
             int telephonenumber;
-            if (!Int32.TryParse(PhonetextBox.Text, out telephonenumber) || PhonetextBox.Text.Length != 11 || PhonetextBox.Text.Length != 11)
+            if (!Int32.TryParse(PhonetextBox.Text, out telephonenumber) || !(PhonetextBox.Text.Length == 8 || PhonetextBox.Text.Length == 11))
             {
                 MessageBox.Show("برجاء ادخال رقم  تليفون صحيح ");
                 return;
@@ -115,7 +115,7 @@ namespace AGEAS_iteration1
                 return;
             }
             int telephonenumber;
-            if (!Int32.TryParse(PhonetextBox.Text, out telephonenumber) || PhonetextBox.Text.Length != 11 || PhonetextBox.Text.Length != 11)
+            if (!Int32.TryParse(PhonetextBox.Text, out telephonenumber) || !(PhonetextBox.Text.Length == 8 || PhonetextBox.Text.Length == 11))
             {
                 MessageBox.Show("برجاء ادخال رقم  تليفون صحيح ");
                 return;
