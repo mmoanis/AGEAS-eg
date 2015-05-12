@@ -39,7 +39,6 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -144,7 +143,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.DeleteButton);
             this.groupBox1.Controls.Add(this.AddButton);
             this.groupBox1.Controls.Add(this.UpdateButton);
             this.groupBox1.Controls.Add(this.TypeLabel);
@@ -156,7 +154,7 @@
             this.groupBox1.Controls.Add(this.SupplierLabel);
             this.groupBox1.Location = new System.Drawing.Point(986, 164);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 235);
+            this.groupBox1.Size = new System.Drawing.Size(364, 198);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             // 
@@ -167,18 +165,6 @@
             this.numericUpDown2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.numericUpDown2.Size = new System.Drawing.Size(222, 20);
             this.numericUpDown2.TabIndex = 33;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(116, 186);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
-            this.DeleteButton.TabIndex = 32;
-            this.DeleteButton.Text = "مسح";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
@@ -285,7 +271,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label1;
     }

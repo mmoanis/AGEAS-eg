@@ -74,6 +74,19 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            if (NametextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال اسم العميل");
+                return;
+            }
+            
+            int telephonenumber;
+            if (!Int32.TryParse(TeltextBox.Text, out telephonenumber) || TeltextBox.Text.Length != 11 || TeltextBox.Text.Length != 11)
+            {
+                MessageBox.Show("برجاء ادخال رقم  تليفون صحيح ");
+                return;
+            }
+
             Program.myController.InsertCustomer(NametextBox.Text, TeltextBox.Text, BalanceText.Value);
             Form4_Load(sender, e);
         }
@@ -103,6 +116,19 @@ namespace AGEAS_iteration1
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            if (NametextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال اسم العميل");
+                return;
+            }
+
+            int telephonenumber;
+            if (!Int32.TryParse(TeltextBox.Text, out telephonenumber) || TeltextBox.Text.Length != 11 || TeltextBox.Text.Length != 11)
+            {
+                MessageBox.Show("برجاء ادخال رقم  تليفون صحيح ");
+                return;
+            }
+
             if (DGV.SelectedRows.Count != 0)
             {
                 Program.myController.UpdateCustomer(int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString()), NametextBox.Text, TeltextBox.Text, BalanceText.Value);

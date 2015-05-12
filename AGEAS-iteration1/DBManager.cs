@@ -463,7 +463,7 @@ namespace AGEAS_iteration1
                 throw(EX);
             }
         }
-        public DataTable UpdateProduct(int Product_ID, int Supplier_ID, string Name, decimal Price)
+        public DataTable UpdateProduct(int Product_ID, int Supplier_ID, string Name, decimal Price, int Quantity)
         {
             try
             {
@@ -475,6 +475,7 @@ namespace AGEAS_iteration1
                 cmd.Parameters.AddWithValue("@Supplier_ID", Supplier_ID);
                 cmd.Parameters.AddWithValue("@Name", Name);
                 cmd.Parameters.AddWithValue("@Price", Price);
+                cmd.Parameters.AddWithValue("@Quantity", Quantity);
                 adapter.Fill(Table);
                 return Table;
             }

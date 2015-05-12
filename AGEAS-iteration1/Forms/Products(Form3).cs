@@ -26,6 +26,7 @@ namespace AGEAS_iteration1
             
             TypetextBox.MaxLength = 50;
             numericUpDown1.Maximum = 999999999;
+            numericUpDown2.Maximum = 9999;
             numericUpDown1.DecimalPlaces = 3;
             SearchTextBox.MaxLength = 50;
             
@@ -47,6 +48,7 @@ namespace AGEAS_iteration1
             {
                 comboBox1.Text = DGV.SelectedRows[0].Cells[1].Value.ToString();
                 numericUpDown1.Value = decimal.Parse(DGV.SelectedRows[0].Cells[3].Value.ToString());
+                numericUpDown2.Value = decimal.Parse(DGV.SelectedRows[0].Cells[4].Value.ToString());
                 TypetextBox.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
                 AddButton.Enabled = false;
             }
@@ -54,6 +56,7 @@ namespace AGEAS_iteration1
             {
                 comboBox1.Text = "";
                 numericUpDown1.Value = 0;
+                numericUpDown2.Value = 0;
                 TypetextBox.Text = "";
                 AddButton.Enabled = true;
             }
@@ -84,19 +87,41 @@ namespace AGEAS_iteration1
         private void AddButton_Click(object sender, EventArgs e)
         {
             // TODO: check the input
+            if (TypetextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال اسم المنتج");
+                return;
+            }
+            if (numericUpDown1.Value <= 0)
+            {
+                MessageBox.Show("برجاء ادخال سعر المنتج");
+                return;
+            }
+
             int supplier_ID = (int) comboBox1.SelectedValue;
-            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
+            Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, Int32.Parse(numericUpDown2.Value.ToString()));
             Form3_Load(sender, e);
             
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            if (TypetextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال اسم المنتج");
+                return;
+            }
+            if (numericUpDown1.Value <= 0)
+            {
+                MessageBox.Show("برجاء ادخال سعر المنتج");
+                return;
+            }
             if (DGV.SelectedRows.Count != 0)
             {
                 int supplier_ID = (int)comboBox1.SelectedValue;
                 int product_ID = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-                Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
+                Program.myController.UpdateProuct(product_ID, supplier_ID, TypetextBox.Text, numericUpDown1.Value, Int32.Parse(numericUpDown2.Value.ToString()));
+                //Program.myController.InsertProduct(supplier_ID, TypetextBox.Text, numericUpDown1.Value, 123);
                 Form3_Load(sender, e);
             }
         }

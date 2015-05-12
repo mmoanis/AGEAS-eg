@@ -42,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DiscounttextBox = new System.Windows.Forms.NumericUpDown();
-            this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.DGV = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,7 +76,7 @@
             // UpdateButton
             // 
             this.UpdateButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateButton.Location = new System.Drawing.Point(30, 248);
+            this.UpdateButton.Location = new System.Drawing.Point(36, 212);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.UpdateButton.Size = new System.Drawing.Size(128, 33);
@@ -126,7 +125,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.DiscounttextBox);
-            this.groupBox1.Controls.Add(this.DeleteButton);
             this.groupBox1.Controls.Add(this.AddButton);
             this.groupBox1.Controls.Add(this.UpdateButton);
             this.groupBox1.Controls.Add(this.CustomerLabel);
@@ -134,7 +132,7 @@
             this.groupBox1.Controls.Add(this.DiscountLabel);
             this.groupBox1.Location = new System.Drawing.Point(1030, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 332);
+            this.groupBox1.Size = new System.Drawing.Size(312, 263);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -170,7 +168,7 @@
             // 
             // ReceivedValueTextBox
             // 
-            this.ReceivedValueTextBox.Location = new System.Drawing.Point(6, 155);
+            this.ReceivedValueTextBox.Location = new System.Drawing.Point(4, 155);
             this.ReceivedValueTextBox.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -178,12 +176,12 @@
             196608});
             this.ReceivedValueTextBox.Name = "ReceivedValueTextBox";
             this.ReceivedValueTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ReceivedValueTextBox.Size = new System.Drawing.Size(219, 20);
+            this.ReceivedValueTextBox.Size = new System.Drawing.Size(221, 20);
             this.ReceivedValueTextBox.TabIndex = 43;
             // 
             // ValueTextBox
             // 
-            this.ValueTextBox.Location = new System.Drawing.Point(6, 123);
+            this.ValueTextBox.Location = new System.Drawing.Point(4, 123);
             this.ValueTextBox.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -191,7 +189,7 @@
             196608});
             this.ValueTextBox.Name = "ValueTextBox";
             this.ValueTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ValueTextBox.Size = new System.Drawing.Size(219, 20);
+            this.ValueTextBox.Size = new System.Drawing.Size(221, 20);
             this.ValueTextBox.TabIndex = 42;
             // 
             // label3
@@ -227,22 +225,10 @@
             this.DiscounttextBox.Size = new System.Drawing.Size(219, 20);
             this.DiscounttextBox.TabIndex = 35;
             // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(102, 287);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
-            this.DeleteButton.TabIndex = 34;
-            this.DeleteButton.Text = "مسح";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(164, 248);
+            this.AddButton.Location = new System.Drawing.Point(170, 212);
             this.AddButton.Name = "AddButton";
             this.AddButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.AddButton.Size = new System.Drawing.Size(128, 33);
@@ -407,7 +393,6 @@
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label DiscountLabel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.NumericUpDown DiscounttextBox;

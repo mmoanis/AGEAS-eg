@@ -86,7 +86,7 @@
             this.Backbtn5.Name = "Backbtn5";
             this.Backbtn5.Size = new System.Drawing.Size(143, 26);
             this.Backbtn5.TabIndex = 1;
-            this.Backbtn5.Text = "Back";
+            this.Backbtn5.Text = "الرجوع";
             this.Backbtn5.UseVisualStyleBackColor = true;
             this.Backbtn5.Click += new System.EventHandler(this.Backbtn5_Click);
             // 

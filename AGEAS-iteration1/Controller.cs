@@ -594,11 +594,11 @@ namespace AGEAS_iteration1
         /// <param name="Name"></param>
         /// <param name="Price"></param>
         /// <returns></returns>
-        public DataTable UpdateProuct(int Product_ID, int Supplier_ID, string Name, decimal Price)
+        public DataTable UpdateProuct(int Product_ID, int Supplier_ID, string Name, decimal Price, int Quantity)
         {
             try
             {
-                return dbManager.UpdateProduct(Product_ID, Supplier_ID, Name, Price);
+                return dbManager.UpdateProduct(Product_ID, Supplier_ID, Name, Price, Quantity);
             }
             catch (Exception e)
             {

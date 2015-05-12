@@ -40,7 +40,6 @@
             this.CompanyTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchNameTextBox = new System.Windows.Forms.TextBox();
@@ -164,7 +163,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DeleteButton);
             this.groupBox1.Controls.Add(this.AddButton);
             this.groupBox1.Controls.Add(this.NametextBox);
             this.groupBox1.Controls.Add(this.CompanyTextBox);
@@ -177,21 +175,9 @@
             this.groupBox1.Controls.Add(this.AddressLabel);
             this.groupBox1.Location = new System.Drawing.Point(1001, 119);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(341, 271);
+            this.groupBox1.Size = new System.Drawing.Size(341, 236);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(91, 223);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.DeleteButton.Size = new System.Drawing.Size(128, 33);
-            this.DeleteButton.TabIndex = 34;
-            this.DeleteButton.Text = "مسح";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 
@@ -309,7 +295,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.TextBox SearchNameTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.DataGridView DGV;
         private System.Windows.Forms.TextBox SearchCompanyTextBox;
