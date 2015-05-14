@@ -8,10 +8,10 @@ using System.Windows.Forms;
 using AGEAS_iteration1;
 namespace AGEAS_iteration1
 {
-    public partial class Form3 : Form
+    public partial class Products : Form
     {
 
-        public Form3()
+        public Products()
         {
             InitializeComponent();
             TypeLabel.Visible = true; 

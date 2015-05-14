@@ -9,10 +9,10 @@ using AGEAS_iteration1.Forms;
 
 namespace AGEAS_iteration1
 {
-    public partial class Form2 : Form
+    public partial class FunctionChoice : Form
     {
         
-        public Form2()
+        public FunctionChoice()
         {
             InitializeComponent();
             

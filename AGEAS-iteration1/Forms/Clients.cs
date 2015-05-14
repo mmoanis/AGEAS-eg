@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AGEAS_iteration1
 {
-    public partial class Form4 : Form
+    public partial class Clients : Form
     {
-        public Form4()
+        public Clients()
         {
             InitializeComponent();
             NameLabel.Visible = true;

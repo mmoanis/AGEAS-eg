@@ -1,6 +1,6 @@
 ﻿namespace AGEAS_iteration1
 {
-    partial class Form2
+    partial class FunctionChoice
     {
         /// <summary>
         /// Required designer variable.

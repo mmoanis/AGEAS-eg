@@ -9,10 +9,10 @@ using AGEAS_iteration1.Forms;
 
 namespace AGEAS_iteration1
 {
-    public partial class Form6 : Form
+    public partial class Transactions : Form
     {
 
-        public Form6()
+        public Transactions()
         {
             InitializeComponent();
             CustomerLabel.Visible = true;

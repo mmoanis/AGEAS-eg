@@ -1,6 +1,6 @@
 ﻿namespace AGEAS_iteration1
 {
-    partial class Form6
+    partial class Transactions
     {
         /// <summary>
         /// Required designer variable.

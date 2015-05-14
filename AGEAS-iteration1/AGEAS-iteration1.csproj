@@ -84,29 +84,29 @@
     <Compile Include="Controller.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="DBManager.cs" />
-    <Compile Include="Forms\Login%28Form1%29.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login%28Form1%29.Designer.cs">
-      <DependentUpon>Login%28Form1%29.cs</DependentUpon>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Functionchoice%28Form2%29.cs">
+    <Compile Include="Forms\Functionchoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Functionchoice%28Form2%29.Designer.cs">
-      <DependentUpon>Functionchoice%28Form2%29.cs</DependentUpon>
+    <Compile Include="Forms\Functionchoice.Designer.cs">
+      <DependentUpon>Functionchoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Products%28Form3%29.cs">
+    <Compile Include="Forms\Products.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Products%28Form3%29.Designer.cs">
-      <DependentUpon>Products%28Form3%29.cs</DependentUpon>
+    <Compile Include="Forms\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Clients%28Form4%29.cs">
+    <Compile Include="Forms\Clients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Clients%28Form4%29.Designer.cs">
-      <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
+    <Compile Include="Forms\Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Preferences.cs">
       <SubType>Form</SubType>
@@ -114,11 +114,11 @@
     <Compile Include="Forms\Preferences.Designer.cs">
       <DependentUpon>Preferences.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Suppliers%28Form5%29.cs">
+    <Compile Include="Forms\Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Suppliers%28Form5%29.Designer.cs">
-      <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
+    <Compile Include="Forms\Suppliers.Designer.cs">
+      <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TransactionDetails.cs">
       <SubType>Form</SubType>
@@ -126,31 +126,31 @@
     <Compile Include="Forms\TransactionDetails.Designer.cs">
       <DependentUpon>TransactionDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Transactions%28Form6%29.cs">
+    <Compile Include="Forms\Transactions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Transactions%28Form6%29.Designer.cs">
-      <DependentUpon>Transactions%28Form6%29.cs</DependentUpon>
+    <Compile Include="Forms\Transactions.Designer.cs">
+      <DependentUpon>Transactions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Reports%28Form7%29.cs">
+    <Compile Include="Forms\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Reports%28Form7%29.Designer.cs">
-      <DependentUpon>Reports%28Form7%29.cs</DependentUpon>
+    <Compile Include="Forms\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Login%28Form1%29.resx">
-      <DependentUpon>Login%28Form1%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Functionchoice%28Form2%29.resx">
-      <DependentUpon>Functionchoice%28Form2%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Functionchoice.resx">
+      <DependentUpon>Functionchoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Products%28Form3%29.resx">
-      <DependentUpon>Products%28Form3%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Clients%28Form4%29.resx">
-      <DependentUpon>Clients%28Form4%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfitReport.rdlc" />
     <EmbeddedResource Include="Forms\CustomerReport.rdlc" />
@@ -159,17 +159,17 @@
     <EmbeddedResource Include="Forms\Preferences.resx">
       <DependentUpon>Preferences.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Suppliers%28Form5%29.resx">
-      <DependentUpon>Suppliers%28Form5%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Suppliers.resx">
+      <DependentUpon>Suppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TransactionDetails.resx">
       <DependentUpon>TransactionDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Transactions%28Form6%29.resx">
-      <DependentUpon>Transactions%28Form6%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Transactions.resx">
+      <DependentUpon>Transactions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Reports%28Form7%29.resx">
-      <DependentUpon>Reports%28Form7%29.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -205,6 +205,7 @@
     </None>
     <None Include="app.config" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

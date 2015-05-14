@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace AGEAS_iteration1
 {
-    public partial class Form5 : Form
+    public partial class Suppliers : Form
     {
         
-        public Form5()
+        public Suppliers()
         {
             InitializeComponent();
             

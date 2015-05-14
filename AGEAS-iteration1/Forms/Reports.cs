@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AGEAS_iteration1
 {
-    public partial class Form7 : Form
+    public partial class Reports : Form
     {
-        public Form7()
+        public Reports()
         {
             InitializeComponent();
             panelProfitSearchParameters.Visible = false;

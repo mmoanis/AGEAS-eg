@@ -1,6 +1,6 @@
 ﻿namespace AGEAS_iteration1
 {
-    partial class Form4
+    partial class Clients
     {
         /// <summary>
         /// Required designer variable.

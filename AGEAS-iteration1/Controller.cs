@@ -9,13 +9,13 @@ namespace AGEAS_iteration1
     public class Controller
     {
         #region Fields
-        public Form1 F1;
-        public Form2 F2;
-        public Form3 F3;
-        public Form4 F4;
-        public Form5 F5;
-        public Form6 F6;
-        public Form7 F7;
+        public Login F1;
+        public FunctionChoice F2;
+        public Products F3;
+        public Clients F4;
+        public Suppliers F5;
+        public Transactions F6;
+        public Reports F7;
         public bool Admin;
 
         private static Controller controller;
@@ -207,7 +207,7 @@ namespace AGEAS_iteration1
         /// <returns></returns>
         public bool Form1LoginButtonPressed(string name, string pw)
         {
-            F2 = new Form2();
+            F2 = new FunctionChoice();
             F2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
 
@@ -237,7 +237,7 @@ namespace AGEAS_iteration1
         /// </summary>
         public void Form2CustomersButtonPressed()
         {
-            F4 = new Form4();
+            F4 = new Clients();
             F4.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F4.FormClosed += (s, args) => F2.Show();
             F4.ShowDialog();
@@ -257,7 +257,7 @@ namespace AGEAS_iteration1
         /// </summary>
         public void Form2ProductsButtonPressed()
         {
-            F3 = new Form3();
+            F3 = new Products();
             F3.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F3.FormClosed += (s, args) => F2.Show();
             F3.ShowDialog();
@@ -268,7 +268,7 @@ namespace AGEAS_iteration1
         /// </summary>
         public void Form2SuppliersButtonPressed()
         {
-            F5 = new Form5();
+            F5 = new Suppliers();
             F5.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F5.FormClosed += (s, args) => F2.Show();
             F5.ShowDialog();
@@ -279,7 +279,7 @@ namespace AGEAS_iteration1
         /// </summary>
         public void Form2TransactionsButtonPressed()
         {
-            F6 = new Form6();
+            F6 = new Transactions();
             F6.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F6.FormClosed += (s, args) => F2.Show();
             F6.ShowDialog();
@@ -289,7 +289,7 @@ namespace AGEAS_iteration1
         /// </summary>
         public void Form2ReportsButtonPressed()
         {
-            F7 = new Form7();
+            F7 = new Reports();
             F7.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             F7.FormClosed += (s, args) => F2.Show();
             F7.ShowDialog();
@@ -550,9 +550,9 @@ namespace AGEAS_iteration1
         /// 
         /// </summary>
         /// <returns></returns>
-        public Form1 StartForm1()
+        public Login StartForm1()
         {
-            F1 = new Form1();
+            F1 = new Login();
             F1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             return F1;
         }
