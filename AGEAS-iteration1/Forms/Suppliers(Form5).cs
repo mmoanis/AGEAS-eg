@@ -77,11 +77,24 @@ namespace AGEAS_iteration1
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (NametextBox.Text.Length < 1 || AddresstextBox.Text.Length < 1 || AddresstextBox .Text.Length < 1)
+            if (NametextBox.Text.Length < 1)
             {
                 MessageBox.Show("برجاء ادخال اسم المورد");
                 return;
             }
+            
+            if (CompanyTextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال اسم الشركة");
+                return;
+            }
+
+            if (AddresstextBox.Text.Length < 1)
+            {
+                MessageBox.Show("برجاء ادخال العنوان");
+                return;
+            }
+
             int telephonenumber;
             if (!Int32.TryParse(PhonetextBox.Text, out telephonenumber) || !(PhonetextBox.Text.Length == 8 || PhonetextBox.Text.Length == 11))
             {

@@ -67,6 +67,10 @@ namespace AGEAS_iteration1
                 dbManager.InsertSupplier(name, phone, address, company);
                 F5.ShowMessage("تم ادخال البيانات بنجاح");
             }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                F5.ShowMessage("رقم التليفون / اسم الشركة مكرر");
+            }
             catch (Exception e)
             {
                 F5.ShowMessage(e.Message);
@@ -440,6 +444,13 @@ namespace AGEAS_iteration1
             {
                 dbManager.Insertcustomer(name, phone, balance);
                 F4.ShowMessage("تم ادخال البيانات بنجاح");
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                if (e.Number == 2627)
+                {
+                    F4.ShowMessage("رقم التليفون مكرر");
+                }
             }
             catch (Exception e)
             {

@@ -76,7 +76,16 @@ namespace AGEAS_iteration1
                 MessageBox.Show("برجاء ادخال قيمة الفاتورة");
                 return;
             }
-
+            if (ReceivedValueTextBox.Value > ValueTextBox.Value)
+            {
+                MessageBox.Show("يوجد خطأ فى قيمة الفاتورة المدخلة");
+                return;
+            }
+            if (comboBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("برجاء اختيار اسم العميل");
+                return;
+            }
             Program.myController.AddTransaction((int)comboBox1.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
 
@@ -94,14 +103,16 @@ namespace AGEAS_iteration1
             comboBox1.DataSource = customers;
             comboBox1.ValueMember = "الرقم";
             comboBox1.DisplayMember = "الاسم";
+            comboBox1.SelectedIndex = -1;
             ClientSearchTextBox.DataSource = customers;
             ClientSearchTextBox.ValueMember = "الرقم";
             ClientSearchTextBox.DisplayMember = "الاسم";
+            ClientSearchTextBox.SelectedIndex = -1;
         }
 
         private void Form6_Click(object sender, EventArgs e)
         {
-
+            DGV.ClearSelection();
         }
 
         /// <summary>

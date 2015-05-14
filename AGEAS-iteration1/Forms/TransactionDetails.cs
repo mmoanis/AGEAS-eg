@@ -38,12 +38,13 @@ namespace AGEAS_iteration1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             // TODO: fix application navigation
+            this.Close();
         }
 
         private void TransactionDetails_Load(object sender, EventArgs e)
         {
             comboBox2.DataSource = Program.myController.GetProductsList();
-            comboBox2.DisplayMember = "الاسم";
+            comboBox2.DisplayMember = "اسم المنتج";
             comboBox2.ValueMember = "الرقم";
 
             loadDetails();
