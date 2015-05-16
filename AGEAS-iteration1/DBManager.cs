@@ -1,21 +1,109 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.Sql;
+using AGEAS_iteration1.Properties;
 
 namespace AGEAS_iteration1
 {
     class DBManager
     {
-        private string databaseDirectory;
-        private string connectionString = "Server=.;Database=AGEAS;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = string.Empty;
         private SqlConnection Conn;
 
         private static DBManager dbManager;
 
+        /// <summary>
+        /// probably initialize the connection string to a sql server.
+        /// </summary>
+        private void Initialize()
+        {
+            // try the dot
+            try
+            {
+                connectionString = "Server=.;" + Settings.Default.ConnectionString;
+                Conn = new SqlConnection(connectionString);
+                Conn.Open();
+                Settings.Default.ServerName = ".";
+                return;
+            }
+            catch (Exception)
+            {
+                Conn = null;
+            }
+
+            // find out the proper server name
+            SqlDataSourceEnumerator enumerator = SqlDataSourceEnumerator.Instance;
+            DataTable table = enumerator.GetDataSources();
+
+            if (table.Rows.Count == 0)
+                throw new InvalidProgramException("Cann't find the sql server");
+
+            foreach (System.Data.DataRow row in table.Rows)
+            {
+                foreach (System.Data.DataColumn col in table.Columns)
+                {
+                    try
+                    {
+                        connectionString = "Server=" + row[col] + ";" + Settings.Default.ConnectionString;
+                        Conn = new SqlConnection(connectionString);
+                        Conn.Open();
+                        Settings.Default.ServerName = row[col] + ";";
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        Conn = null;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Attach the database to the server.
+        /// </summary>
+        private void AttachDatabaseToSqlServer()
+        {
+            using (SqlCommand command = new SqlCommand("sp_attach_db ", Conn))
+            {
+                try
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@dbname", "AGEAS");
+                    command.Parameters.AddWithValue("@filename1",
+                        System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf");
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Constructs the signal instance of the class.
+        /// </summary>
         private DBManager()
         {
-             Conn = new SqlConnection(connectionString);
-             Conn.Open();
+            if (string.IsNullOrEmpty(Settings.Default.ServerName))
+            {
+                Initialize();
+                AttachDatabaseToSqlServer();
+            }
+            else
+            {
+                try
+                {
+                    Conn = new SqlConnection(Settings.Default.ServerName + Settings.Default.ConnectionString);
+                    Conn.Open();
+                }
+                catch (Exception)
+                {
+                    // exit the program safely
+                    throw new Exception("failed to initailize program");
+                }
+            }
         }
 
         /// <summary>
