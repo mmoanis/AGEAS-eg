@@ -51,8 +51,8 @@ namespace AGEAS_iteration1
             {
                 NametextBox.Text = DGV.SelectedRows[0].Cells[1].Value.ToString();
                 PhonetextBox.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
-                AddresstextBox.Text = DGV.SelectedRows[0].Cells[3].Value.ToString();
-                CompanyTextBox.Text = DGV.SelectedRows[0].Cells[4].Value.ToString();
+                CompanyTextBox.Text = DGV.SelectedRows[0].Cells[3].Value.ToString();
+                AddresstextBox.Text = DGV.SelectedRows[0].Cells[4].Value.ToString();
                 AddButton.Enabled = false;
             }
             else

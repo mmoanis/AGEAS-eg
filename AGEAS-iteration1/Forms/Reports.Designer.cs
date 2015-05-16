@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.getCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AGEASDataSet1 = new AGEAS_iteration1.AGEASDataSet1();
             this.getMonthlyProfitReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,9 +92,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.getCustomerBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.getCustomerBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.CustomerReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 75);
             this.reportViewer1.Name = "reportViewer1";
@@ -214,7 +214,7 @@
             // 
             this.getDailyProfitReportTableAdapter.ClearBeforeFill = true;
             // 
-            // Form7
+            // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +224,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.Backbtn5);
-            this.Name = "Form7";
+            this.Name = "Reports";
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getCustomerBindingSource)).EndInit();

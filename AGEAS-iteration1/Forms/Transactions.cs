@@ -133,6 +133,21 @@ namespace AGEAS_iteration1
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            if (ValueTextBox.Value <= 0)
+            {
+                MessageBox.Show("برجاء ادخال قيمة الفاتورة");
+                return;
+            }
+            if (ReceivedValueTextBox.Value > ValueTextBox.Value)
+            {
+                MessageBox.Show("يوجد خطأ فى قيمة الفاتورة المدخلة");
+                return;
+            }
+            if (comboBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("برجاء اختيار اسم العميل");
+                return;
+            }
             Program.myController.UpdateTransaction(Convert.ToInt32(DGV.SelectedRows[0].Cells[0].Value), DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
         }
