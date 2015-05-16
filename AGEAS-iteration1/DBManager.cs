@@ -18,8 +18,22 @@ namespace AGEAS_iteration1
         /// </summary>
         private bool Initialize()
         {
-            string server = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;";
+            // try the dot
+            try
+            {
+                connectionString = "Server=.;" + Settings.Default.ConnectionString;
+                Conn = new SqlConnection(connectionString);
+                Conn.Open();
+                Settings.Default.ServerName = "Server=.;";
+            }
+            catch (SqlException e)
+            {
+                
+            }
+
             // try the SQLEXPRESS
+            string server = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;";
+            
             try
             {
                 connectionString = server + Settings.Default.ConnectionString;
