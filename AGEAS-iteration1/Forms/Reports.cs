@@ -54,7 +54,6 @@ namespace AGEAS_iteration1
                 case 2:
                     // customers report
                     GenerateCustomerReport();
-                    this.reportViewer1.DataBindings = getCustomerBindingSource;
                     break;
                 default:
                     break;
@@ -70,6 +69,11 @@ namespace AGEAS_iteration1
         private void GenerateCustomerReport()
         {
             this.getCustomerTableAdapter.Fill(this.AGEASDataSet1.getCustomer);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.getCustomerBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.CustomerReport.rdlc";
         }
 
         /// <summary>
@@ -85,18 +89,32 @@ namespace AGEAS_iteration1
         /// </summary>
         private void GenerateProfitReport()
         {
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            
             switch (cbDate.SelectedIndex)
             {
                 case 0:
                     // by year
                     this.getAnnualProfitReportTableAdapter.Fill(this.AGEASDataSet1.getAnnualProfitReport, dateTimePicker1.Value.Year);
+                    reportDataSource1.Name = "DataSet1";
+                    reportDataSource1.Value = this.getAnnualProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReportAnnual.rdlc";
                     break;
                 case 1:
                     // By month
                     this.getMonthlyProfitReportTableAdapter.Fill(this.AGEASDataSet.getMonthlyProfitReport, dateTimePicker1.Value.Month, dateTimePicker1.Value.Year);
+                    reportDataSource1.Name = "DataSet";
+                    reportDataSource1.Value = this.getMonthlyProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReport.rdlc";
                     break;
                 case 2:
                     this.getDailyProfitReportTableAdapter.Fill(this.AGEASDataSet1.getDailyProfitReport, dateTimePicker1.Value.Date);
+                    reportDataSource1.Name = "DataSet1";
+                    reportDataSource1.Value = this.getDailyProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReportDaily.rdlc";
                     break;
                 default:
                     break;
