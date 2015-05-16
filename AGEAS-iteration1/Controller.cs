@@ -33,9 +33,9 @@ namespace AGEAS_iteration1
             {
                 dbManager = DBManager.Instance;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-               
+                throw e;
             }
         }
 

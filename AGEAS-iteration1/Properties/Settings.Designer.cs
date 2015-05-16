@@ -97,7 +97,7 @@ namespace AGEAS_iteration1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"Database=AGEAS;Integrated Security=True;Connect Timeout=30\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Database=AGEAS;Integrated Security=True;Connect Timeout=30")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

@@ -16,46 +16,28 @@ namespace AGEAS_iteration1
         /// <summary>
         /// probably initialize the connection string to a sql server.
         /// </summary>
-        private void Initialize()
+        private bool Initialize()
         {
-            // try the dot
+            string server = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;";
+            // try the SQLEXPRESS
             try
             {
-                connectionString = "Server=.;" + Settings.Default.ConnectionString;
+                connectionString = server + Settings.Default.ConnectionString;
                 Conn = new SqlConnection(connectionString);
                 Conn.Open();
-                Settings.Default.ServerName = ".";
-                return;
+                return true;
             }
-            catch (Exception)
+            catch (SqlException e)
+            {
+                // need to attach the database
+                Settings.Default.ServerName = server;
+                return false;
+            }
+            catch (Exception e)
             {
                 Conn = null;
-            }
+                throw e;
 
-            // find out the proper server name
-            SqlDataSourceEnumerator enumerator = SqlDataSourceEnumerator.Instance;
-            DataTable table = enumerator.GetDataSources();
-
-            if (table.Rows.Count == 0)
-                throw new InvalidProgramException("Cann't find the sql server");
-
-            foreach (System.Data.DataRow row in table.Rows)
-            {
-                foreach (System.Data.DataColumn col in table.Columns)
-                {
-                    try
-                    {
-                        connectionString = "Server=" + row[col] + ";" + Settings.Default.ConnectionString;
-                        Conn = new SqlConnection(connectionString);
-                        Conn.Open();
-                        Settings.Default.ServerName = row[col] + ";";
-                        return;
-                    }
-                    catch (Exception)
-                    {
-                        Conn = null;
-                    }
-                }
             }
         }
 
@@ -64,19 +46,30 @@ namespace AGEAS_iteration1
         /// </summary>
         private void AttachDatabaseToSqlServer()
         {
-            using (SqlCommand command = new SqlCommand("sp_attach_db ", Conn))
+            string connection = Settings.Default.ServerName + "Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection conn = new SqlConnection(connection))
             {
-                try
+                conn.Open();
+                string query = " CREATE DATABASE AGEAS ON" + 
+               " (FILENAME = '" + System.IO.Path.GetDirectoryName( System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf" + "'), "+
+               " (FILENAME = '" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf" + "')" +
+               " FOR ATTACH;";
+                using (SqlCommand command = new SqlCommand(query, conn))
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@dbname", "AGEAS");
-                    command.Parameters.AddWithValue("@filename1",
-                        System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf");
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    throw e;
+                    try
+                    {
+                        command.CommandType = CommandType.Text;
+                        //command.Parameters.AddWithValue("@dbname", "AGEAS");
+                        //command.Parameters.AddWithValue("@filename1",
+                        //    System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf");
+                        //command.Parameters.AddWithValue("@filename2",
+                        //    System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf");
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
                 }
             }
         }
@@ -88,8 +81,8 @@ namespace AGEAS_iteration1
         {
             if (string.IsNullOrEmpty(Settings.Default.ServerName))
             {
-                Initialize();
-                AttachDatabaseToSqlServer();
+                if(!Initialize())
+                    AttachDatabaseToSqlServer();
             }
             else
             {
