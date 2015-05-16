@@ -25,8 +25,9 @@ namespace AGEAS_iteration1
                 Conn = new SqlConnection(connectionString);
                 Conn.Open();
                 Settings.Default.ServerName = "Server=.;";
+                return true;
             }
-            catch (SqlException e)
+            catch (Exception e)
             {
                 
             }
