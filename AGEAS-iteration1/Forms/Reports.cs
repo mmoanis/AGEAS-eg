@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using AGEAS_iteration1.Properties;
 using System.Windows.Forms;
 
 namespace AGEAS_iteration1
@@ -14,6 +15,12 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             panelProfitSearchParameters.Visible = false;
+            string connectionString = Settings.Default.ServerName + Settings.Default.ConnectionString; ;
+            getAnnualProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+            getCustomerTableAdapter.Connection.ConnectionString = connectionString;
+            getDailyProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+            getMonthlyProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+        
         }
 
         private void Backbtn5_Click(object sender, EventArgs e)
@@ -47,11 +54,13 @@ namespace AGEAS_iteration1
                 case 2:
                     // customers report
                     GenerateCustomerReport();
+                    this.reportViewer1.DataBindings = getCustomerBindingSource;
                     break;
                 default:
                     break;
             }
 
+            
             this.reportViewer1.RefreshReport();
         }
 
@@ -68,7 +77,7 @@ namespace AGEAS_iteration1
         /// </summary>
         private void GenerateProductReport()
         {
-            this.getCustomerTableAdapter.Fill(this.AGEASDataSet1.getCustomer);
+            // TODO: add the product reports
         }
 
         /// <summary>
