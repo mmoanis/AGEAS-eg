@@ -1,21 +1,103 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.Sql;
+using AGEAS_iteration1.Properties;
 
 namespace AGEAS_iteration1
 {
     class DBManager
     {
-        private string databaseDirectory;
-        private string connectionString = "Server=.;Database=AGEAS;Integrated Security=True;Connect Timeout=30";
+        private string connectionString = string.Empty;
         private SqlConnection Conn;
 
         private static DBManager dbManager;
 
+        /// <summary>
+        /// probably initialize the connection string to a sql server.
+        /// </summary>
+        private bool Initialize()
+        {
+            string server = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;";
+            // try the SQLEXPRESS
+            try
+            {
+                connectionString = server + Settings.Default.ConnectionString;
+                Conn = new SqlConnection(connectionString);
+                Conn.Open();
+                Settings.Default.ServerName = server;
+                return true;
+            }
+            catch (SqlException e)
+            {
+                // need to attach the database
+                Settings.Default.ServerName = server;
+                return false;
+            }
+            catch (Exception e)
+            {
+                Conn = null;
+                throw e;
+
+            }
+        }
+
+        /// <summary>
+        /// Attach the database to the server.
+        /// </summary>
+        private void AttachDatabaseToSqlServer()
+        {
+            string connection = Settings.Default.ServerName + "Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                conn.Open();
+                string query = " CREATE DATABASE AGEAS ON" + 
+               " (FILENAME = '" + System.IO.Path.GetDirectoryName( System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf" + "') "+
+               //" (FILENAME = '" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf" + "')" +
+               " FOR ATTACH;";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.Text;
+                        //command.Parameters.AddWithValue("@dbname", "AGEAS");
+                        //command.Parameters.AddWithValue("@filename1",
+                        //    System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf");
+                        //command.Parameters.AddWithValue("@filename2",
+                        //    System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf");
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Constructs the signal instance of the class.
+        /// </summary>
         private DBManager()
         {
-             Conn = new SqlConnection(connectionString);
-             Conn.Open();
+            if (string.IsNullOrEmpty(Settings.Default.ServerName))
+            {
+                if(!Initialize())
+                    AttachDatabaseToSqlServer();
+            }
+            else
+            {
+                try
+                {
+                    Conn = new SqlConnection(Settings.Default.ServerName + Settings.Default.ConnectionString);
+                    Conn.Open();
+                }
+                catch (Exception)
+                {
+                    // exit the program safely
+                    throw new Exception("failed to initailize program");
+                }
+            }
         }
 
         /// <summary>

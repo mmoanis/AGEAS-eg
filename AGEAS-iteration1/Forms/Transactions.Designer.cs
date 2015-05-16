@@ -352,8 +352,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "اسم العميل",
-            "تاريخ التعامل",
-            "كل ما سبق"});
+            "تاريخ التعامل"});
             this.comboBox3.Location = new System.Drawing.Point(6, 63);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(128, 21);

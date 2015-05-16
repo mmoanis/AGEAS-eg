@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using AGEAS_iteration1.Properties;
 using System.Windows.Forms;
 
 namespace AGEAS_iteration1
@@ -14,6 +15,12 @@ namespace AGEAS_iteration1
         {
             InitializeComponent();
             panelProfitSearchParameters.Visible = false;
+            string connectionString = Settings.Default.ServerName + Settings.Default.ConnectionString; ;
+            getAnnualProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+            getCustomerTableAdapter.Connection.ConnectionString = connectionString;
+            getDailyProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+            getMonthlyProfitReportTableAdapter.Connection.ConnectionString = connectionString;
+        
         }
 
         private void Backbtn5_Click(object sender, EventArgs e)
@@ -52,6 +59,7 @@ namespace AGEAS_iteration1
                     break;
             }
 
+            
             this.reportViewer1.RefreshReport();
         }
 
@@ -61,6 +69,11 @@ namespace AGEAS_iteration1
         private void GenerateCustomerReport()
         {
             this.getCustomerTableAdapter.Fill(this.AGEASDataSet1.getCustomer);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.getCustomerBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.CustomerReport.rdlc";
         }
 
         /// <summary>
@@ -68,7 +81,7 @@ namespace AGEAS_iteration1
         /// </summary>
         private void GenerateProductReport()
         {
-            this.getCustomerTableAdapter.Fill(this.AGEASDataSet1.getCustomer);
+            // TODO: add the product reports
         }
 
         /// <summary>
@@ -76,18 +89,32 @@ namespace AGEAS_iteration1
         /// </summary>
         private void GenerateProfitReport()
         {
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            
             switch (cbDate.SelectedIndex)
             {
                 case 0:
                     // by year
                     this.getAnnualProfitReportTableAdapter.Fill(this.AGEASDataSet1.getAnnualProfitReport, dateTimePicker1.Value.Year);
+                    reportDataSource1.Name = "DataSet1";
+                    reportDataSource1.Value = this.getAnnualProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReportAnnual.rdlc";
                     break;
                 case 1:
                     // By month
                     this.getMonthlyProfitReportTableAdapter.Fill(this.AGEASDataSet.getMonthlyProfitReport, dateTimePicker1.Value.Month, dateTimePicker1.Value.Year);
+                    reportDataSource1.Name = "DataSet";
+                    reportDataSource1.Value = this.getMonthlyProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReport.rdlc";
                     break;
                 case 2:
                     this.getDailyProfitReportTableAdapter.Fill(this.AGEASDataSet1.getDailyProfitReport, dateTimePicker1.Value.Date);
+                    reportDataSource1.Name = "DataSet1";
+                    reportDataSource1.Value = this.getDailyProfitReportBindingSource;
+                    this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                    this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReportDaily.rdlc";
                     break;
                 default:
                     break;
