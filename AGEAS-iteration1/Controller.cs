@@ -29,7 +29,14 @@ namespace AGEAS_iteration1
         /// </summary>
         private Controller()
         {
-            dbManager = DBManager.Instance;
+            try
+            {
+                dbManager = DBManager.Instance;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         #endregion PrivateMethods

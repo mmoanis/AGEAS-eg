@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGEAS-iteration1", "AGEAS-iteration1\AGEAS-iteration1.csproj", "{899712C9-5CB0-4E2A-A4B2-EDC59479E588}"
 EndProject
