@@ -47,7 +47,7 @@ namespace AGEAS_iteration1
             {
                 comboBox1.SelectedValue = DGV.SelectedRows[0].Cells[0].Value.ToString();
                 dateTimePicker3.Text = DGV.SelectedRows[0].Cells[2].Value.ToString();
-                DiscounttextBox.Value = (decimal) DGV.SelectedRows[0].Cells[4].Value;
+                DiscounttextBox.Value = (decimal)DGV.SelectedRows[0].Cells[4].Value;
                 ValueTextBox.Value = (decimal)DGV.SelectedRows[0].Cells[5].Value;
                 ReceivedValueTextBox.Value = (decimal)DGV.SelectedRows[0].Cells[6].Value;
                 AddButton.Enabled = false;
@@ -71,21 +71,12 @@ namespace AGEAS_iteration1
         private void AddButton_Click(object sender, EventArgs e)
         {
             // TODO: add the checks for the input fields used
-            if(ValueTextBox.Value <= 0)
+            if (ValueTextBox.Value <= 0)
             {
                 MessageBox.Show("برجاء ادخال قيمة الفاتورة");
                 return;
             }
-            if (ReceivedValueTextBox.Value > ValueTextBox.Value)
-            {
-                MessageBox.Show("يوجد خطأ فى قيمة الفاتورة المدخلة");
-                return;
-            }
-            if (comboBox1.SelectedIndex < 0)
-            {
-                MessageBox.Show("برجاء اختيار اسم العميل");
-                return;
-            }
+
             Program.myController.AddTransaction((int)comboBox1.SelectedValue, DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
             Form6_Load(sender, e);
 
@@ -103,16 +94,14 @@ namespace AGEAS_iteration1
             comboBox1.DataSource = customers;
             comboBox1.ValueMember = "الرقم";
             comboBox1.DisplayMember = "الاسم";
-            comboBox1.SelectedIndex = -1;
             ClientSearchTextBox.DataSource = customers;
             ClientSearchTextBox.ValueMember = "الرقم";
             ClientSearchTextBox.DisplayMember = "الاسم";
-            ClientSearchTextBox.SelectedIndex = -1;
         }
 
         private void Form6_Click(object sender, EventArgs e)
         {
-            DGV.ClearSelection();
+
         }
 
         /// <summary>
@@ -123,7 +112,14 @@ namespace AGEAS_iteration1
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (DGV.SelectedRows.Count != 0)
+            {
                 Program.myController.DeleteTransaction((int)DGV.SelectedRows[0].Cells[0].Value);
+                Form6_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("لابد من اختيار احد التعاملات لاتمام عملية الحذف", "خطاء في عملية حذف البيانات", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -133,8 +129,15 @@ namespace AGEAS_iteration1
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            Program.myController.UpdateTransaction(Convert.ToInt32(DGV.SelectedRows[0].Cells[0].Value), DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
-            Form6_Load(sender, e);
+            if (DGV.SelectedRows.Count != 0)
+            {
+                Program.myController.UpdateTransaction(Convert.ToInt32(DGV.SelectedRows[0].Cells[0].Value), DiscounttextBox.Value, ValueTextBox.Value, ReceivedValueTextBox.Value, checkBox1.Checked);
+                Form6_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("لابد من اختيار احد التعاملات لاتمام عملية التحديث", "خطاء في عملية تعديل البيانات", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -153,6 +156,10 @@ namespace AGEAS_iteration1
                 case 1:
                     // date
                     DGV.DataSource = Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value);
+                    break;
+                case 2:
+                    MessageBox.Show("not implemented yet, DONT REPORT AS AN ISSUE");
+                    //Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value).AsEnumerable().Where(o => o in Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue).AsEnumerable());
                     break;
                 default:
                     MessageBox.Show("لابد من اختيار طريقة البحث");
