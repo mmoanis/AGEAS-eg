@@ -106,6 +106,11 @@ namespace AGEAS_iteration1
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            if (DGV.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("برجاء اختيار خانة للتعديل");
+                return;
+            }
             if (TypetextBox.Text.Length < 1)
             {
                 MessageBox.Show("برجاء ادخال اسم المنتج");

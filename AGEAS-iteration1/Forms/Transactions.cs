@@ -133,6 +133,11 @@ namespace AGEAS_iteration1
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            if (DGV.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("برجاء اختيار خانة للتعديل");
+                return;
+            }
             if (ValueTextBox.Value <= 0)
             {
                 MessageBox.Show("برجاء ادخال قيمة الفاتورة");
