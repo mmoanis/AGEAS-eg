@@ -19,6 +19,9 @@ namespace AGEAS_iteration1.Forms
             this.tbAdminOldPassword.PasswordChar = '*';
             this.tbUserNewPassword.PasswordChar = '*';
             this.tbUserOldPassword.PasswordChar = '*';
+            ((Control)tabPage1).Enabled = false;
+            ((Control)tabPage3).Enabled = false;
+            //foreach (Control ctl in tabPage1.Controls) ctl.Enabled = false;
         }
 
         private void btChangeAdminSettings_Click(object sender, EventArgs e)
@@ -27,6 +30,8 @@ namespace AGEAS_iteration1.Forms
             {
                 // set new password
                 Settings.Default.adminPassword = tbAdminNewPassword.Text;
+                Settings.Default.Save();
+                MessageBox.Show("تم تغيير كلمة المرور");
             }
             else
             {
@@ -40,6 +45,8 @@ namespace AGEAS_iteration1.Forms
             {
                 // set new password
                 Settings.Default.userPassword = tbUserNewPassword.Text;
+                Settings.Default.Save();
+                MessageBox.Show("تم تغيير كلمة المرور");
             }
             else
             {
