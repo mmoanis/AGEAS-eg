@@ -229,12 +229,15 @@
     <None Include="AGEASDataSet1.xss">
       <DependentUpon>AGEASDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram3.cd" />
     <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram6.cd" />
     <None Include="Properties\app.manifest">
       <SubType>Designer</SubType>
     </None>
