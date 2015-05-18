@@ -49,6 +49,11 @@ namespace AGEAS_iteration1
         /// <param name="quantity"></param>
         public void AddProductPurchase(int product_id, int purchase_id, int quantity)
         {
+            if (product_id <= 0 || purchase_id <= 0 || quantity < 0)
+            {
+                throw new ArgumentException("invalid id");
+            }
+
             try
             {
                 dbManager.InsertProductPurchase(product_id, purchase_id, quantity);
@@ -69,6 +74,11 @@ namespace AGEAS_iteration1
         /// <param name="company"></param>
         public void AddSuppliers(string name, string phone, string address, string company)
         {
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(company))
+            {
+                throw new ArgumentException("invalid input strings");
+            }
+
             try
             {
                 dbManager.InsertSupplier(name, phone, address, company);
@@ -94,7 +104,7 @@ namespace AGEAS_iteration1
         /// <param name="onInstallment"></param>
         public void AddTransaction(int supplier_id, decimal discount, decimal value, decimal paid, bool onInstallment)
         {
-            if (supplier_id <= 0 || discount < 0 || value <= 0 || paid < 0)
+            if (supplier_id <= 0 || discount < 0 || value < 0 || paid < 0)
             {
                 throw new ArgumentException("Invalid monetary value!");
             }
@@ -483,7 +493,7 @@ namespace AGEAS_iteration1
         /// <param name="price"></param>
         public void InsertProduct(int supplier_id, string name, decimal price, int quantity)
         {
-            if (string.IsNullOrEmpty(name) || quantity <= 0 || price <= 0 || supplier_id <= 0)
+            if (string.IsNullOrEmpty(name) || quantity < 0 || price <= 0 || supplier_id <= 0)
             {
                 throw new ArgumentException("arguemnts are either null, or not valid money values");
             }
@@ -588,6 +598,11 @@ namespace AGEAS_iteration1
         /// <param name="balance"></param>
         public void UpdateCustomer(int customer_id, string name, string phone, decimal balance)
         {
+            if (customer_id <= 0 || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) || balance < 0)
+            {
+                throw new ArgumentException("invalid argument");
+            }
+
             try
             {
                 dbManager.UpdateCustomer(customer_id, name, phone, balance);
@@ -615,6 +630,11 @@ namespace AGEAS_iteration1
         /// <param name="quantity"></param>
         public void UpdateProductPurchase(int product_purchase_id, int product_id, int purchase_id, int quantity)
         {
+            if (product_purchase_id <= 0 || product_id <= 0 || purchase_id <= 0 || quantity < 0)
+            {
+                throw new ArgumentException();
+            }
+
             try
             {
                 dbManager.UpdateProductPurchase(product_purchase_id, product_id, purchase_id, quantity);
@@ -636,6 +656,11 @@ namespace AGEAS_iteration1
         /// <returns></returns>
         public DataTable UpdateProuct(int Product_ID, int Supplier_ID, string Name, decimal Price, int Quantity)
         {
+            if (Product_ID <= 0 || Supplier_ID <= 0 || string.IsNullOrEmpty(Name) || Price < 0 || Quantity < 0)
+            {
+                throw new ArgumentException();
+            }
+
             try
             {
                 return dbManager.UpdateProduct(Product_ID, Supplier_ID, Name, Price, Quantity);
@@ -658,6 +683,10 @@ namespace AGEAS_iteration1
         /// <returns></returns>
         public DataTable updateSupplier(int Supplier_ID, string Name, string Phone, string Address, string Company)
         {
+            if (Supplier_ID <= 0 || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Phone) || string.IsNullOrEmpty(Address) || string.IsNullOrEmpty(Company))
+            {
+                throw new ArgumentException();
+            }
             try
             {
                 return dbManager.UpdateSupplier(Supplier_ID, Name, Phone, Address, Company);
@@ -684,6 +713,10 @@ namespace AGEAS_iteration1
         /// <param name="onInstallment"></param>
         public void UpdateTransaction(int purchase_id, decimal discount, decimal value, decimal paid, bool onInstallment)
         {
+            if (purchase_id <= 0 || discount < 0 || value < 0 || paid < 0)
+            {
+                throw new ArgumentException();
+            }
             try
             {
                 dbManager.UpdatePurchase(purchase_id, onInstallment, discount, value, paid);
