@@ -25,6 +25,7 @@ namespace AGEAS_iteration1
                 Conn = new SqlConnection(connectionString);
                 Conn.Open();
                 Settings.Default.ServerName = "Server=.;";
+                Settings.Default.Save();
                 return true;
             }
             catch (Exception e)
@@ -41,12 +42,14 @@ namespace AGEAS_iteration1
                 Conn = new SqlConnection(connectionString);
                 Conn.Open();
                 Settings.Default.ServerName = server;
+                Settings.Default.Save();
                 return true;
             }
             catch (SqlException e)
             {
                 // need to attach the database
                 Settings.Default.ServerName = server;
+                Settings.Default.Save();
                 return false;
             }
             catch (Exception e)
