@@ -82,18 +82,45 @@ namespace UnitTestProject1
         public void AddTest1()
         {
             Controller controller = Controller.Instance;
-            controller.InsertProduct(3, "", 0, 0);
+            controller.InsertProduct(1, "", 4, 56);
         }
 
         /// <summary>
-        /// 
+        /// TC-017
         /// </summary>
         [TestMethod]
         [ExpectedException(typeof(System.ArgumentException))]
-        public void AddTest()
+        public void AddTest2()
         {
             Controller controller = Controller.Instance;
             controller.InsertCustomer("", "", 0);
+        }
+
+        /// <summary>
+        /// TC-018
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentException))]
+        public void AddTest3()
+        {
+            Controller controller = Controller.Instance;
+            controller.InsertCustomer("", "0122318527", 0);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentException))]
+        public void AddTest4()
+        {
+            Controller controller = Controller.Instance;
+            controller.AddTransaction(-1, 4, 4, 4, true);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.NullReferenceException))]
+        public void AddTest5()
+        {
+            Controller controller = Controller.Instance;
+            controller.AddTransaction(1, 4, 4, 4, true);
         }
     }
 }

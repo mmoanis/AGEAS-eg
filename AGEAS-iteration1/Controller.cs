@@ -94,6 +94,11 @@ namespace AGEAS_iteration1
         /// <param name="onInstallment"></param>
         public void AddTransaction(int supplier_id, decimal discount, decimal value, decimal paid, bool onInstallment)
         {
+            if (supplier_id <= 0 || discount < 0 || value <= 0 || paid < 0)
+            {
+                throw new ArgumentException("Invalid monetary value!");
+            }
+
             try
             {
                 dbManager.InsertPurchase(supplier_id, onInstallment, discount, value, paid);
