@@ -447,6 +447,11 @@ namespace AGEAS_iteration1
         /// <param name="balance">customer balance.</param>
         public void InsertCustomer(string name, string phone, decimal balance)
         {
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone))
+            {
+                throw new ArgumentException("Arguments are either null or empty");
+            }
+
             try
             {
                 dbManager.Insertcustomer(name, phone, balance);
@@ -473,6 +478,11 @@ namespace AGEAS_iteration1
         /// <param name="price"></param>
         public void InsertProduct(int supplier_id, string name, decimal price, int quantity)
         {
+            if (string.IsNullOrEmpty(name) || quantity <= 0 || price <= 0 || supplier_id <= 0)
+            {
+                throw new ArgumentException("arguemnts are either null, or not valid money values");
+            }
+
             try
             {
                 dbManager.InsertProduct(supplier_id, name, price, quantity);
