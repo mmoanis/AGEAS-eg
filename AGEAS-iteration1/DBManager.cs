@@ -110,7 +110,7 @@ namespace AGEAS_iteration1
                     {
                         Settings.Default.ServerName = string.Empty;
                         Settings.Default.Save();
-                        throw new Exception("برجاء اتباع خطوات التنصيب");
+                        //throw new Exception("برجاء اتباع خطوات التنصيب");
                     }
                 }
             }
