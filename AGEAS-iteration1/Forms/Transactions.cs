@@ -168,7 +168,15 @@ namespace AGEAS_iteration1
             {
                 case 0:
                     // customer name
-                    DGV.DataSource = Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue);
+                    if (ClientSearchTextBox.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("برجاء اختيار اسم العميل");
+
+                    }
+                    else
+                    {
+                        DGV.DataSource = Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue);
+                    }
                     break;
                 case 1:
                     // date
