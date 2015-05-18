@@ -100,8 +100,19 @@ namespace AGEAS_iteration1
         {
             if (string.IsNullOrEmpty(Settings.Default.ServerName))
             {
-                if(!Initialize())
-                    AttachDatabaseToSqlServer();
+                if (!Initialize())
+                {
+                    try
+                    {
+                        AttachDatabaseToSqlServer();
+                    }
+                    catch (Exception)
+                    {
+                        Settings.Default.ServerName = string.Empty;
+                        Settings.Default.Save();
+                        throw new Exception("برجاء اتباع خطوات التنصيب");
+                    }
+                }
             }
             else
             {
