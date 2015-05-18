@@ -157,11 +157,11 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        [ExpectedException(typeof(System.NullReferenceException))]
         public void UpdateTest5()
         {
             Controller controller = Controller.Instance;
-            controller.UpdateProuct(6, 1, "خلاط", 503, 2);
+            DataTable t = controller.UpdateProuct(6, 1, "خلاط", 503, 2);
+            Assert.IsNotNull(t);
         }
     }
 }

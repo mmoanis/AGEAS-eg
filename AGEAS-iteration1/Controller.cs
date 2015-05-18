@@ -84,7 +84,7 @@ namespace AGEAS_iteration1
                 dbManager.InsertSupplier(name, phone, address, company);
                 F5.ShowMessage("تم ادخال البيانات بنجاح");
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (System.Data.SqlClient.SqlException)
             {
                 F5.ShowMessage("رقم التليفون / اسم الشركة مكرر");
             }
@@ -130,7 +130,7 @@ namespace AGEAS_iteration1
                 dbManager.backUPDatabase(path);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -328,7 +328,7 @@ namespace AGEAS_iteration1
             {
                 return dbManager.getCustomerByName(Customer_Name);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 F4.ShowMessage("فشلت عملية البحث");
                 return new DataTable();
@@ -691,7 +691,7 @@ namespace AGEAS_iteration1
             {
                 return dbManager.UpdateSupplier(Supplier_ID, Name, Phone, Address, Company);
             }
-            catch (System.Data.SqlClient.SqlException e)
+            catch (System.Data.SqlClient.SqlException)
             {
                 F5.ShowMessage("رقم التليفون / اسم الشركة مكرر");
                 return null;
