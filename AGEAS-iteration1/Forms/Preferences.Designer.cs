@@ -30,28 +30,28 @@
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btChangeUserSettings = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbUserOldPassword = new System.Windows.Forms.TextBox();
+            this.tbUserNewPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbAdminOldPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbAdminNewPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btChangeAdminSettings = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbUserNewPassword = new System.Windows.Forms.TextBox();
-            this.tbUserOldPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btChangeUserSettings = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbAdminNewPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbAdminOldPassword = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btBackUp = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btBackUp = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -78,6 +78,62 @@
             this.tabPage2.Text = "المستخدمين";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btChangeUserSettings);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.tbUserOldPassword);
+            this.groupBox3.Controls.Add(this.tbUserNewPassword);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(22, 143);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(488, 108);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "المستخدم الثانوي";
+            // 
+            // btChangeUserSettings
+            // 
+            this.btChangeUserSettings.Location = new System.Drawing.Point(20, 63);
+            this.btChangeUserSettings.Name = "btChangeUserSettings";
+            this.btChangeUserSettings.Size = new System.Drawing.Size(109, 23);
+            this.btChangeUserSettings.TabIndex = 9;
+            this.btChangeUserSettings.Text = "تغيير كلمة المرور";
+            this.btChangeUserSettings.UseVisualStyleBackColor = true;
+            this.btChangeUserSettings.Click += new System.EventHandler(this.btChangeUserSettings_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(389, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "كلمة المرور الجديدة";
+            // 
+            // tbUserOldPassword
+            // 
+            this.tbUserOldPassword.Location = new System.Drawing.Point(243, 44);
+            this.tbUserOldPassword.Name = "tbUserOldPassword";
+            this.tbUserOldPassword.Size = new System.Drawing.Size(140, 20);
+            this.tbUserOldPassword.TabIndex = 5;
+            // 
+            // tbUserNewPassword
+            // 
+            this.tbUserNewPassword.Location = new System.Drawing.Point(243, 70);
+            this.tbUserNewPassword.Name = "tbUserNewPassword";
+            this.tbUserNewPassword.Size = new System.Drawing.Size(140, 20);
+            this.tbUserNewPassword.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(389, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "كلمة المرور القديمة";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox2);
@@ -100,38 +156,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "المستخدم الرئيسي";
             // 
-            // tbAdminOldPassword
-            // 
-            this.tbAdminOldPassword.Location = new System.Drawing.Point(243, 54);
-            this.tbAdminOldPassword.Name = "tbAdminOldPassword";
-            this.tbAdminOldPassword.Size = new System.Drawing.Size(140, 20);
-            this.tbAdminOldPassword.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(389, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "كلمة المرور القديمة";
-            // 
-            // tbAdminNewPassword
-            // 
-            this.tbAdminNewPassword.Location = new System.Drawing.Point(243, 80);
-            this.tbAdminNewPassword.Name = "tbAdminNewPassword";
-            this.tbAdminNewPassword.Size = new System.Drawing.Size(140, 20);
-            this.tbAdminNewPassword.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "كلمة المرور الجديدة";
-            // 
             // btChangeAdminSettings
             // 
             this.btChangeAdminSettings.Location = new System.Drawing.Point(20, 73);
@@ -142,61 +166,37 @@
             this.btChangeAdminSettings.UseVisualStyleBackColor = true;
             this.btChangeAdminSettings.Click += new System.EventHandler(this.btChangeAdminSettings_Click);
             // 
-            // groupBox3
+            // label2
             // 
-            this.groupBox3.Controls.Add(this.btChangeUserSettings);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.tbUserOldPassword);
-            this.groupBox3.Controls.Add(this.tbUserNewPassword);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(22, 143);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(488, 108);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "المستخدم الثانوي";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(389, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "كلمة المرور الجديدة";
             // 
-            // label4
+            // tbAdminNewPassword
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(389, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "كلمة المرور القديمة";
+            this.tbAdminNewPassword.Location = new System.Drawing.Point(243, 80);
+            this.tbAdminNewPassword.Name = "tbAdminNewPassword";
+            this.tbAdminNewPassword.Size = new System.Drawing.Size(140, 20);
+            this.tbAdminNewPassword.TabIndex = 2;
             // 
-            // tbUserNewPassword
+            // label1
             // 
-            this.tbUserNewPassword.Location = new System.Drawing.Point(243, 70);
-            this.tbUserNewPassword.Name = "tbUserNewPassword";
-            this.tbUserNewPassword.Size = new System.Drawing.Size(140, 20);
-            this.tbUserNewPassword.TabIndex = 7;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(389, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "كلمة المرور القديمة";
             // 
-            // tbUserOldPassword
+            // tbAdminOldPassword
             // 
-            this.tbUserOldPassword.Location = new System.Drawing.Point(243, 44);
-            this.tbUserOldPassword.Name = "tbUserOldPassword";
-            this.tbUserOldPassword.Size = new System.Drawing.Size(140, 20);
-            this.tbUserOldPassword.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "كلمة المرور الجديدة";
-            // 
-            // btChangeUserSettings
-            // 
-            this.btChangeUserSettings.Location = new System.Drawing.Point(20, 63);
-            this.btChangeUserSettings.Name = "btChangeUserSettings";
-            this.btChangeUserSettings.Size = new System.Drawing.Size(109, 23);
-            this.btChangeUserSettings.TabIndex = 9;
-            this.btChangeUserSettings.Text = "تغيير كلمة المرور";
-            this.btChangeUserSettings.UseVisualStyleBackColor = true;
-            this.btChangeUserSettings.Click += new System.EventHandler(this.btChangeUserSettings_Click);
+            this.tbAdminOldPassword.Location = new System.Drawing.Point(243, 54);
+            this.tbAdminOldPassword.Name = "tbAdminOldPassword";
+            this.tbAdminOldPassword.Size = new System.Drawing.Size(140, 20);
+            this.tbAdminOldPassword.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -220,6 +220,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "حفظ";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(324, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "لابد من اجراء حفظ لقاعدة البيانات بشكل دوري لنتاكد انه كله في التمام";
+            // 
             // btBackUp
             // 
             this.btBackUp.Location = new System.Drawing.Point(200, 32);
@@ -229,15 +238,6 @@
             this.btBackUp.Text = "back up";
             this.btBackUp.UseVisualStyleBackColor = true;
             this.btBackUp.Click += new System.EventHandler(this.btBackUp_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "لابد من اجراء حفظ لقاعدة البيانات بشكل دوري لنتاكد انه كله في التمام";
             // 
             // tabControl1
             // 
@@ -259,13 +259,13 @@
             this.Name = "Preferences";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "Settings";
+            this.Text = "الإعدادات";
             this.tabPage2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

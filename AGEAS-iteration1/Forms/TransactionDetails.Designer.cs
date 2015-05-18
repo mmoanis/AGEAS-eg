@@ -147,7 +147,7 @@
             this.Name = "TransactionDetails";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "TransactionDetails";
+            this.Text = "تفاصيل الفاتورة";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TransactionDetails_FormClosing);
             this.Load += new System.EventHandler(this.TransactionDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

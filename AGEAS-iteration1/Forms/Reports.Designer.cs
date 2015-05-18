@@ -224,7 +224,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.Backbtn5);
             this.Name = "Reports";
-            this.Text = "Form7";
+            this.Text = "تقارير";
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getCustomerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AGEASDataSet1)).EndInit();
