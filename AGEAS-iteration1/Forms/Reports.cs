@@ -72,6 +72,7 @@ namespace AGEAS_iteration1
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.getCustomerBindingSource;
+            this.reportViewer1.Reset();
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.CustomerReport.rdlc";
         }
@@ -89,6 +90,7 @@ namespace AGEAS_iteration1
         /// </summary>
         private void GenerateProfitReport()
         {
+            this.reportViewer1.Reset();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             
             switch (cbDate.SelectedIndex)
@@ -104,7 +106,7 @@ namespace AGEAS_iteration1
                 case 1:
                     // By month
                     this.getMonthlyProfitReportTableAdapter.Fill(this.AGEASDataSet.getMonthlyProfitReport, dateTimePicker1.Value.Month, dateTimePicker1.Value.Year);
-                    reportDataSource1.Name = "DataSet";
+                    reportDataSource1.Name = "DataSet1";
                     reportDataSource1.Value = this.getMonthlyProfitReportBindingSource;
                     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
                     this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.ProfitReport.rdlc";
