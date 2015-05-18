@@ -122,5 +122,45 @@ namespace UnitTestProject1
             Controller controller = Controller.Instance;
             controller.AddTransaction(1, 4, 4, 4, true);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentException))]
+        public void UpdateTest1()
+        {
+            Controller controller = Controller.Instance;
+            controller.updateSupplier(3, "", "", "", "");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentException))]
+        public void UpdateTest2()
+        {
+            Controller controller = Controller.Instance;
+            controller.updateSupplier(-1, "ff", "0122122", "4th", "Toshiba");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.NullReferenceException))]
+        public void UpdateTest3()
+        {
+            Controller controller = Controller.Instance;
+            controller.UpdateCustomer(1, "mohamed", "032323", 32);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentException))]
+        public void UpdateTest4()
+        {
+            Controller controller = Controller.Instance;
+            controller.UpdateProductPurchase(-1, 0, 0, 43);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.NullReferenceException))]
+        public void UpdateTest5()
+        {
+            Controller controller = Controller.Instance;
+            controller.UpdateProuct(6, 1, "خلاط", 503, 2);
+        }
     }
 }
