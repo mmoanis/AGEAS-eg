@@ -117,7 +117,7 @@ namespace AGEAS_iteration1
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            DGV.DataSource = Program.myController.GetSupplierbyName(SearchNameTextBox.Text,SearchCompanyTextBox.Text);
+            DGV.DataSource = Program.myController.GetSupplierbyName(SearchNameTextBox.Text);
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)

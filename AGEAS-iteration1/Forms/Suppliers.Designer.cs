@@ -45,8 +45,6 @@
             this.SearchNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.SearchCompanyTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +203,7 @@
             // 
             // SearchNameTextBox
             // 
-            this.SearchNameTextBox.Location = new System.Drawing.Point(696, 70);
+            this.SearchNameTextBox.Location = new System.Drawing.Point(696, 85);
             this.SearchNameTextBox.Name = "SearchNameTextBox";
             this.SearchNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.SearchNameTextBox.Size = new System.Drawing.Size(222, 20);
@@ -215,7 +213,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(924, 70);
+            this.label3.Location = new System.Drawing.Point(924, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 36;
@@ -230,35 +228,12 @@
             this.DGV.Size = new System.Drawing.Size(954, 398);
             this.DGV.TabIndex = 37;
             // 
-            // SearchCompanyTextBox
-            // 
-            this.SearchCompanyTextBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchCompanyTextBox.Location = new System.Drawing.Point(696, 96);
-            this.SearchCompanyTextBox.Name = "SearchCompanyTextBox";
-            this.SearchCompanyTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.SearchCompanyTextBox.Size = new System.Drawing.Size(222, 20);
-            this.SearchCompanyTextBox.TabIndex = 39;
-            this.SearchCompanyTextBox.UseWaitCursor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(924, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 20);
-            this.label4.TabIndex = 38;
-            this.label4.Text = ":اسم الشركة";
-            this.label4.UseWaitCursor = true;
-            // 
-            // Form5
+            // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 651);
             this.ControlBox = false;
-            this.Controls.Add(this.SearchCompanyTextBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
@@ -266,7 +241,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Backbtn3);
             this.Controls.Add(this.label1);
-            this.Name = "Form5";
+            this.Name = "Suppliers";
             this.Text = "موردين";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.Click += new System.EventHandler(this.Form5_Click);
@@ -297,7 +272,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.DataGridView DGV;
-        private System.Windows.Forms.TextBox SearchCompanyTextBox;
-        private System.Windows.Forms.Label label4;
     }
 }

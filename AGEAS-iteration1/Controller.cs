@@ -424,11 +424,11 @@ namespace AGEAS_iteration1
         /// <param name="Name"></param>
         /// <param name="Company"></param>
         /// <returns></returns>
-        public DataTable GetSupplierbyName(string Name, string Company)
+        public DataTable GetSupplierbyName(string Name)
         {
             try
             {
-                return dbManager.getSupplierByNameCompany(Name, Company);
+                return dbManager.getSupplierByNameCompany(Name);
             }
             catch (Exception e)
             {

@@ -410,7 +410,7 @@ namespace AGEAS_iteration1
                 throw(EX);
             }
         }
-        public DataTable getSupplierByNameCompany(string Name, string Company)
+        public DataTable getSupplierByNameCompany(string Name)
         {
             try
             {
@@ -419,7 +419,6 @@ namespace AGEAS_iteration1
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable Table = new DataTable();
                 cmd.Parameters.AddWithValue("@Name", Name);
-                cmd.Parameters.AddWithValue("@Company", Company);
                 adapter.Fill(Table);
                 return Table;
             }
