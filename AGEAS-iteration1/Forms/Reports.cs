@@ -47,11 +47,11 @@ namespace AGEAS_iteration1
                     // the profit report
                     GenerateProfitReport();
                     break;
-                case 1:
+                //case 1:
                     // products report
-                    GenerateProductReport();
-                    break;
-                case 2:
+                    //GenerateProductReport();
+                    //break;
+                case 1:
                     // customers report
                     GenerateCustomerReport();
                     break;

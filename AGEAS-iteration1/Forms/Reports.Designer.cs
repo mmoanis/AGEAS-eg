@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.getCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AGEASDataSet1 = new AGEAS_iteration1.AGEASDataSet1();
             this.getMonthlyProfitReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,9 +92,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.getCustomerBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.getCustomerBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AGEAS_iteration1.Forms.CustomerReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 75);
             this.reportViewer1.Name = "reportViewer1";
@@ -113,7 +113,6 @@
             this.cbReportOptions.FormattingEnabled = true;
             this.cbReportOptions.Items.AddRange(new object[] {
             "الارباح",
-            "البضائع",
             "العملاء"});
             this.cbReportOptions.Location = new System.Drawing.Point(611, 22);
             this.cbReportOptions.Name = "cbReportOptions";
