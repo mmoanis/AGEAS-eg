@@ -168,16 +168,19 @@ namespace AGEAS_iteration1
             {
                 case 0:
                     // customer name
-                    DGV.DataSource = Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue);
+                    if (ClientSearchTextBox.SelectedIndex != -1)
+                        DGV.DataSource = Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue);
+                    else
+                        MessageBox.Show("برجاء اختيار عميل لاتمام عملية البحث");
                     break;
                 case 1:
                     // date
                     DGV.DataSource = Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value);
                     break;
                 case 2:
-                    MessageBox.Show("not implemented yet, DONT REPORT AS AN ISSUE");
+                   //MessageBox.Show("not implemented yet, DONT REPORT AS AN ISSUE");
                     //Program.myController.SearchPurchaseByDateInterval(dateTimePicker1.Value, dateTimePicker2.Value).AsEnumerable().Where(o => o in Program.myController.GetPurchasesByCustomer((int)ClientSearchTextBox.SelectedValue).AsEnumerable());
-                    break;
+                    
                 default:
                     MessageBox.Show("لابد من اختيار طريقة البحث");
                     break;
