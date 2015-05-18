@@ -28,7 +28,7 @@ namespace AGEAS_iteration1
                 Settings.Default.Save();
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 
             }
@@ -45,7 +45,7 @@ namespace AGEAS_iteration1
                 Settings.Default.Save();
                 return true;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
                 // need to attach the database
                 Settings.Default.ServerName = server;

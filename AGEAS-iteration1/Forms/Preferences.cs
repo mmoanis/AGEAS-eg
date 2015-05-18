@@ -20,7 +20,6 @@ namespace AGEAS_iteration1.Forms
             this.tbUserNewPassword.PasswordChar = '*';
             this.tbUserOldPassword.PasswordChar = '*';
             ((Control)tabPage1).Enabled = false;
-            ((Control)tabPage3).Enabled = false;
             //foreach (Control ctl in tabPage1.Controls) ctl.Enabled = false;
         }
 
