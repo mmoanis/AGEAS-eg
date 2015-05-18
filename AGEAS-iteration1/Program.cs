@@ -11,13 +11,22 @@ namespace AGEAS_iteration1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        public static Controller myController = Controller.Instance;
+        public static Controller myController;
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(myController.StartForm1());
+            try
+            {
+
+                myController = Controller.Instance;
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(myController.StartForm1());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("لقد تعرض البرنامج لمشكلة تقنية ولابد من الاغلاق، برجاء اعادة فتح البرنامج");
+            }
         }
     }
 }
