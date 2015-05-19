@@ -106,11 +106,12 @@ namespace AGEAS_iteration1
                     {
                         AttachDatabaseToSqlServer();
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         Settings.Default.ServerName = string.Empty;
                         Settings.Default.Save();
                         //throw new Exception("برجاء اتباع خطوات التنصيب");
+                        throw e;
                     }
                 }
             }
