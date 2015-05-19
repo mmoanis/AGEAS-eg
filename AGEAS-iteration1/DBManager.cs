@@ -18,46 +18,29 @@ namespace AGEAS_iteration1
         /// </summary>
         private bool Initialize()
         {
-            // try the dot
-            try
+            string[] serverNames = new string[2]{
+                "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;" + "Integrated Security=True;Connect Timeout=30;",
+                "Server=.;Integrated Security=True;Connect Timeout=30;"
+            };
+
+            // try different server names
+            for (int i = 0; i < serverNames.Length; i++)
             {
-                connectionString = "Server=.;" + Settings.Default.ConnectionString;
-                Conn = new SqlConnection(connectionString);
-                Conn.Open();
-                Settings.Default.ServerName = "Server=.;";
-                Settings.Default.Save();
-                return true;
-            }
-            catch (Exception)
-            {
-                
+                try
+                {
+                    Conn = new SqlConnection(serverNames[i]);
+                    Conn.Open();
+                    Settings.Default.ServerName = "Server=.;";
+                    Settings.Default.Save();
+                    return true;
+                }
+                catch(Exception)
+                {
+                    Conn = null;
+                }
             }
 
-            // try the SQLEXPRESS
-            string server = "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;";
-            
-            try
-            {
-                connectionString = server + Settings.Default.ConnectionString;
-                Conn = new SqlConnection(connectionString);
-                Conn.Open();
-                Settings.Default.ServerName = server;
-                Settings.Default.Save();
-                return true;
-            }
-            catch (SqlException)
-            {
-                // need to attach the database
-                Settings.Default.ServerName = server;
-                Settings.Default.Save();
-                return false;
-            }
-            catch (Exception e)
-            {
-                Conn = null;
-                throw e;
-
-            }
+            return false;
         }
 
         /// <summary>
@@ -65,6 +48,7 @@ namespace AGEAS_iteration1
         /// </summary>
         private void AttachDatabaseToSqlServer()
         {
+            if (CheckIsAttached()) return;
             string connection = Settings.Default.ServerName + "Integrated Security=True;Connect Timeout=30";
             using (SqlConnection conn = new SqlConnection(connection))
             {
@@ -93,6 +77,22 @@ namespace AGEAS_iteration1
             }
         }
 
+        private bool CheckIsAttached()
+        {
+            using (SqlConnection con = new SqlConnection(Settings.Default.ServerName + Settings.Default.ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
         /// <summary>
         /// Constructs the signal instance of the class.
         /// </summary>
@@ -100,7 +100,7 @@ namespace AGEAS_iteration1
         {
             if (string.IsNullOrEmpty(Settings.Default.ServerName))
             {
-                if (!Initialize())
+                if (Initialize())
                 {
                     try
                     {
