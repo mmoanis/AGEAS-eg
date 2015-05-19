@@ -7,5 +7,8 @@ namespace AGEAS_iteration1
 {
     class SetupException : Exception
     {
+        public SetupException(string Message) : base(Message)
+        {
+        }
     }
 }

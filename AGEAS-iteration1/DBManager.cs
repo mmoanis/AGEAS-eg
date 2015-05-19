@@ -111,7 +111,8 @@ namespace AGEAS_iteration1
                         Settings.Default.ServerName = string.Empty;
                         Settings.Default.Save();
                         //throw new Exception("برجاء اتباع خطوات التنصيب");
-                        throw new SetupException(" برجاء اتباع عمليات التنصيب، والذهاب الي الملف التالي" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location));
+                        //throw new SetupException(" برجاء اتباع عمليات التنصيب، والذهاب الي الملف التالي" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location));
+                        throw new SetupException(e.Message);
                     }
                 }
             }
