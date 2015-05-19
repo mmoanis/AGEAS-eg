@@ -25,7 +25,6 @@ namespace AGEAS_iteration1.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string adminUserName {
             get {
                 return ((string)(this["adminUserName"]));

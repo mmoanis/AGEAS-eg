@@ -18,9 +18,13 @@ namespace AGEAS_iteration1
         /// </summary>
         private bool Initialize()
         {
-            string[] serverNames = new string[2]{
+            string[] connectionStrings = new string[2]{
                 "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;" + "Integrated Security=True;Connect Timeout=30;",
                 "Server=.;Integrated Security=True;Connect Timeout=30;"
+            };
+            string[] serverNames = new string[2]{
+                "Server=" + System.Environment.MachineName + "\\SQLEXPRESS;",
+                "Server=.;"
             };
 
             // try different server names
@@ -28,9 +32,9 @@ namespace AGEAS_iteration1
             {
                 try
                 {
-                    Conn = new SqlConnection(serverNames[i]);
+                    Conn = new SqlConnection(connectionStrings[i]);
                     Conn.Open();
-                    Settings.Default.ServerName = "Server=.;";
+                    Settings.Default.ServerName = serverNames[i];
                     Settings.Default.Save();
                     return true;
                 }
@@ -48,13 +52,11 @@ namespace AGEAS_iteration1
         /// </summary>
         private void AttachDatabaseToSqlServer()
         {
-            if (!CheckIsAttached()) return;
+            if (CheckIsAttached()) return;
             string connection = Settings.Default.ServerName + "Integrated Security=True;Connect Timeout=30";
             using (SqlConnection conn = new SqlConnection(connection))
             {
                 conn.Open();
-                string temp = "EXEC sp_detach_db 'AGEAS', 'true';";
-                SqlCommand temp2 = new SqlCommand(temp, conn);
                 string query = " CREATE DATABASE AGEAS ON" + 
                " (FILENAME = '" + System.IO.Path.GetDirectoryName( System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf" + "') "+
                //" (FILENAME = '" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf" + "')" +
@@ -73,7 +75,16 @@ namespace AGEAS_iteration1
                     }
                     catch (Exception e)
                     {
-                        throw e;
+                        if (e is SqlException)
+                        {
+                            SqlException ee = e as SqlException;
+                            if (ee.Number == 1801)
+                            {
+                                return;
+                            }
+                        }
+                        else
+                            throw e;
                     }
                 }
             }
@@ -107,6 +118,8 @@ namespace AGEAS_iteration1
                     try
                     {
                         AttachDatabaseToSqlServer();
+                        Conn = new SqlConnection(Settings.Default.ServerName + Settings.Default.ConnectionString);
+                        Conn.Open();
                     }
                     catch (Exception e)
                     {
@@ -177,7 +190,17 @@ namespace AGEAS_iteration1
         }
         public void Close()
         {
-            Conn.Close();
+            if (Conn != null)
+            {
+                try
+                {
+                    Conn.Close();
+                }
+                catch (Exception)
+                {
+                }
+            }
+            
         }
 
         public DataTable deletecustomer(int Customer_ID)

@@ -418,6 +418,11 @@ namespace AGEAS_iteration1
             }
         }
 
+        public void CloseDatabase()
+        {
+            dbManager.Close();
+        }
+
         /// <summary>
         /// Search for supplier inside the database
         /// </summary>

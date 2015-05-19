@@ -30,6 +30,13 @@ namespace AGEAS_iteration1
                 else
                     MessageBox.Show("لقد تعرض البرنامج لمشكلة تقنية ولابد من الاغلاق، برجاء اعادة فتح البرنامج");
             }
+            finally
+            {
+                if (myController != null)
+                {
+                    myController.CloseDatabase();
+                }
+            }
         }
     }
 }
