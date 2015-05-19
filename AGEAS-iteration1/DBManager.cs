@@ -48,11 +48,13 @@ namespace AGEAS_iteration1
         /// </summary>
         private void AttachDatabaseToSqlServer()
         {
-            if (CheckIsAttached()) return;
+            if (!CheckIsAttached()) return;
             string connection = Settings.Default.ServerName + "Integrated Security=True;Connect Timeout=30";
             using (SqlConnection conn = new SqlConnection(connection))
             {
                 conn.Open();
+                string temp = "EXEC sp_detach_db 'AGEAS', 'true';";
+                SqlCommand temp2 = new SqlCommand(temp, conn);
                 string query = " CREATE DATABASE AGEAS ON" + 
                " (FILENAME = '" + System.IO.Path.GetDirectoryName( System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS.mdf" + "') "+
                //" (FILENAME = '" + System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\AGEAS_log.ldf" + "')" +
