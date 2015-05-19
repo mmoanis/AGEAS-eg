@@ -23,9 +23,12 @@ namespace AGEAS_iteration1
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(myController.StartForm1());
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("لقد تعرض البرنامج لمشكلة تقنية ولابد من الاغلاق، برجاء اعادة فتح البرنامج");
+                if (e is SetupException)
+                    MessageBox.Show(e.Message);
+                else
+                    MessageBox.Show("لقد تعرض البرنامج لمشكلة تقنية ولابد من الاغلاق، برجاء اعادة فتح البرنامج");
             }
         }
     }
